@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DE Plan Revisions</title>
+<meta name="description" content="Recommended revisions to CPG Cranberry's Disciplined Entrepreneurship Steps 3, 5, 6, 8, 12 and 20, based on a synthetic interview study (n=10). Hypotheses to validate with real humans.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script>
+  (function(){try{var t=localStorage.getItem('de-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;}}catch(e){}})();
+</script>
+<style>
+/* Shared CPG Cranberry research design tokens: paste inline into each HTML <style> */
+:root{
+  color-scheme: light;
+  --bg:#faf7f4; --surface:#ffffff; --surface-2:#f4eeea;
+  --ink:#1d1416; --ink-2:#5a4e50; --muted:#8a7e80;
+  --line:#eadfdc; --axis:#d6cbc8;
+  --accent:#b3264a; --accent-ink:#8f1c3a; --accent-soft:#f7e6ea;
+  --good:#0ca30c; --good-soft:#e5f5e5; --good-ink:#006300;
+  --warn:#fab219; --warn-soft:#fff3d6; --warn-ink:#7a5200;
+  --crit:#d03b3b; --crit-soft:#fbe6e6; --crit-ink:#9e2323;
+  --shadow:0 1px 2px rgba(29,20,22,.05),0 4px 16px rgba(29,20,22,.05);
+  --radius:14px;
+  --serif:"Fraunces", Georgia, serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#141011; --surface:#1c1618; --surface-2:#241c1e;
+    --ink:#f7f1f2; --ink-2:#cdbfc2; --muted:#9a8e90;
+    --line:#33292b; --axis:#463a3c;
+    --accent:#e0607f; --accent-ink:#f08aa3; --accent-soft:#3a1f27;
+    --good-soft:#15301a; --good-ink:#5fd35f;
+    --warn-soft:#3a2e10; --warn-ink:#fac451;
+    --crit-soft:#3d1a1a; --crit-ink:#f08080;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#141011; --surface:#1c1618; --surface-2:#241c1e;
+  --ink:#f7f1f2; --ink-2:#cdbfc2; --muted:#9a8e90;
+  --line:#33292b; --axis:#463a3c;
+  --accent:#e0607f; --accent-ink:#f08aa3; --accent-soft:#3a1f27;
+  --good-soft:#15301a; --good-ink:#5fd35f;
+  --warn-soft:#3a2e10; --warn-ink:#fac451;
+  --crit-soft:#3d1a1a; --crit-ink:#f08080;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 16px 80px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-size:clamp(28px,5vw,44px)} h2{font-size:clamp(22px,3.4vw,28px);margin-top:1.8em} h3{font-size:19px}
+p{margin:0 0 1em;color:var(--ink-2)}
+.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.mandate{border:1px solid var(--crit);background:var(--crit-soft);color:var(--ink);border-radius:var(--radius);padding:16px 18px;margin:20px 0}
+.mandate strong{color:var(--crit-ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:600 12px/1.6 var(--sans);white-space:nowrap}
+.badge.good{background:var(--good-soft);color:var(--good-ink)}
+.badge.warn{background:var(--warn-soft);color:var(--warn-ink)}
+.badge.crit{background:var(--crit-soft);color:var(--crit-ink)}
+.badge.neutral{background:var(--surface-2);color:var(--ink-2)}
+blockquote{margin:0 0 12px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--surface-2);border-radius:0 10px 10px 0;color:var(--ink)}
+blockquote cite{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:4px}
+.grid{display:grid;gap:16px}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}}
+a{color:var(--accent-ink)}
+.theme-toggle{position:fixed;top:12px;right:12px;z-index:10;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:500 13px var(--sans);cursor:pointer}
+@media print{.theme-toggle{display:none}}
+
+/* ---------- Page-specific layer (tokens only) ---------- */
+body{overflow-x:hidden}
+.topbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1080px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px}
+.toc{flex:1;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;gap:4px;white-space:nowrap}
+.toc a{display:block;padding:6px 10px;border-radius:999px;font:500 13px/1.4 var(--sans);color:var(--ink-2);text-decoration:none}
+.toc a:hover,.toc a:focus-visible{background:var(--accent-soft);color:var(--accent-ink)}
+.toc a b{font-weight:600;color:var(--accent-ink)}
+.topbar .theme-toggle{position:static;flex:none}
+.brandmark{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--accent-ink);flex:none;white-space:nowrap}
+@media(max-width:640px){.brandmark{display:none}}
+
+.hero{padding:28px 0 8px;max-width:820px}
+.eyebrow,.step-num{line-height:1.4}
+.block > h3{line-height:1.4}
+@media(max-width:520px){.lede{font-size:17px}.revision{padding:16px 14px}.ranked > li{padding:14px 14px 14px 50px}.ranked > li::before{left:12px;top:14px}.persona.card{padding:16px}}
+.ranked h4,.timeline h4{line-height:1.3}
+.swipe{display:none}
+@media(max-width:760px){.swipe{display:inline}}
+.hero h1{font-weight:500;margin-bottom:.4em}
+.hero h1 em{font-style:italic;color:var(--accent-ink)}
+.lede{font-size:18px;line-height:1.65;color:var(--ink-2)}
+.lede strong{color:var(--ink)}
+.stats{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin:24px 0 8px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.stat .v{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.1;color:var(--accent-ink)}
+.stat .l{font-size:13px;color:var(--ink-2);margin-top:4px;line-height:1.4}
+
+.mandate h2{margin:0 0 .4em;font-size:20px;color:var(--crit-ink)}
+.mandate p{color:var(--ink)}
+.mandate p:last-child{margin-bottom:0}
+.mandate ul{margin:0 0 12px;padding-left:20px}
+.mandate li{margin-bottom:4px}
+
+section.step{margin-top:56px;scroll-margin-top:64px}
+#summary,#next{scroll-margin-top:64px}
+.step-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.step-head h2{margin:0;font-weight:500}
+.step-num{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);width:100%}
+.block{margin-bottom:22px}
+.block > h3{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.block p:last-child,.block ul:last-child{margin-bottom:0}
+.block ul,.block ol{margin:0 0 1em;padding-left:20px;color:var(--ink-2)}
+.block li{margin-bottom:6px}
+.block li strong,.block p strong{color:var(--ink)}
+.revision{background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.revision > h3{color:var(--accent-ink)}
+.revision p,.revision li{color:var(--ink)}
+.conf{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.conf p{margin:0;font-size:14px}
+.validate{border:1px dashed var(--axis);border-radius:var(--radius);padding:16px 18px}
+.proposal{display:inline-block;font:600 11px/1.6 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--warn-ink);background:var(--warn-soft);border-radius:6px;padding:0 6px;margin-right:6px}
+dl.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:15px}
+dl.kv dt{font-weight:600;color:var(--ink)}
+dl.kv dd{margin:0;color:var(--ink-2)}
+@media(max-width:520px){dl.kv{grid-template-columns:1fr}dl.kv dd{margin-bottom:8px}}
+
+.persona h3{font-size:21px;margin-bottom:2px}
+.persona .role{font-size:13px;color:var(--muted);margin-bottom:12px}
+.persona ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px}
+.persona li{margin-bottom:6px}
+.persona.alt{background:var(--surface-2)}
+
+/* Timeline */
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline li{position:relative;padding:0 0 22px 40px}
+.timeline li::before{content:"";position:absolute;left:13px;top:6px;bottom:-6px;width:2px;background:var(--line)}
+.timeline li:last-child::before{display:none}
+.timeline .dot{position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--surface);border:2px solid var(--accent);color:var(--accent-ink);font:600 13px/24px var(--sans);text-align:center}
+.timeline li.break .dot{border-color:var(--crit);background:var(--crit-soft);color:var(--crit-ink)}
+.timeline h4{font-family:var(--serif);font-weight:600;font-size:17px;margin:2px 0 4px}
+.timeline p{margin:0 0 4px;font-size:15px}
+.timeline .breaks{font-size:14px;color:var(--crit-ink);margin-top:4px}
+.timeline .breaks b{font-weight:600}
+
+table.compact td,table.compact th{padding:9px 10px}
+table.summary{min-width:760px}
+table.summary td:first-child{white-space:nowrap;font-weight:600;color:var(--ink)}
+table.vs{min-width:680px}
+table.dmu{min-width:640px}
+table.assume{min-width:620px}
+td.tm{color:var(--muted);font-style:italic}
+tr.hl td{background:var(--accent-soft)}
+.caption{font-size:13px;color:var(--muted);margin-top:8px}
+
+.ranked{counter-reset:r;list-style:none;padding:0;margin:0}
+.ranked > li{counter-increment:r;position:relative;padding:16px 16px 16px 56px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);margin-bottom:12px}
+.ranked > li::before{content:counter(r);position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--surface);font:600 14px/28px var(--sans);text-align:center}
+.ranked h4{font-family:var(--serif);font-weight:600;font-size:17px;margin:0 0 6px}
+.ranked p{margin:0 0 6px;font-size:15px}
+.ranked p:last-child{margin-bottom:0}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.links .badge{white-space:normal;line-height:1.4;padding:5px 12px;max-width:100%}
+
+.actions{counter-reset:a;list-style:none;margin:0;padding:0}
+.actions li{counter-increment:a;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.actions li::before{content:counter(a,decimal-leading-zero);font-family:var(--serif);font-weight:600;font-size:22px;color:var(--accent-ink);line-height:1.2}
+.actions strong{color:var(--ink)}
+.actions p{margin:0}
+.actions .when{font-size:13px;color:var(--muted)}
+
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer p{color:var(--muted);font-size:13px}
+
+@media print{
+  .topbar{display:none}
+  body{background:var(--surface)}
+  .wrap{padding:0;max-width:none}
+  section.step,.card,.revision,.validate,.ranked > li,blockquote,.timeline li,tr{break-inside:avoid}
+  .table-scroll{overflow:visible}
+  table.summary,table.vs,table.dmu,table.assume{min-width:0}
+  a{color:inherit;text-decoration:none}
+  .card,.stat{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="brandmark">CPG Cranberry</span>
+    <nav class="toc" aria-label="Contents">
+      <ol>
+        <li><a href="#summary">At a glance</a></li>
+        <li><a href="#step3"><b>3</b> End user</a></li>
+        <li><a href="#step5"><b>5</b> Persona</a></li>
+        <li><a href="#step6"><b>6</b> Life cycle</a></li>
+        <li><a href="#step8"><b>8</b> Value prop</a></li>
+        <li><a href="#step12"><b>12</b> DMU</a></li>
+        <li><a href="#step20"><b>20</b> Assumptions</a></li>
+        <li><a href="#next">Next 30 days</a></li>
+      </ol>
+    </nav>
+    <button type="button" class="theme-toggle" aria-label="Toggle light or dark theme">Theme</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">CPG Cranberry · Disciplined Entrepreneurship</div>
+    <h1>Revising the plan: from <em>everyday luxury habit</em> to a tested afternoon treat and gift</h1>
+    <p class="lede">The synthetic interview round puts the plan's central bet at risk. <strong>A3 (habitual frequency) is Invalidated: 0 of 10 respondents support a recurring habit and 9 of 10 contradict it</strong>; stated behavior was 7 "try once" and 3 "occasional gift", with no one recurring. Self-purchase willingness to pay sits <strong>below the $9–$16 band</strong> (median "expensive but considering" $8.00, median "too expensive" $12.50). The strongest unmet need is not "a luxury cranberry snack" but <strong>a tart, genuinely low-sugar afternoon-slump treat</strong> that doesn't crash you. The one place the premium price clears is <strong>gifting</strong>: all 5 respondents who would pay $24 or more for a 3-pack would do so only as a gift or hosting set. Below are the recommended changes to Steps 3, 5, 6, 8, 12 and 20, each with a real-world test to run.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><div class="v">0/10</div><div class="l">support a recurring habit (A3); 9/10 contradict</div></div>
+      <div class="stat" role="listitem"><div class="v">$8.00</div><div class="l">median self "expensive but considering" price (n=9)</div></div>
+      <div class="stat" role="listitem"><div class="v">5 of 5</div><div class="l">3-pack answers at $24+ were gift or hosting only</div></div>
+      <div class="stat" role="listitem"><div class="v">8/10</div><div class="l">describe a defined afternoon snack moment; 8/10 raise sugar</div></div>
+    </div>
+  </div>
+
+  <aside class="mandate" role="note" aria-labelledby="mandate-h">
+    <h2 id="mandate-h">Human Validation Mandate</h2>
+    <p><strong>Everything on this page is a hypothesis from a synthetic sandbox, not a validated fact.</strong> The source study interviewed n=10 AI-generated personas, and their answers were suspiciously uniform: 10 of 10 said "fancy Craisins" unprompted, 10 of 10 said "Thanksgiving", and 10 of 10 described a chalk- or sand-like "healthy snack" letdown. Real people are rarely this aligned. One respondent equals 10 percentage points, no one tasted a product, and stated prices are known to diverge from real purchases.</p>
+    <ul>
+      <li>Every revision below needs <strong>real interviews and real sales tests</strong> before it changes a pricing, product, channel or fundraising decision.</li>
+      <li><strong>How to read the confidence labels:</strong> "High confidence" means high confidence that the hypothesis is worth testing, or that the original assumption is at risk. It does <em>not</em> mean the market is proven. "Low" means the signal is thin even by synthetic standards.</li>
+      <li>All pass/fail thresholds are <strong>proposals</strong> for the founder to commit to before running each test.</li>
+    </ul>
+  </aside>
+
+  <!-- AT A GLANCE -->
+  <section id="summary" aria-labelledby="summary-h">
+    <h2 id="summary-h">At a glance</h2>
+    <p>One row per Disciplined Entrepreneurship step. Details and evidence follow in each section.<span class="swipe"> Swipe the tables sideways to see all columns.</span></p>
+    <div class="card" style="padding:4px 4px 8px">
+      <div class="table-scroll">
+        <table class="summary compact">
+          <thead><tr><th scope="col">Step</th><th scope="col">Current assumption</th><th scope="col">Recommended revision</th><th scope="col">Confidence</th><th scope="col">Validation test</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#step3">3 · End User</a></td><td>Chic Happier/Erewhon woman who wants a "cute chic" luxury snack</td><td>Woman with a defined afternoon-slump ritual who reads sugar labels and likes tart/sour; gifter/host as secondary segment; "elegant, understated chic" rather than cute</td><td><span class="badge neutral">Medium confidence</span></td><td>20–30 real interviews plus a packaging shelf test (cute pastel vs. understated tin vs. minimal)</td></tr>
+            <tr><td><a href="#step5">5 · Persona</a></td><td>Maya Chen (end user) and Daniel Chen (household economic buyer) as twin personas</td><td>Evolved Maya: salty-tart, label-reading 3pm snacker, price-sensitive for herself. Add a "Priya" anti-Godiva host. Move Daniel into the DMU as payer/approver</td><td><span class="badge neutral">Medium confidence</span></td><td>Recruit 5 real "Mayas" and 5 real "Priyas"; check persona fit against diaries and actual purchases</td></tr>
+            <tr><td><a href="#step6">6 · Life Cycle</a></td><td>Discover on social, buy at Happier, eat as an everyday treat, rebuy</td><td>Sampling-led discovery; trial at Happier, repeat only in weekly channels; plan for the week-six novelty drop and the tin's second life</td><td><span class="badge neutral">Medium confidence</span></td><td>In-store demo with QR capture; track sample-to-purchase and 30/60/90-day repeat</td></tr>
+            <tr><td><a href="#step8">8 · Value Prop</a></td><td>3x–4x premium over $3–$4 Craisins; $9–$16 single, $24 3-pack</td><td>Re-baseline against chocolate, dates, TJ's mango, Sour Strips. Test self single at $7–$9 and gift tin/trio at $24–$32</td><td><span class="badge neutral">High confidence</span></td><td>Price-ladder smoke test ($7 / $10 / $14; $24 / $32) and in-store units sold</td></tr>
+            <tr><td><a href="#step12">12 · DMU</a></td><td>Daniel is a second end-user persona</td><td>Map roles: end user, economic buyer, champion, influencers, veto (kids, partner), gift recipient, retail buyer</td><td><span class="badge neutral">Medium confidence</span></td><td>Paired interviews with 5+ couples; subscription pre-order with deposit</td></tr>
+            <tr><td><a href="#step20">20 · Assumptions</a></td><td>A1–A4 as written, habit ranked riskiest</td><td>A3 Invalidated; rewrite as 7 falsifiable assumptions ranked by risk, led by 60-day repeat and blind-taste liking</td><td><span class="badge neutral">High confidence</span></td><td>Happier shelf test (≥25% 60-day repeat, proposed), blind taste n≥30 per cell, price ladder</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step" id="step3" aria-labelledby="s3-h">
+    <div class="step-head"><span class="step-num">Step 3</span><h2 id="s3-h">End User Profile</h2><span class="badge neutral">Medium confidence</span></div>
+
+    <div class="block">
+      <h3>What the plan currently assumes</h3>
+      <p>The beachhead is a chic woman who shops at Happier Grocery (NYC) or Erewhon and wants a "cute chic" luxury snack. The profile constraints are women aged 25–41 in luxury-grocery metros, $110k–$140k individual or $140k–$190k household income, shopping luxury grocers at least monthly, buying for themselves first and as gifts second.</p>
+    </div>
+
+    <div class="block">
+      <h3>What the synthetic research suggests</h3>
+      <ul>
+        <li><strong>8 of 10</strong> describe a defined afternoon snack moment; Zoe and Hannah both call it "the danger zone". <strong>8 of 10</strong> raise sugar or label concerns, and <strong>7 of 10</strong> like tart flavors unprompted (while rejecting "sugar with acid" candy-sour).</li>
+        <li>"Luxury snacker" is too broad: stated behavior was <strong>7 "try once"</strong> and <strong>3 "occasional gift"</strong>. The two Innovators have the highest WTP but both warn against building on them.</li>
+        <li>On "cute": packaging mattered to 9 of 10 in some context, but <strong>0 of 10</strong> said it drives a repeat purchase and 4 said explicitly it won't. <strong>3 reject cute or pastel outright</strong> (Priya, Olivia, Lauren), and 7 voice "paid for the wrapper" distrust.</li>
+        <li>Channel: <strong>8 of 10</strong> tie any recurrence to a store they shop weekly or a subscription. Happier is a weekend or monthly treat trip for Maya, Hannah and Rachel.</li>
+      </ul>
+      <blockquote>It's honestly the most important snack of my day.<cite>Sienna Alvarez, on her afternoon snack</cite></blockquote>
+      <blockquote>Design-forward packaging matters to get me to pick it up, but I've been burned before, so it won't get me to buy it twice.<cite>Sienna Alvarez</cite></blockquote>
+    </div>
+
+    <div class="block revision">
+      <h3>Recommended revision</h3>
+      <p><strong>Primary beachhead (end user):</strong> a woman aged roughly 27–40 in NYC, in the Happier/Erewhon orbit, who has a <strong>defined weekday afternoon-slump ritual</strong>, <strong>reads the sugar line before buying</strong>, and actively <strong>likes tart, sour or salty-tart flavors</strong> (sour plum, yuzu, hibiscus, green apple). Today she settles for Hu, dates, TJ's dried mango or the office snack wall.</p>
+      <p><strong>Secondary segment:</strong> the gifter and host who refuses generic chocolate and buys hostess, teacher and thank-you gifts several times a month. This is where price clears, so treat it as the launch cash engine, and watch its pull toward November–December.</p>
+      <p><strong>On "cute chic":</strong> keep the founder's instinct that aesthetics matter; they earn the pick-up and the gift. But reframe the brief as <strong>elegant, understated chic</strong> (a keepable tin, restrained palette, the sugar number on the front) and test it against a cute/pastel version before committing. This is a design hypothesis, not a verdict on the founder's taste.</p>
+      <p><strong>Channel note:</strong> use Happier Grocery for discovery and trial, but add at least one weekly channel for repeat (Whole Foods, TJ's-adjacent specialty, or a subscription) before judging repeat.</p>
+    </div>
+
+    <div class="block conf">
+      <span class="badge neutral">Medium confidence</span>
+      <p>The afternoon, sugar and tart signals recur across 7–8 of 10 personas, but they were designed inside the founder's hypothesis, and uniformity may overstate consensus.</p>
+    </div>
+
+    <div class="block validate">
+      <h3>How to validate with real humans</h3>
+      <ul>
+        <li><strong>Interviews:</strong> 20–30 Happier/Erewhon shoppers, intercepted in store or recruited via Instagram or Substack, using the existing script. Add a 5-day snack diary to capture actual afternoon behavior.</li>
+        <li><strong>Packaging test:</strong> show real shoppers three mock-ups (cute pastel, understated tin, minimal clinical) with separate self-buyer and gift-buyer cells, measuring pick-up and purchase rather than stated preference (at least 30 shoppers per cell).</li>
+        <li><span class="proposal">Proposed threshold</span>Keep the tightened profile if at least 50% of recruited shoppers report a weekly afternoon-snack ritual and at least 40% name a tart or sour snack they already buy. Adopt the understated design if it matches or beats cute pastel on self-buyer pick-up.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="step" id="step5" aria-labelledby="s5-h">
+    <div class="step-head"><span class="step-num">Step 5</span><h2 id="s5-h">Persona</h2><span class="badge neutral">Medium confidence</span></div>
+
+    <div class="block">
+      <h3>What the plan currently assumes</h3>
+      <p>Two personas: <strong>Maya Chen</strong>, a 31-year-old urban professional snacker in Williamsburg ($110k–$140k band, $128k), and <strong>Daniel Chen</strong>, a 38-year-old household economic buyer in Hoboken ($140k–$190k band, $172k household). Both are treated as end-user personas for an everyday luxury snack.</p>
+    </div>
+
+    <div class="block">
+      <h3>What the synthetic research suggests</h3>
+      <ul>
+        <li><strong>Maya is price-sensitive for herself:</strong> self "expensive but considering" $8, "too expensive" $13; a 3-pack at $20, gift only, after trying. She is coded Contradicts on A2 and A3. She is the clearest voice for a salty-tart, li-hing-mui-style profile and for availability at weekly stores (TJ's, Whole Foods).</li>
+        <li><strong>Priya is the clearest self/gift split:</strong> a self ceiling of $8–9, but a gift "expensive but considering" price of $18, "too expensive" $28, and $40 for three separable gift tins.</li>
+        <li><strong>Daniel doesn't eat it:</strong> coded Contradicts on A1 ("I'd take chocolate"), with a self ceiling of $9 but a gift ceiling of about $20. He approves or cancels recurring purchases on price per ounce.</li>
+      </ul>
+      <blockquote>I try things once, and maybe one in ten becomes a regular.<cite>Maya Chen</cite></blockquote>
+      <blockquote>If it tasted like a sour plum kind of thing, salty-tart, that would get my attention way more than "white cranberries."<cite>Maya Chen</cite></blockquote>
+    </div>
+
+    <div class="block revision">
+      <h3>Recommended revision</h3>
+      <div class="grid two">
+        <div class="card persona">
+          <div class="eyebrow">Primary persona · end user</div>
+          <h3>Maya Chen, revised</h3>
+          <div class="role">31 · Senior PMM, B2B SaaS · Williamsburg · $128k</div>
+          <ul>
+            <li><strong>The moment:</strong> the 3pm slump at an office snack wall she finds "meh"; keeps TJ's dried mango and dark chocolate almonds in her desk.</li>
+            <li><strong>The flavor:</strong> grew up on li hing mui and sour plum; wants salty-tart, not sweet. "Sweet white cranberry" does less for her than a salty-tart profile.</li>
+            <li><strong>The gate:</strong> reads the label; resealable matters more to her than pretty design.</li>
+            <li><strong>The money:</strong> about $8 feels expensive but considerable for herself; $13 is too much. Pays up once for a story, repeats only if the taste delivers.</li>
+            <li><strong>The truth to design for:</strong> "maybe one in ten becomes a regular". The job is to be that one, through her weekly Whole Foods or TJ's trip, not her weekend Happier run.</li>
+          </ul>
+        </div>
+        <div class="card persona alt">
+          <div class="eyebrow">Second persona · gifter / host</div>
+          <h3>Priya Raman, the "anti-Godiva" host</h3>
+          <div class="role">34 · Engagement Manager · Tribeca-adjacent · $176k household</div>
+          <ul>
+            <li><strong>The moment:</strong> Friday Happier run for Saturday's dinner for six and Sunday's hostess gift; keeps an "emergency gifts" drawer.</li>
+            <li><strong>The fear:</strong> showing up with something generic.</li>
+            <li><strong>The money:</strong> stingy for herself ($8–9 ceiling), generous for gifts ($18 single, $40 for three separable tins).</li>
+            <li><strong>The taste:</strong> tart and spice-forward (tamarind, amla, chili); calls cute pastel "trying too hard".</li>
+            <li><strong>Risk:</strong> ties cranberry gifting to November–December, so off-season demand must be tested.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:16px"><strong>Daniel Chen moves to the DMU (Step 12)</strong> as payer and approver: he is the price-per-ounce gate on anything recurring and an occasional gift buyer. He is not an end user.</p>
+      <blockquote>I refuse to show up with Godiva. It feels like you grabbed it at the airport.<cite>Priya Raman</cite></blockquote>
+    </div>
+
+    <div class="block conf">
+      <span class="badge neutral">Medium confidence</span>
+      <p>The self-versus-gift split is a consistent pattern (WTP roughly doubles in gift contexts for Priya and Daniel), but these personas were authored, so real "Mayas" may differ on flavor.</p>
+    </div>
+
+    <div class="block validate">
+      <h3>How to validate with real humans</h3>
+      <ul>
+        <li>Recruit <strong>5 real Maya-profile</strong> and <strong>5 real Priya-profile</strong> shoppers (screen on afternoon ritual, tart preference, gifting frequency). Run the script, then a tasting of 2–3 prototypes, then a follow-up two weeks later asking what they actually bought.</li>
+        <li><span class="proposal">Proposed threshold</span>Keep revised Maya as the primary persona if at least 3 of 5 prefer a tart or salty-tart prototype over the sweet white version, and at least 3 of 5 name a weekly store where they'd expect to find it. Keep Priya if at least 3 of 5 say they'd give it outside November–December.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 6 -->
+  <section class="step" id="step6" aria-labelledby="s6-h">
+    <div class="step-head"><span class="step-num">Step 6</span><h2 id="s6-h">Full Life Cycle Use Case</h2><span class="badge neutral">Medium confidence</span></div>
+
+    <div class="block">
+      <h3>What the plan currently assumes</h3>
+      <p>She discovers the brand on social media, buys it at Happier Grocery or Erewhon, eats it as an everyday treat, and rebuys habitually, like Graza on the counter.</p>
+    </div>
+
+    <div class="block">
+      <h3>What the synthetic research suggests</h3>
+      <ul>
+        <li><strong>10 of 10</strong> framed the first purchase as "once". <strong>7 of 10</strong> need proof first (a sample, social proof or a trusted recommendation), and 5 explicitly mention a sample.</li>
+        <li>For <strong>8 of 10</strong>, the first or easiest moment to picture was a cheese board or party, not a personal snack.</li>
+        <li>No one would buy a 3-pack for themselves before trying a single (10 of 10). 8 of 10 would need a weekly store or subscription for any recurrence.</li>
+      </ul>
+      <blockquote>And I'd have to still like it after the Instagram moment wears off, which, going by my track record, is usually around week six.<cite>Sienna Alvarez</cite></blockquote>
+      <blockquote>I'll eat a free one and then decide<cite>Hannah Kim</cite></blockquote>
+    </div>
+
+    <div class="block revision">
+      <h3>Recommended revision: the life cycle as it would actually run</h3>
+      <ol class="timeline">
+        <li><span class="dot" aria-hidden="true">1</span><h4>Find out</h4><p>A free sample at a Happier Grocery demo or a cheesemonger counter (Citarella, Eataly); a trusted shopkeeper or friend; a wellness or snack creator. Lauren trusts shopkeepers, not ads; Olivia wants creator proof.</p></li>
+        <li><span class="dot" aria-hidden="true">2</span><h4>Acquire</h4><p>Trial at Happier or Erewhon (a single, never a multipack). Repeat has to happen where she shops weekly (Whole Foods, TJ's-style stores, Thrive) or by subscription.</p><p class="breaks"><b>Breaks here:</b> Happier is a weekend or monthly trip for some of the core personas.</p></li>
+        <li><span class="dot" aria-hidden="true">3</span><h4>Pay</h4><p>For herself, around the $8 median "expensive but considering". For a gift, $15–$18 single or $24+ trio.</p><p class="breaks"><b>Breaks here:</b> $9–$16 for self sits above the pain point for most.</p></li>
+        <li><span class="dot" aria-hidden="true">4</span><h4>First use</h4><p>The 3pm slump at the desk (portion pack, resealable), a cheese board, or a hostess gift.</p></li>
+        <li><span class="dot" aria-hidden="true">5</span><h4>Value received</h4><p>Tart, not cloying; no sugar crash; better than the "chalk and sand" health snack. If it tastes like "Craisins in a nicer bag", the cycle ends here.</p></li>
+        <li class="break"><span class="dot" aria-hidden="true">6</span><h4>Repeat or drop off</h4><p>Repeat triggers: new flavors and drops (Chloe, Zoe), a drawer portion pack (Hannah), a weekly shelf, a subscription the household payer approves.</p><p class="breaks"><b>Breaks here:</b> novelty decays around week six; 0 of 10 say packaging drives repeat; 0 of 10 stated a recurring purchase.</p></li>
+        <li><span class="dot" aria-hidden="true">7</span><h4>Dispose or re-use</h4><p>A keepable tin gets a second life on the counter (Zoe saves cute tins), which keeps the brand visible. The resealable bag moves to the desk drawer.</p></li>
+        <li><span class="dot" aria-hidden="true">8</span><h4>Re-buy as a gift</h4><p>The self-trial converts into gifting (hostess, teacher, thank-you). This loop is plausible but seasonal.</p></li>
+      </ol>
+      <p><strong>Where the current model breaks:</strong> step 6. The plan assumes step 5 leads to weekly repeat; the synthetic data shows it leads to "once" or to a gift. Design the business so steps 1–5 and 8 are profitable without step 6, and treat step 6 as an upside to be proven.</p>
+    </div>
+
+    <div class="block conf">
+      <span class="badge neutral">Medium confidence</span>
+      <p>The "once" framing and the need for proof are strong in the data (10/10 and 7/10); repeat cannot be measured without a real product in real hands.</p>
+    </div>
+
+    <div class="block validate">
+      <h3>How to validate with real humans</h3>
+      <ul>
+        <li>Run <strong>in-store demos at Happier Grocery and one cheese counter</strong> over 4–6 weekends, with QR or email capture on every sale, sampled and unsampled.</li>
+        <li>Track sample-to-purchase conversion, how buyers heard about it, gift vs. self share, and 30/60/90-day repeat. Ask repeat buyers where they bought the second time.</li>
+        <li><span class="proposal">Proposed threshold</span>Sample-to-purchase of at least 15% on the day, and sampled shoppers repeating at least twice as often as unsampled shoppers at 30 days.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 8 -->
+  <section class="step" id="step8" aria-labelledby="s8-h">
+    <div class="step-head"><span class="step-num">Step 8</span><h2 id="s8-h">Quantify the Value Proposition</h2><span class="badge neutral">High confidence</span></div>
+
+    <div class="block">
+      <h3>What the plan currently assumes</h3>
+      <p>The "as-is" comparison is Craisins at $3–$4. CPG Cranberry commands a 3x–4x premium: $9–$16 for a single and $24 for a 3-pack.</p>
+    </div>
+
+    <div class="block">
+      <h3>What the synthetic research suggests</h3>
+      <ul>
+        <li><strong>The competitive set is wider than Craisins.</strong> Chocolate is the incumbent treat for 9 of 10 (Hu, La Maison du Chocolat, Compartés, Lily's). Others: Medjool dates, TJ's dried mango, Sour Strips (Zoe), Chomps, Larabar.</li>
+        <li><strong>Self-purchase Van Westendorp medians:</strong> too cheap <strong>$4.00</strong> (n=10), expensive but considering <strong>$8.00</strong> (n=9, mean $8.50), too expensive <strong>$12.50</strong> (n=10, mean $12.70). Only 4 of 10 have a self "expensive but considering" price of $9 or more; for 8 of 10 the self "too expensive" line is $16 or less.</li>
+        <li><strong>3-pack:</strong> median maximum <strong>$25</strong> (n=9, mean $24.94; 1 would not buy). Five of 10 would pay $24 or more, and <strong>all five only as a gift or hosting set</strong>. None would pay that for their own consumption.</li>
+      </ul>
+      <blockquote>Because at $15 I can get something from La Maison du Chocolat that I already know I love. It's competing with that, not with Craisins.<cite>Lauren Mitchell</cite></blockquote>
+      <blockquote>For myself, anything over eight or nine and I'd just buy almonds, I'm being honest.<cite>Priya Raman</cite></blockquote>
+    </div>
+
+    <div class="block revision">
+      <h3>Recommended revision: re-baseline "as-is" vs. "possible"</h3>
+      <p>Quantify the value proposition against what she eats at 3pm today, not against Craisins. Cells marked <em>to measure</em> need real data from shelf audits, nutrition panels or a food scientist; none of them are invented here.</p>
+      <div class="table-scroll">
+        <table class="vs compact">
+          <thead><tr><th scope="col">Dimension</th><th scope="col">As-is: premium chocolate (Hu, La Maison)</th><th scope="col">As-is: dates / TJ's mango</th><th scope="col">As-is: Sour Strips</th><th scope="col">As-is: Craisins</th><th scope="col">Possible: CPG Cranberry</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Price per serving</th><td class="tm">to measure</td><td class="tm">to measure</td><td class="tm">to measure</td><td class="tm">to measure ($3–$4 per bag per plan)</td><td>Set by price test; self single hypothesis $7–$9</td></tr>
+            <tr><th scope="row">Added sugar per serving</th><td class="tm">to measure</td><td class="tm">to measure</td><td class="tm">to measure</td><td class="tm">to measure</td><td>Target printed on front; under 5 g is Olivia's stated threshold (feasibility <em>to measure</em>)</td></tr>
+            <tr><th scope="row">Crash / satiety</th><td>Known, trusted ritual ("the part of the day that's mine")</td><td class="tm">to measure</td><td class="tm">to measure</td><td>Read as "sugary"</td><td>"No crash" claim only if proven (<em>to measure</em>)</td></tr>
+            <tr><th scope="row">Gift-worthiness</th><td>Safe default; Godiva-tier reads as generic</td><td>Low</td><td>Low</td><td>None</td><td>Keepable tin, "anti-Godiva" (to test)</td></tr>
+            <tr><th scope="row">Flavor</th><td>Rich, sweet</td><td>Sweet, chewy</td><td>Candy-sour ("sugar with acid")</td><td>Sweet</td><td>Real-fruit tart or salty-tart</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption">Qualitative cells come from synthetic respondent descriptions; every numeric cell is "to measure".</p>
+
+      <h3 style="margin-top:20px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)">Price architecture hypothesis (to test)</h3>
+      <div class="table-scroll">
+        <table class="compact" style="min-width:520px">
+          <thead><tr><th scope="col">Format</th><th scope="col">Buyer</th><th scope="col" class="num">Hypothesis</th><th scope="col">Anchor in the data</th></tr></thead>
+          <tbody>
+            <tr><td>Everyday single / portion pack</td><td>Self</td><td class="num">$7–$9</td><td>Self EC median $8.00; too cheap $4.00; too expensive $12.50</td></tr>
+            <tr><td>Gift single tin</td><td>Gifter</td><td class="num">$15–$18</td><td>Gift EC: Daniel $15, Priya $18</td></tr>
+            <tr class="hl"><td>Gift trio / hosting tin set</td><td>Gifter, host</td><td class="num">$24–$32</td><td>3-pack median $25 (n=9); all ≥$24 answers gift-only</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px">Drop the "3x–4x over Craisins" framing from the pitch; it invites the "fancy Craisins" comparison that 10 of 10 made unprompted.</p>
+    </div>
+
+    <div class="block conf">
+      <span class="badge neutral">High confidence</span>
+      <p>High confidence that the $9–$16 self-purchase band is at risk and worth re-testing. The right price itself is not known.</p>
+    </div>
+
+    <div class="block validate">
+      <h3>How to validate with real humans</h3>
+      <ul>
+        <li><strong>Survey:</strong> Van Westendorp plus Gabor-Granger with at least 100 real target shoppers.</li>
+        <li><strong>Price-ladder smoke test:</strong> landing page or paid-social A/B at $7, $10 and $14 singles, and $24 and $32 gift trios, measuring add-to-cart and deposits.</li>
+        <li><strong>Shelf audit:</strong> record price per serving and added sugar for the 6–8 incumbent 3pm snacks at Happier and Whole Foods to fill in the "to measure" cells.</li>
+        <li><span class="proposal">Proposed threshold</span>Keep a $10+ self single only if its conversion is at least 60% of the $7 conversion. Keep the $32 trio if it converts at least half as well as $24 among gift buyers.</li>
+      </ul>
+      <blockquote>If you could say "doesn't spike you" and prove it, that would honestly matter more to me than the packaging or the white cranberries.<cite>Olivia Brooks</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- STEP 12 -->
+  <section class="step" id="step12" aria-labelledby="s12-h">
+    <div class="step-head"><span class="step-num">Step 12</span><h2 id="s12-h">Decision-Making Unit (DMU)</h2><span class="badge neutral">Medium confidence</span></div>
+
+    <div class="block">
+      <h3>What the plan currently assumes</h3>
+      <p>The DMU is mostly the end user herself, with Daniel Chen as a parallel persona for the household buyer.</p>
+    </div>
+
+    <div class="block">
+      <h3>What the synthetic research suggests</h3>
+      <ul>
+        <li>Two gates in couple households: the partner on taste, the payer on value per ounce. Daniel runs two budgets: groceries, which he optimizes (a $9 self ceiling), and gifts for his wife, which he doesn't (up to about $20).</li>
+        <li>2 of 10 raise a household co-approval gate: the spouse gates recurring buys (Daniel) and the kids gate the list (Rachel).</li>
+        <li>7 of 10 need proof first, pointing to influencers: creators (Olivia, Zoe), shopkeepers (Lauren), friends (Maya).</li>
+      </ul>
+      <blockquote>Groceries I optimize. Gifts for her I don't really optimize, I just try not to get something she wouldn't pick herself.<cite>Daniel Chen</cite></blockquote>
+      <blockquote>The worst outcome is spending $40 on something that looks like I grabbed it at a CVS.<cite>Daniel Chen</cite></blockquote>
+    </div>
+
+    <div class="block revision">
+      <h3>Recommended revision: role map</h3>
+      <div class="table-scroll">
+        <table class="dmu compact">
+          <thead><tr><th scope="col">Role</th><th scope="col">Who</th><th scope="col">What they decide</th><th scope="col">What wins them</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">End user</th><td>Revised Maya (afternoon, tart, label reader)</td><td>Whether it earns a second purchase</td><td>Taste, low added sugar, portion packs</td></tr>
+            <tr><th scope="row">Economic buyer (single)</th><td>The end user herself</td><td>Trial at about $8</td><td>A sample; a price below her pain point</td></tr>
+            <tr><th scope="row">Economic buyer (recurring)</th><td>Household payer (Daniel type)</td><td>Approves or cancels subscriptions and weekly-list items</td><td>Price per ounce, no pantry waste</td></tr>
+            <tr><th scope="row">Champion</th><td>The end user or the host (Priya type) who brings it to friends</td><td>Whether it spreads</td><td>A story worth retelling, a tin worth keeping</td></tr>
+            <tr><th scope="row">Influencers</th><td>Wellness and snack creators; shopkeepers and cheesemongers; friends</td><td>Whether she tries it at all</td><td>Proof: sugar number, taste demos, trusted recommendation</td></tr>
+            <tr><th scope="row">Veto</th><td>Kids (in family households); household partner</td><td>Whether it stays on the list</td><td>Kid acceptance; partner's price approval</td></tr>
+            <tr><th scope="row">Gift recipient</th><td>Hosts, teachers, partners</td><td>Whether the gift reflects well on the giver</td><td>Not generic; looks considered, not "CVS"</td></tr>
+            <tr><th scope="row">Retail gatekeeper</th><td>Happier, Erewhon, Whole Foods category buyers</td><td>Shelf space and staying on it</td><td>Velocity (to be learned in buyer conversations)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="block conf">
+      <span class="badge neutral">Medium confidence</span>
+      <p>The payer gate rests on one synthetic couple (Daniel) and one mother (Rachel); the roles are standard, but their weight is unknown.</p>
+    </div>
+
+    <div class="block validate">
+      <h3>How to validate with real humans</h3>
+      <ul>
+        <li><strong>Paired interviews</strong> with at least 5 couples (the discoverer and the payer interviewed separately, then together).</li>
+        <li><strong>Subscription pre-order</strong> with a refundable deposit, recording who completes checkout and who cancels.</li>
+        <li><strong>Retail buyer conversations</strong> with Whole Foods and Erewhon about velocity thresholds.</li>
+        <li><span class="proposal">Proposed threshold</span>If fewer than 3 of 5 payers would approve a monthly subscription at the tested price per ounce, drop the subscription model from the plan and rely on single and gift purchases.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 20 -->
+  <section class="step" id="step20" aria-labelledby="s20-h">
+    <div class="step-head"><span class="step-num">Step 20</span><h2 id="s20-h">Identify Key Assumptions</h2><span class="badge neutral">High confidence</span></div>
+
+    <div class="block">
+      <h3>What the plan currently assumes, and its synthetic status</h3>
+      <div class="table-scroll">
+        <table class="assume compact">
+          <thead><tr><th scope="col">ID</th><th scope="col">Assumption</th><th scope="col">Synthetic status</th><th scope="col" class="num">Supports / Partial / Contradicts</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">A3</th><td>Habitual frequency: a recurring everyday habit</td><td><span class="badge crit">✕ Invalidated</span></td><td class="num">0 / 1 / 9</td></tr>
+            <tr><th scope="row">A1</th><td>Craveability: an elevated cranberry treat for personal, non-holiday eating</td><td><span class="badge warn">◐ Partially validated</span><br><small>weak: no unconditional support</small></td><td class="num">0 / 6 / 4</td></tr>
+            <tr><th scope="row">A2</th><td>WTP of $9–$16 per package or $24 per 3-pack</td><td><span class="badge warn">◐ Partially validated</span><br><small>lower band, trial and gift only</small></td><td class="num">2 / 4 / 4</td></tr>
+            <tr><th scope="row">A4</th><td>Luxury branding, clean label, white cranberry and artisanal prep create genuine value</td><td><span class="badge warn">◐ Partially validated</span><br><small>drives trial and gifting, not repeat</small></td><td class="num">0 / 8 / 2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption">Status rule from the study: Validated needs 60%+ Supports; Invalidated is 20% or less Supports and over 50% Contradicts. A1 and A2 miss "Invalidated" only because contradictions are 40%; treat both as at risk.</p>
+    </div>
+
+    <div class="block">
+      <h3>What the synthetic research suggests</h3>
+      <p>The original list tests broad attitudes. The revision should test specific behaviors with numbers attached, because stated behavior was 7 "try once", 3 "occasional gift", and 0 recurring. "Small batch / handmade" was dismissed by 9 of 10, while white cranberry was the only element that sparked curiosity (9 of 10 called it new or interesting).</p>
+      <blockquote>I think people like me are good for your first month and then we're gone, so I wouldn't build a business on us.<cite>Zoe Martinez</cite></blockquote>
+      <blockquote>Weekly, realistically, no. A couple of times a year as a gift, that I can believe.<cite>Daniel Chen</cite></blockquote>
+    </div>
+
+    <div class="block revision">
+      <h3>Recommended revision: sharper, falsifiable assumptions, ranked by risk</h3>
+      <p>All thresholds are <strong>proposals</strong>. Commit to them in writing before each test runs.</p>
+      <ol class="ranked">
+        <li>
+          <h4>R1 · Repeat exists outside the holidays</h4>
+          <p><strong>Assumption:</strong> self-buyers who try a single will buy again within 60 days, February–August included.</p>
+          <p><strong>Experiment:</strong> an 8–12 week Happier Grocery shelf or pop-up test with QR or email capture on every sale.</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> 60-day repeat of 25% or more. <strong>Pivot:</strong> under 20% means a gift- and entertaining-led brand with a lower-priced everyday format.</p>
+        </li>
+        <li>
+          <h4>R2 · A tart, low-sugar product can beat the incumbent treat</h4>
+          <p><strong>Assumption:</strong> a tart or salty-tart low-sugar cranberry is liked as much as a Hu square or TJ's mango by target women.</p>
+          <p><strong>Experiment:</strong> blind sensory panel, at least 30 per cell: tart/salty, chili, sweet white, a Craisins control and a Hu square; 9-point liking plus "would buy again".</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> the best cranberry variant's mean liking within 0.5 points of the Hu square, and at least 40% "would buy again".</p>
+        </li>
+        <li>
+          <h4>R3 · Sampling converts</h4>
+          <p><strong>Assumption:</strong> tasting turns a "once" into a purchase.</p>
+          <p><strong>Experiment:</strong> in-store demos at Happier and a cheese counter, counting sampled vs. unsampled shoppers.</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> sample-to-purchase of 15% or more on the day.</p>
+        </li>
+        <li>
+          <h4>R4 · Self-buyers pay a premium at a lower price point</h4>
+          <p><strong>Assumption:</strong> a single sells at $7–$9 for self-purchase, with some tolerance above $10.</p>
+          <p><strong>Experiment:</strong> price ladder at $7, $10 and $14 (smoke test, then in-store units sold).</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> $10 conversion at least 60% of $7 conversion. A2 is revived only if real shoppers buy $12+ singles for themselves in meaningful volume.</p>
+        </li>
+        <li>
+          <h4>R5 · Gift formats sell beyond November–December</h4>
+          <p><strong>Assumption:</strong> a $24–$32 gift trio sells as a hostess or thank-you gift year-round.</p>
+          <p><strong>Experiment:</strong> gift trio at $24 and $32 on DTC and at Happier, tracked through an off-season window.</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> off-season weekly gift units at least 40% of the November–December weekly rate.</p>
+        </li>
+        <li>
+          <h4>R6 · Specific provenance and understated design beat generic claims</h4>
+          <p><strong>Assumption:</strong> a named-farm story and a front-of-pack sugar number outperform "small batch" and cute pastel.</p>
+          <p><strong>Experiment:</strong> message and pack A/B on paid social and in-store shelf talkers, measuring click-through, add-to-cart and purchase.</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> the named-farm plus sugar-number message beats "small batch" on add-to-cart by at least 20% relative.</p>
+        </li>
+        <li>
+          <h4>R7 · The household payer approves recurring purchase</h4>
+          <p><strong>Assumption:</strong> in couple households, the payer approves a subscription at the tested price per ounce.</p>
+          <p><strong>Experiment:</strong> paired interviews (5+ couples) and a deposit-backed subscription pre-order.</p>
+          <p><span class="proposal">Proposed</span><strong>Pass:</strong> at least 3 of 5 payers approve, and at least 10% of the pre-order waitlist opts into a subscription.</p>
+        </li>
+      </ol>
+      <div class="links" aria-label="Connected Disciplined Entrepreneurship steps">
+        <span class="badge neutral">→ Step 21 · Test Key Assumptions (R1–R7 are its test plan)</span>
+        <span class="badge neutral">→ Step 22 · MVBP (single + gift trio + demo kit)</span>
+        <span class="badge neutral">→ Step 23 · "Dogs will eat the dog food" (R1 repeat)</span>
+      </div>
+    </div>
+
+    <div class="block conf">
+      <span class="badge neutral">High confidence</span>
+      <p>High confidence that A3 as written is at risk and that repeat is the assumption to test first. Whether real repeat exists is completely unknown.</p>
+    </div>
+
+    <div class="block validate">
+      <h3>How to validate with real humans</h3>
+      <p>Carry R1–R7 into Step 21 as a staged plan: interviews in weeks 1–3, blind sensory panel in weeks 2–5, smoke tests in weeks 3–6, deposit pre-orders in weeks 4–8, the Happier shelf test in weeks 6–18, and an off-season sales check afterward. <span class="proposal">Proposed decision rule</span>Proceed with "everyday" positioning only if the shelf test shows at least 20–25% 60-day repeat and single-pack self-purchase at $10 or more.</p>
+    </div>
+  </section>
+
+  <!-- NEXT 30 DAYS -->
+  <section id="next" aria-labelledby="next-h" style="margin-top:56px">
+    <h2 id="next-h">Next 30 days</h2>
+    <p>In order. Each step produces real-human evidence for the next.</p>
+    <div class="card">
+      <ol class="actions">
+        <li><div><p><strong>Write down kill/pivot thresholds before collecting data.</strong> Take the proposed numbers above (25% 60-day repeat, 15% sample-to-purchase, $10 vs. $7 conversion), edit them, and commit to them.</p><p class="when">Days 1–2</p></div></li>
+        <li><div><p><strong>Run 20–30 real interviews</strong> with Happier/Erewhon shoppers using the existing script, including at least 5 couples. Count how often "fancy Craisins" comes up unprompted, as a check on the synthetic uniformity.</p><p class="when">Days 1–21</p></div></li>
+        <li><div><p><strong>Make 3–4 kitchen prototypes</strong> (tart/salty li-hing-mui style, chili, sweet white cranberry, plus a control) and have a food scientist confirm the added-sugar level you can reach and what white cranberry does to Brix and acidity.</p><p class="when">Days 3–14</p></div></li>
+        <li><div><p><strong>Run a blind taste panel</strong> of at least 30 per cell against a Hu square and TJ's dried mango (R2).</p><p class="when">Days 14–28</p></div></li>
+        <li><div><p><strong>Launch the price-ladder and message smoke test</strong>: $7 / $10 / $14 singles, $24 / $32 gift trios, named-farm vs. "small batch" copy, and understated vs. cute pack (R4, R6).</p><p class="when">Days 10–30</p></div></li>
+        <li><div><p><strong>Book a Happier Grocery demo and one cheese-counter sampling day</strong>, with QR or email capture ready so the 60-day repeat clock (R1, R3) starts on the first sale.</p><p class="when">Days 15–30</p></div></li>
+        <li><div><p><strong>Rewrite Steps 3, 5 and 20</strong> with real data, then review results against the thresholds from action 1.</p><p class="when">Day 30</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <p>Source: CPG Cranberry synthetic primary market research synthesis (synthesis_data.json, dashboard_report.md). Synthetic study date 2026-09-23; n=10 synthetic respondents (9 aesthetic-driven women in the luxury-grocery orbit plus 1 household economic buyer).</p>
+    <p>All findings are hypotheses from AI-generated personas. Validate with real humans before acting.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var btn=document.querySelector('.theme-toggle');
+  function current(){
+    var t=document.documentElement.dataset.theme;
+    if(t==='light'||t==='dark') return t;
+    return (window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  }
+  function label(){var c=current();btn.textContent=c==='dark'?'Light mode':'Dark mode';btn.setAttribute('aria-pressed',c==='dark'?'true':'false');}
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    document.documentElement.dataset.theme=next;
+    try{localStorage.setItem('de-theme',next);}catch(e){}
+    label();
+  });
+  label();
+})();
+</script>
+</body>
+</html>

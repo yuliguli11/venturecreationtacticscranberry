@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real-User Interview Script</title>
+<meta name="description" content="Field interview script for validating CPG Cranberry's synthetic findings with real Happier Grocery / Erewhon shoppers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
+<style>
+/* ===== Shared CPG Cranberry research design tokens (inlined) ===== */
+:root{
+  color-scheme: light;
+  --bg:#faf7f4; --surface:#ffffff; --surface-2:#f4eeea;
+  --ink:#1d1416; --ink-2:#5a4e50; --muted:#8a7e80;
+  --line:#eadfdc; --axis:#d6cbc8;
+  --accent:#b3264a; --accent-ink:#8f1c3a; --accent-soft:#f7e6ea;
+  --good:#0ca30c; --good-soft:#e5f5e5; --good-ink:#006300;
+  --warn:#fab219; --warn-soft:#fff3d6; --warn-ink:#7a5200;
+  --crit:#d03b3b; --crit-soft:#fbe6e6; --crit-ink:#9e2323;
+  --shadow:0 1px 2px rgba(29,20,22,.05),0 4px 16px rgba(29,20,22,.05);
+  --radius:14px;
+  --serif:"Fraunces", Georgia, serif;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#141011; --surface:#1c1618; --surface-2:#241c1e;
+    --ink:#f7f1f2; --ink-2:#cdbfc2; --muted:#9a8e90;
+    --line:#33292b; --axis:#463a3c;
+    --accent:#e0607f; --accent-ink:#f08aa3; --accent-soft:#3a1f27;
+    --good-soft:#15301a; --good-ink:#5fd35f;
+    --warn-soft:#3a2e10; --warn-ink:#fac451;
+    --crit-soft:#3d1a1a; --crit-ink:#f08080;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#141011; --surface:#1c1618; --surface-2:#241c1e;
+  --ink:#f7f1f2; --ink-2:#cdbfc2; --muted:#9a8e90;
+  --line:#33292b; --axis:#463a3c;
+  --accent:#e0607f; --accent-ink:#f08aa3; --accent-soft:#3a1f27;
+  --good-soft:#15301a; --good-ink:#5fd35f;
+  --warn-soft:#3a2e10; --warn-ink:#fac451;
+  --crit-soft:#3d1a1a; --crit-ink:#f08080;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 16px 80px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-size:clamp(28px,5vw,44px)} h2{font-size:clamp(22px,3.4vw,28px);margin-top:1.8em} h3{font-size:19px}
+p{margin:0 0 1em;color:var(--ink-2)}
+.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.mandate{border:1px solid var(--crit);background:var(--crit-soft);color:var(--ink);border-radius:var(--radius);padding:16px 18px;margin:20px 0}
+.mandate strong{color:var(--crit-ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font:600 12px/1.6 var(--sans);white-space:nowrap}
+.badge.good{background:var(--good-soft);color:var(--good-ink)}
+.badge.warn{background:var(--warn-soft);color:var(--warn-ink)}
+.badge.crit{background:var(--crit-soft);color:var(--crit-ink)}
+.badge.neutral{background:var(--surface-2);color:var(--ink-2)}
+blockquote{margin:0 0 12px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--surface-2);border-radius:0 10px 10px 0;color:var(--ink)}
+blockquote cite{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:4px}
+.grid{display:grid;gap:16px}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}}
+a{color:var(--accent-ink)}
+.theme-toggle{position:fixed;top:12px;right:12px;z-index:10;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:500 13px var(--sans);cursor:pointer}
+@media print{.theme-toggle{display:none}}
+
+/* ===== Page-specific styles (tokens only) ===== */
+th{color:var(--ink-2)}
+blockquote cite{color:var(--ink-2)}
+.masthead{padding:28px 0 32px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.masthead h1{max-width:18ch;font-weight:500}
+.masthead h1 em{font-style:italic;color:var(--accent-ink)}
+.lede{font-size:18px;line-height:1.6;max-width:64ch;color:var(--ink-2)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.toc{display:flex;flex-wrap:wrap;gap:8px 18px;margin:22px 0 0;padding:0;list-style:none;font-size:14px}
+.toc a{text-decoration:none;border-bottom:1px solid var(--axis);padding-bottom:1px}
+.toc a:hover{border-bottom-color:var(--accent)}
+.mandate{padding:22px 24px;margin:32px 0}
+.mandate h2{margin:0 0 8px;font-size:22px;color:var(--crit-ink)}
+.mandate p{color:var(--ink);margin-bottom:.6em}
+.mandate p:last-child{margin-bottom:0}
+section.block{margin-top:56px}
+section.block > h2{margin-top:0}
+.section-intro{max-width:70ch}
+.rule-list{margin:0;padding-left:20px}
+.rule-list li{margin-bottom:8px;color:var(--ink-2)}
+.rule-list li strong{color:var(--ink)}
+.mom{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 var(--radius) var(--radius) 0;padding:18px 20px;margin:20px 0}
+.mom h3{margin:0 0 6px;color:var(--accent-ink)}
+.mom p{color:var(--ink);margin:0 0 .5em}
+.mom p:last-child{margin:0}
+.card h3{margin-top:0}
+.card ul{margin:0;padding-left:20px}
+.card li{margin-bottom:6px;color:var(--ink-2)}
+.card li strong{color:var(--ink)}
+.section-head{margin:48px 0 6px;padding-top:24px;border-top:1px solid var(--line)}
+.section-head .eyebrow{margin-bottom:8px}
+.section-head h3{font-size:clamp(20px,3vw,24px);margin-bottom:4px}
+.section-head p{margin:0;max-width:70ch}
+.q{margin:18px 0}
+.q-head{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-bottom:10px}
+.qnum{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1;color:var(--accent-ink);margin-right:6px}
+.badge.rev{background:var(--accent-soft);color:var(--accent-ink)}
+.badge.new{background:var(--warn-soft);color:var(--warn-ink)}
+.q-text{font-family:var(--serif);font-weight:500;font-size:clamp(18px,2.4vw,21px);line-height:1.45;color:var(--ink);margin:0 0 10px;max-width:62ch}
+.why{font-size:14px;color:var(--ink-2);margin:0 0 6px}
+.why strong{color:var(--accent-ink)}
+.was{font-size:13px;color:var(--ink-2);margin:0 0 6px}
+.was del{text-decoration-color:var(--axis)}
+.probe{font-size:14px;color:var(--ink-2);margin:0 0 14px}
+.probe em{color:var(--ink)}
+.col{border-radius:10px;padding:16px;min-width:0}
+.col.sim{background:var(--surface-2)}
+.col.sim blockquote{background:var(--surface);font-size:14px}
+.col.real{border:1px solid var(--line);border-top:3px solid var(--accent)}
+.col h4{font:600 11px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}
+.col.real h4{color:var(--accent-ink)}
+.col p,.col li{font-size:14px}
+.col ul{margin:0 0 12px;padding-left:18px}
+.col li{margin-bottom:5px;color:var(--ink-2)}
+.col li strong,.col p strong{color:var(--ink)}
+.signal{display:flex;gap:8px;align-items:flex-start;font-size:14px;margin:0 0 8px;color:var(--ink-2)}
+.signal:last-child{margin-bottom:0}
+.signal .badge{flex:none;margin-top:1px}
+.concept{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;min-width:0}
+.concept .badge{margin-bottom:10px}
+.concept p.script{font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.5;color:var(--ink)}
+.concept p.tests{font-size:13px;margin:0}
+.old-concept{font-size:14px;color:var(--ink-2);background:var(--surface-2);border-radius:10px;padding:12px 14px;margin:14px 0}
+.behav{border:1px dashed var(--accent)}
+.fill{height:64px}
+.check{display:inline-flex;gap:5px;align-items:center;margin:0 10px 4px 0;white-space:nowrap;font-size:13px;color:var(--ink-2)}
+.box{display:inline-block;width:13px;height:13px;border:1.5px solid var(--ink-2);border-radius:3px}
+.score-meta{display:grid;gap:10px 18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:0 0 16px;font-size:14px}
+.score-meta div{border-bottom:1px solid var(--axis);padding:6px 0;color:var(--ink-2)}
+.score-table{min-width:720px}
+.score-table td:first-child{width:24%}
+.score-table td strong{color:var(--ink)}
+.small{font-size:13px;color:var(--ink-2)}
+.proposal{font-size:13px;margin-top:10px;padding:8px 10px;background:var(--warn-soft);color:var(--warn-ink);border-radius:8px}
+.test-card h3{font-size:18px}
+.test-card p{font-size:14px}
+footer.foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+footer.foot p{font-size:13px}
+@media(max-width:480px){
+  .card{padding:16px}
+  .col{padding:14px}
+  .mandate{padding:18px}
+}
+@media print{
+  :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{
+    color-scheme: light;
+    --bg:#ffffff; --surface:#ffffff; --surface-2:#f4eeea;
+    --ink:#1d1416; --ink-2:#5a4e50; --muted:#8a7e80;
+    --line:#eadfdc; --axis:#d6cbc8;
+    --accent:#b3264a; --accent-ink:#8f1c3a; --accent-soft:#f7e6ea;
+    --good-soft:#e5f5e5; --good-ink:#006300;
+    --warn-soft:#fff3d6; --warn-ink:#7a5200;
+    --crit-soft:#fbe6e6; --crit-ink:#9e2323;
+    --shadow:none;
+  }
+  body{font-size:12pt}
+  .wrap{max-width:none;padding:0}
+  .toc{display:none}
+  .grid.two{grid-template-columns:1fr 1fr}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .grid.four{grid-template-columns:repeat(2,1fr)}
+  .col,.concept,blockquote,tr,.test-card,.mom{break-inside:avoid}
+  .q-head,.q-text{break-after:avoid}
+  .table-scroll{overflow:visible}
+  .score-table{min-width:0}
+  section.block{margin-top:32px}
+  a{text-decoration:none;color:inherit}
+}
+</style>
+</head>
+<body>
+<button class="theme-toggle" type="button" aria-label="Toggle color theme">Dark mode</button>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">CPG Cranberry · Customer Discovery</div>
+  <h1>The real-user interview script, <em>revised by the synthetic run</em></h1>
+  <p class="lede">A 45-minute field guide for interviewing real shoppers in the founder's beachhead: the chic woman who buys treats at Happier Grocery or Erewhon. It keeps the original twenty-question structure. Where ten synthetic interviews showed a question was weak, the question has been reworded. Each question lists what the simulation predicted and what a real person has to show you before you believe it.</p>
+  <div class="meta-row">
+    <span class="badge neutral">Sections A–E · Q1–Q20</span>
+    <span class="badge rev">Revised: reworded after synthetic run</span>
+    <span class="badge new">New: added question</span>
+    <span class="badge neutral">A1–A4: assumption tested</span>
+  </div>
+  <nav aria-label="Contents">
+    <ul class="toc">
+      <li><a href="#before">Before you start</a></li>
+      <li><a href="#sec-a">A · Warm-up</a></li>
+      <li><a href="#sec-b">B · Behavior</a></li>
+      <li><a href="#sec-c">C · Price &amp; signals</a></li>
+      <li><a href="#sec-d">D · Concept</a></li>
+      <li><a href="#sec-e">E · Closing &amp; commitment</a></li>
+      <li><a href="#debrief">Debrief sheet</a></li>
+      <li><a href="#tests">Behavioral tests</a></li>
+    </ul>
+  </nav>
+</header>
+
+<aside class="mandate" role="note" aria-labelledby="mandate-title">
+  <h2 id="mandate-title">Human Validation Mandate</h2>
+  <p><strong>Every synthetic finding cited on this page is a hypothesis, not evidence.</strong> The ten respondents in the first run were AI-generated personas answering an AI interviewer. They cannot predict real taste, real purchasing, or real willingness to pay. Their unanimity is itself a warning: all 10 said "fancy Craisins", and real people are rarely that aligned.</p>
+  <p>This script exists to <strong>confirm or kill those hypotheses with real humans.</strong> Interviews alone are not enough either. Before any pricing, product, channel or fundraising decision, the founder needs <strong>real interviews plus sales tests</strong>: sampling, pre-orders with a deposit, and repeat tracking (see <a href="#tests">Behavioral tests</a>).</p>
+</aside>
+
+<section class="block" aria-labelledby="assump-title">
+  <div class="eyebrow">What we are testing</div>
+  <h2 id="assump-title">Assumptions under test</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>ID</th><th>Assumption</th><th>Synthetic status</th><th>Risk rank</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge neutral">A3</span></td><td><strong>Habitual frequency.</strong> Becomes a recurring everyday snack, not a one-time novelty or seasonal gift.</td><td><span class="badge crit">Invalidated</span> 0/10 support, 9/10 contradict</td><td class="num">1</td></tr>
+        <tr><td><span class="badge neutral">A1</span></td><td><strong>Craveability.</strong> People want an elevated cranberry treat for themselves outside the holidays.</td><td><span class="badge warn">Partial, weak</span> 0 unconditional, 6 conditional</td><td class="num">2</td></tr>
+        <tr><td><span class="badge neutral">A2</span></td><td><strong>Willingness to pay.</strong> $9–$16 per package or $24 per 3-pack.</td><td><span class="badge warn">Partial</span> self median EC $8; $24+ trio only as a gift</td><td class="num">3</td></tr>
+        <tr><td><span class="badge neutral">A4</span></td><td><strong>Positioning &amp; sourcing.</strong> Luxury branding, clean label and white cranberry create real perceived value.</td><td><span class="badge warn">Partial</span> drives trial and gifting, not repeat</td><td class="num">4</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= BEFORE YOU START ================= -->
+<section class="block" id="before" aria-labelledby="before-title">
+  <div class="eyebrow">Before you start</div>
+  <h2 id="before-title">Recruit, consent, and the rules of the room</h2>
+  <p class="section-intro">Recruit as "a conversation about snacks and treats." Never mention cranberries, the brand, Graza or a product idea in the invite, the screener or the first half of the interview.</p>
+
+  <div class="grid two">
+    <div class="card">
+      <h3>Recruiting screener</h3>
+      <p class="small">Ask each item as past behavior and write down the specific answer (store, item, price). A vague answer means the person does not qualify.</p>
+      <ul>
+        <li><strong>Store:</strong> shopped at Happier Grocery, Erewhon, Whole Foods, Citarella, Eataly or a similar specialty grocer <strong>in the last 30 days</strong>. Ask which store and what they bought.</li>
+        <li><strong>Treat purchase:</strong> bought a treat snack for themselves or as a gift for <strong>$6 or more in the last 2 weeks</strong>. Ask what it was and what it cost. A receipt or photo is ideal.</li>
+        <li><strong>Profile band:</strong> age 25–42; individual income about $100k+ or household $140k+; lives or works in NYC (LA or Miami as secondary cells).</li>
+        <li><strong>Buyer role:</strong> a mix of <strong>self-buyers</strong> and <strong>gifters</strong> (a food gift given in the last 3 months).</li>
+        <li><strong>Household payers (DMU):</strong> include 3–5 <strong>partners or household payers</strong> who approve or pay for recurring groceries. Where possible, interview both people in a couple, separately.</li>
+        <li><strong>Adoption signal:</strong> "In the last month, how many snack or treat brands did you try for the first time?" (4+ ≈ Innovator, 2–3 ≈ Early Adopter, 1 ≈ Early Majority, 0 ≈ Late Majority / Skeptic).</li>
+        <li><strong>Exclude:</strong> anyone who works in food/beverage, CPG marketing or market research; friends and family of the team; anyone in a snack study in the last 6 months.</li>
+        <li><strong>Do not screen on</strong> liking cranberries or dried fruit. The study depends on hearing from people who don't.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Target sample: 18 interviews (15–20)</h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Adoption segment</th><th class="num">Target n</th></tr></thead>
+          <tbody>
+            <tr><td>Innovator</td><td class="num">3</td></tr>
+            <tr><td>Early Adopter</td><td class="num">4</td></tr>
+            <tr><td>Early Majority</td><td class="num">6</td></tr>
+            <tr><td>Late Majority</td><td class="num">3</td></tr>
+            <tr><td>Laggard / Skeptic</td><td class="num">2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:12px">Cross-quotas across the 18: at least 8 who mainly buy treats for themselves, at least 5 active food gifters, and 3–5 household payers. Keep Innovators to 3 or fewer. Two synthetic Innovators warned, "Don't trust people like me too much."</p>
+      <h3 style="margin-top:18px">Consent and recording</h3>
+      <p class="small">Read before starting: "I'd like to record so I can quote you accurately. The recording stays with our small team and is used only for research. Your name won't be attached to anything. You can skip any question or stop at any time. Is it OK to record?" If they say yes, confirm again once recording has started. If they say no, take notes by hand. Pay a flat incentive (for example a $50 gift card) and never pay in product, which biases the answers.</p>
+      <p class="small">Run each session with two people, an interviewer and a note-taker. Allow 45 minutes.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Interviewer rules</h3>
+    <ol class="rule-list">
+      <li><strong>No pitching.</strong> You are there to learn, not to sell. Don't defend the idea when someone criticizes it. Write the criticism down.</li>
+      <li><strong>Past behavior over hypotheticals.</strong> "Tell me about the last time…" beats "Would you…?". If they answer with "I usually…" or "I would…", ask "When was the last time that happened?"</li>
+      <li><strong>Neutral probes only:</strong> <em>"Tell me more." "Why was that?" "What happened next?" "Give me an example."</em> Accept silence and don't fill pauses with suggestions.</li>
+      <li><strong>No yes/no questions and no leading adjectives</strong> ("delicious," "premium," "healthy," "luxury," "chic").</li>
+      <li><strong>Record verbatim,</strong> especially brand names, prices, emotional words and any unprompted comparison.</li>
+      <li><strong>Don't mention cranberry before Section D.</strong> If the participant brings it up first, note the moment and move on.</li>
+      <li><strong>Never say "Craisins" or "Thanksgiving" yourself.</strong> Those two words are the main things you are counting.</li>
+      <li><strong>Watch as well as listen.</strong> Note when someone pulls out their phone to show a brand, flips a pack over, or checks their bag or pantry.</li>
+    </ol>
+  </div>
+
+  <div class="mom" role="note">
+    <h3>The Mom Test reminder</h3>
+    <p><strong>Compliments are not data.</strong> "That's so cute," "I'd totally buy that" and "My friends would love it" cost the speaker nothing and predict nothing.</p>
+    <p><strong>Commitments are data.</strong> Time (a follow-up call, a tasting), money (a pre-order or deposit) and reputation (an intro to their partner, a friend or a store buyer). End every interview by asking for one. Log whether you got it, and whether they followed through.</p>
+  </div>
+</section>
+
+<!-- ================= THE SCRIPT ================= -->
+<section class="block" id="script" aria-labelledby="script-title">
+  <div class="eyebrow">The script</div>
+  <h2 id="script-title">Questions Q1–Q20, with field guidance</h2>
+  <p class="section-intro">For each question: the synthetic evidence on the left, and on the right what a real participant has to show or say before it counts. "Green light" and "Red flag" are the signals to write on the debrief sheet.</p>
+
+  <!-- ===== Section A ===== -->
+  <div class="section-head" id="sec-a">
+    <div class="eyebrow">Section A</div>
+    <h3>Warm-up</h3>
+    <p>About 5 minutes. Build rapport and map their real day before anything product-related.</p>
+  </div>
+
+  <article class="card q" id="q1">
+    <div class="q-head"><span class="qnum">Q1</span><span class="badge neutral">A1</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Walk me through your snacking on a typical weekday, from morning to night. What do you reach for, and when?</p>
+    <p class="probe">Probes: <em>"Tell me more about that one." "Where were you when you ate it?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p><strong>8 of 10</strong> described a defined afternoon snack moment, and two independently called it "the danger zone."</p>
+        <blockquote>It's honestly the most important snack of my day.<cite>Sienna Alvarez (synthetic, Innovator)</cite></blockquote>
+        <blockquote>It's kind of a prop, if I'm honest.<cite>Chloe Laurent, on her register grab (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether they name a <strong>specific time and a specific product</strong> for the afternoon, or just "whatever."</li>
+          <li>Where snacks come from: a desk drawer, the register grab, the office kitchen, delivery.</li>
+          <li>Unprompted mentions of treats that are "for the photo" rather than for eating.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A fixed daily slot, a named product and a place, e.g. "3:30, a Hu bar from my drawer."</p>
+        <p class="signal"><span class="badge crit">Red flag</span> No fixed slot, or snacking only at weekends. There is no habit for the product to take over.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q1b">
+    <div class="q-head"><span class="qnum">Q1b</span><span class="badge new">New</span><span class="badge neutral">A1</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Think about yesterday, or the last workday you remember, between lunch and dinner. What did you eat or drink, where did it come from, and how did you feel an hour later?</p>
+    <p class="why"><strong>Why added:</strong> the report's biggest unmet need is an afternoon-slump treat, but the original script never asked about that moment directly.</p>
+    <p class="probe">Probes: <em>"What did you pass on?" "What would have made that moment better?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>The hypothesized gap is an <strong>indulgent but genuinely low-sugar treat that doesn't cause a crash</strong>. 8 of 10 raised sugar concerns. Away-from-home options such as office walls, hotel minibars and break-room pastries were described as letdowns.</p>
+        <blockquote>If it's too sweet I crash and I bloat, and then I'm annoyed at myself for the rest of the afternoon.<cite>Sienna Alvarez (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether they <strong>describe a crash, guilt or regret</strong> in their own words, without being asked about sugar.</li>
+          <li>What actually fills the slot today (Hu, dates, TJ's mango, a pastry, coffee only) and what it costs.</li>
+          <li>Whether the moment happens at a desk, on the move, or at home. This decides the format (portion pack or resealable bag).</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> An unprompted complaint about how the current option makes them feel, plus money already spent trying to fix it.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> They're happy with the incumbent ("my Hu bar is perfect"). The need exists, but the slot is already taken.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q2">
+    <div class="q-head"><span class="qnum">Q2</span><span class="badge neutral">A1</span><span class="badge neutral">A4</span></div>
+    <p class="q-text">Think about the last time a snack left you disappointed or unsatisfied. What happened?</p>
+    <p class="probe">Probes: <em>"What did you do with the rest of it?" "What did you buy the next time instead?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p><strong>10 of 10</strong> described a chalk-, sand- or wax-like "healthy snack" letdown (8 were protein or healthy bars). The report flags this uniformity as a likely model artifact.</p>
+        <blockquote>it tasted like chalky sweet sand.<cite>Chloe Laurent, on an ~$11 bar at Happier (synthetic)</cite></blockquote>
+        <blockquote>What annoys me is the packaging promising something the food doesn't deliver.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether real letdowns are about <strong>taste, price or a packaging promise the food didn't keep</strong>. These point to different fixes.</li>
+          <li>What they did next: posted it, returned it, warned a friend, or never bought it again.</li>
+          <li>How varied real answers are. Uniform answers in real interviews would suggest your questioning is leading them.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A vivid, specific story with a brand and a price, plus a lasting change in what they buy.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> They can't recall one. That suggests low involvement in the category, and they won't pay for an upgrade.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Section B ===== -->
+  <div class="section-head" id="sec-b">
+    <div class="eyebrow">Section B</div>
+    <h3>Current behavior &amp; alternatives</h3>
+    <p>About 12 minutes. Probes A1 and A3 through what they actually do. Still no mention of cranberry.</p>
+  </div>
+
+  <article class="card q" id="q3">
+    <div class="q-head"><span class="qnum">Q3</span><span class="badge neutral">A1</span><span class="badge neutral">A2</span></div>
+    <p class="q-text">Tell me about the last snack you bought for yourself that felt like a treat. Where were you, what was it, and what made you pick it up?</p>
+    <p class="probe">Probes: <em>"What did it cost?" "Show me a photo of it, if you have one."</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Treats were impulse buys at the register, driven by packaging, social novelty or a trusted shopkeeper. Chocolate was the incumbent treat for <strong>9 of 10</strong>.</p>
+        <blockquote>Part of it was that nobody in my group chat had posted it yet, so I kind of wanted to be first.<cite>Sienna Alvarez, on chili-crisp almonds at Erewhon (synthetic)</cite></blockquote>
+        <blockquote>That's usually how I buy things, someone I trust tells me it's good.<cite>Lauren Mitchell (synthetic, Skeptic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether they <strong>name a real, recent purchase of $9 or more without prompting</strong>, and where in the store it happened (register or aisle).</li>
+          <li>Whether they <strong>pull out their phone</strong> to show the brand, a story post or a receipt.</li>
+          <li>What triggered it: the pack, a friend, a creator, a staff recommendation, or a bad week.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A treat for themselves at $9 or more from a specialty grocer in the last 2 weeks, with a named brand.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Their only treats are gifts, or the same chocolate from the same shop for years.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q4">
+    <div class="q-head"><span class="qnum">Q4</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Which snacks have you bought over and over for months? What keeps them in your rotation?</p>
+    <p class="probe">Probes: <em>"Where do you usually buy it?" "What does it cost?" "How did it first get into the rotation?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Staples stay because they are reliable. 4 of 10 used the phrase "boring in the best way." For <strong>8 of 10</strong>, repeat buying depends on a weekly channel (TJ's, Whole Foods, Costco, Target, Subscribe &amp; Save).</p>
+        <blockquote>What they have in common is that they're boring in the best way: I know exactly what I'm getting, they travel, and they're not too sweet.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether <strong>any item priced $8 or more</strong> is on real repeat, and through which channel.</li>
+          <li>Whether specialty grocers (Happier, Erewhon) are a weekly habit or a monthly treat trip.</li>
+          <li>Whether a subscription is already carrying any of their repeat snacks.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A premium snack bought monthly or more for 3+ months, from a store the brand could realistically be in.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Every repeat item is mass-market and bought at Costco or Subscribe &amp; Save prices.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q5">
+    <div class="q-head"><span class="qnum">Q5</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Tell me about a snack you were excited to try and then stopped buying. What changed?</p>
+    <p class="probe">Probes: <em>"How many times did you buy it?" "About how many weeks until you stopped?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Novelty decay was universal (<strong>10 of 10</strong>). Buying tended to end quietly, without a decision.</p>
+        <blockquote>I try things once, and maybe one in ten becomes a regular.<cite>Maya Chen (synthetic, Early Adopter)</cite></blockquote>
+        <blockquote>Then I realized I was basically paying fourteen dollars for gummy bears in a nice box, and once everyone had seen them in my stories it wasn't special anymore.<cite>Chloe Laurent, on Sugarfina (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>number of purchases and weeks</strong> before they stopped. This gives you a real decay curve.</li>
+          <li>Why they stopped: taste fatigue, price, availability, or the social novelty wearing off.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They stopped for a fixable reason (hard to find, the bag went stale).</p>
+        <p class="signal"><span class="badge crit">Red flag</span> They stopped because "everyone had seen it". The pattern is driven by novelty, and a pretty cranberry pack would follow it.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q6">
+    <div class="q-head"><span class="qnum">Q6</span><span class="badge rev">Revised</span><span class="badge neutral">A1</span></div>
+    <p class="q-text">Think about the last time you wanted something sweet in the afternoon or after dinner. What options went through your head, and what did you end up having?</p>
+    <p class="why"><strong>Why revised:</strong> the original "what options do you consider" drew generic "usually" answers. Anchoring to the last occasion shows the real competitive set.</p>
+    <p class="was">Was: <del>When you want something sweet in the afternoon or after dinner, what are the options you consider, and how do you choose between them?</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Chocolate was the default for <strong>9 of 10</strong> (Zoe prefers sour candy). The choice came down to what was already in the house.</p>
+        <blockquote>It comes down to what's in the apartment. I don't really go out to buy something sweet, so it's whatever's already in the pantry.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>What they actually ate on that occasion and where it came from. Did they buy it that day, or was it already at home?</li>
+          <li>Whether fruit-based or tart options come up at all before chocolate.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> The options they list already include a fruit, tart or "lighter" treat.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Chocolate every time, with a ritual attached ("the part of the day that's mine").</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q7">
+    <div class="q-head"><span class="qnum">Q7</span><span class="badge neutral">A1</span></div>
+    <p class="q-text">How does fruit, in any form (fresh, dried, freeze-dried or in chocolate), fit into your snacking today?</p>
+    <p class="probe">Probes: <em>"What's in your pantry or bag right now?" "When did you last buy dried fruit, and which one?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Dried fruit was seen as low-status, used as an ingredient or as "filler". The freeze-dried raspberries in chocolate at Happier were the exception.</p>
+        <blockquote>There's nothing chic about a raisin.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+        <blockquote>I've never thought of dried fruit as a treat, it's more like, filler that's slightly healthier than candy.<cite>Daniel Chen (synthetic, household payer)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether premium dried or freeze-dried fruit (TJ's mango, freeze-dried berries) is <strong>already bought regularly</strong>.</li>
+          <li>Status language: do they call dried fruit "sad", "a road-trip snack", or "a treat"?</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A premium dried or freeze-dried fruit bought for themselves in the last month.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Dried fruit only ever goes on salads or cheese boards.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q8">
+    <div class="q-head"><span class="qnum">Q8</span><span class="badge neutral">A1</span><span class="badge neutral">A4</span></div>
+    <p class="q-text">What comes to mind when you think about tart or sour flavors in snacks? Tell me about any you've enjoyed or avoided.</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p><strong>7 of 10</strong> liked real tartness without being prompted but rejected candy-sour ("sugar with acid"). 3 feared it would be too tart or bitter. This split matters for the choice between a tart product and a sweet white cranberry.</p>
+        <blockquote>Real tartness makes your mouth water; the fake kind just makes your teeth hurt.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>specific tart products</strong> they name (sour cherry, li hing mui, amla, yuzu, sour strips) and whether they buy them.</li>
+          <li>Which segments lean tart and which avoid it. Log this against the concept variant in Section D.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They name a tart or salty-tart product they buy repeatedly.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "Sour isn't for me". Record this so you can check it against their reaction to the tart variant.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Section C ===== -->
+  <div class="section-head" id="sec-c">
+    <div class="eyebrow">Section C</div>
+    <h3>Values, price &amp; signals</h3>
+    <p>About 10 minutes. Probes A2 and A4, plus gifting and household decisions.</p>
+  </div>
+
+  <article class="card q" id="q9">
+    <div class="q-head"><span class="qnum">Q9</span><span class="badge rev">Revised</span><span class="badge neutral">A2</span></div>
+    <p class="q-text">Tell me about the most you've spent recently on a snack for yourself to eat, not a gift and not a pantry staple. What made it feel worth it, or not?</p>
+    <p class="why"><strong>Why revised:</strong> synthetic answers mixed up olive oil ($40 Brightland), gifts ($70 Levain box) and $65 pralinés, which inflated the price anchors. Separate them. Ask about gifts at Q12.</p>
+    <p class="was">Was: <del>Tell me about the most you've spent on a single snack or pantry item recently…</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>True self-snack ceilings clustered well below the $9–$16 band. Regret, not the price itself, was what hurt.</p>
+        <blockquote>Just for me to snack on, I don't think I've spent more than twelve or thirteen dollars on one item, and that was the Compartés bar.<cite>Priya Raman (synthetic)</cite></blockquote>
+        <blockquote>It's not really about the number, it's about whether I feel dumb afterward.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>actual dollar figure</strong> and item, which is the real anchor for Q16. Write it down.</li>
+          <li>Whether they felt regret or "dumb" afterward, and whether they bought it again.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A self-snack purchase of $12 or more in the last month, with no regret and a repeat buy.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> The self-snack ceiling is under $8. A $10+ single will be a gift-only product for this person.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q10">
+    <div class="q-head"><span class="qnum">Q10</span><span class="badge neutral">A2</span><span class="badge neutral">A4</span></div>
+    <p class="q-text">When you're standing in a store looking at two similar snacks at different prices, what do you look at to decide?</p>
+    <p class="probe">Probe: <em>"How much more would you pay for the one you prefer?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Packaging came first for the aesthetic buyers, unit price for the payer. The premium for "cute" was small.</p>
+        <blockquote>Like, two or three dollars. If it's double, I need a reason besides a bow on the box.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+        <blockquote>The unit price on the shelf tag, first thing. Per ounce.<cite>Daniel Chen (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>dollar premium</strong> they will accept for a better-looking pack.</li>
+          <li>The order in which they check things: pack, then back label, then price, or something else.</li>
+          <li>For store intercepts, watch what they actually pick up and put back.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They describe paying about double for a specific product because of a reason they can say out loud.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "I get the cheaper one if both look fine." Premium positioning alone won't move them.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q10b">
+    <div class="q-head"><span class="qnum">Q10b</span><span class="badge new">New</span><span class="badge neutral">A4</span><span class="badge neutral">A1</span></div>
+    <p class="q-text">Tell me about the last time you turned a snack over in the store and put it back. What did you see?</p>
+    <p class="why"><strong>Why added:</strong> sugar and label concerns came up in 8 of 10 synthetic interviews, but only through side comments. This probe captures the actual rule they use.</p>
+    <p class="probe">Probes: <em>"Which number did you look at?" "What would it have needed to say?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p><strong>7 of 10</strong> would turn the pack over and check sugar first. Only Olivia asked for a front-of-pack sugar number (under 5 g).</p>
+        <blockquote>If the more expensive one is just prettier and has the same sugar, I get genuinely irritated, that's where I feel scammed.<cite>Olivia Brooks (synthetic)</cite></blockquote>
+        <blockquote>Because paying extra for clean feels like an investment, paying extra for sugar feels like being played.<cite>Olivia Brooks (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether they <strong>actually turn the pack over</strong> (observe it in store, or ask for a specific recent product).</li>
+          <li>Their threshold: added sugar or total sugar, a gram figure, whether sugar is the first ingredient, seed oils, dyes.</li>
+          <li>Whether provenance or farm information ever gets read.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They name a gram threshold or an ingredient rule without being prompted. A clean label can work as a gate and as a message.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Nobody reads labels in your sample, so a "short ingredient list" won't set the product apart.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q11">
+    <div class="q-head"><span class="qnum">Q11</span><span class="badge neutral">A4</span></div>
+    <p class="q-text">How do the ingredients, where something comes from, or how it's made figure into what you buy? Give me a recent example.</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>"Small batch" was dismissed as noise by all 10. Specific provenance, such as a named farm or maker, carried weight.</p>
+        <blockquote>I want something specific, like a named farm or a real reason the process matters.<cite>Sienna Alvarez (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether they can <strong>retell a brand's origin story</strong> they've passed on to someone (Fishwife, Diaspora Co., Graza).</li>
+          <li>Which claims they now ignore, in their own words.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They retell a specific provenance story without being asked. A named-grower story could earn a premium.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Every sourcing claim sounds like marketing to them. Put the investment into taste instead.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q12">
+    <div class="q-head"><span class="qnum">Q12</span><span class="badge rev">Revised</span><span class="badge neutral">A2</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Tell me about the last food or snack you gave as a gift or brought to someone's home. How did you choose it, what did it cost, and what month was it?</p>
+    <p class="why"><strong>Why revised:</strong> the stated price for gifts was roughly double the price for self-purchase, and cranberry gifting tied strongly to November and December. Asking for the price and the month captures both.</p>
+    <p class="was">Was: <del>Tell me about the last food or snack you gave as a gift or brought to someone's home. How did you choose it?</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Gift WTP roughly doubled: Priya went from $8–9 for herself to $18 as a gift, and Daniel from $6 to $15. All 5 respondents at $24+ for a trio were buying it as a gift.</p>
+        <blockquote>Because the gift moment is the unboxing. Nobody remembers what the gummy bear tasted like.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+        <blockquote>If I bring it in November it looks thoughtful; if I bring it in June they'll wonder why I brought cranberries.<cite>Priya Raman (synthetic; said after Section D)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>real price and the month</strong> of their last three food gifts.</li>
+          <li>What they did <strong>last Thanksgiving compared with last Tuesday</strong>. Is gifting food a year-round habit or a holiday one?</li>
+          <li>Where they buy gifts (Happier, Eataly, Goldbelly) and whether they keep an "emergency gift drawer."</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They give a $20+ food gift at least monthly, including months from February to August.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Food gifting happens only between November and December, which makes it a seasonal business.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q12b">
+    <div class="q-head"><span class="qnum">Q12b</span><span class="badge new">New</span><span class="badge neutral">A4</span><span class="badge neutral">A2</span></div>
+    <p class="q-text">What's something you would never bring as a gift to someone's home? What makes it wrong?</p>
+    <p class="why"><strong>Why added:</strong> the "anti-Godiva" hostess-gift signal was the strongest runner-up opportunity, and it surfaced only by accident.</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <blockquote>I refuse to show up with Godiva. It feels like you grabbed it at the airport.<cite>Priya Raman (synthetic)</cite></blockquote>
+        <blockquote>The worst outcome is spending $40 on something that looks like I grabbed it at a CVS.<cite>Daniel Chen (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>specific brands they rule out</strong> and why: too generic, too "airport", or too cute.</li>
+          <li>The qualities a gift must have: shows thought, travels well, is a tin you keep, is something the host has never seen.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> Clear rules for gifts plus a current go-to they would like to replace. That is an opening for a gift tin.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "Wine or flowers, always." There is no food-gift slot to win.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q12c">
+    <div class="q-head"><span class="qnum">Q12c</span><span class="badge new">New</span><span class="badge neutral">A3</span><span class="badge neutral">A2</span></div>
+    <p class="q-text">Who else in your household has a say in which snacks get bought again? Walk me through the last time something was added to, or dropped from, the regular list.</p>
+    <p class="why"><strong>Why added:</strong> the household decision-making unit only appeared through the one synthetic payer. Recurring purchases may need a second person's approval.</p>
+    <p class="probe">Probes: <em>"Who pays for the things you buy every week?" "Who orders the subscriptions, and who cancels them?"</em></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>2 of 10 named a household gate. Daniel's partner decides on taste and he decides on price per ounce. Rachel's kids decide what goes on the list.</p>
+        <blockquote>So if you want it to be regular, you have to get past both of us, her on taste and me on price per ounce.<cite>Daniel Chen (synthetic)</cite></blockquote>
+        <blockquote>if they won't eat it, it doesn't matter what I think.<cite>Rachel Goldberg (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li><strong>Who pays for recurring purchases</strong> and who can cancel them.</li>
+          <li>Whether the treat is bought on a separate personal budget ("my Happier money") or from the household grocery budget.</li>
+          <li>Ask to interview the partner or payer separately. Log it as a reputation commitment.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> She controls her own treat spending, or the payer already approves premium repeat items.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> A payer reviews recurring items per ounce and cancels anything that piles up.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Section D ===== -->
+  <div class="section-head" id="sec-d">
+    <div class="eyebrow">Section D</div>
+    <h3>Concept exposure: rotate one variant per interview</h3>
+    <p>About 8 minutes. Read exactly one variant word for word. Rotate A → B → C across interviews and write the variant letter on the debrief sheet. Don't show the other variants.</p>
+  </div>
+
+  <div class="card">
+    <p><span class="badge rev">Revised</span> <strong>Why:</strong> the original statement bundled "sweet white cranberries," "by hand in small batches," "everyday treat" and "design-forward packaging." It produced <strong>claim fatigue in all 10</strong> synthetic respondents: 10 dismissed "small batch" and 8 doubted "everyday treat". For 4 of them, "sweet" was the wrong direction. Each variant now tests one idea and carries no marketing claims.</p>
+    <div class="old-concept">Was: <del>"One idea some people are exploring is a line of cranberry snacks made to be eaten as an everyday treat, not just at the holidays. For example, they could use sweet white cranberries or be prepared by hand in small batches, with a short ingredient list and design-forward packaging. I'd like your honest reaction, positive or negative."</del></div>
+    <p class="small">Opening line for every variant: "I'm going to describe an idea some people are exploring. There's no right answer, and I didn't design it, so please be honest, positive or negative."</p>
+    <div class="grid three">
+      <div class="concept">
+        <span class="badge neutral">Variant A · Tart-forward, low sugar</span>
+        <p class="script">"A dried cranberry snack made to taste tart rather than sweet, with the grams of added sugar printed on the front. It comes in a small bag meant for an afternoon snack."</p>
+        <p class="tests">Tests: the afternoon-slump need (A1, A3) and the sugar gate (A4).</p>
+      </div>
+      <div class="concept">
+        <span class="badge neutral">Variant B · White cranberry</span>
+        <p class="script">"A snack made from white cranberries, which are harvested before they turn red and taste milder than red ones. It comes in a small bag."</p>
+        <p class="tests">Tests: whether the one element that sparked curiosity in the synthetic run (9/10 called it new) creates desire and not just curiosity (A1, A4).</p>
+      </div>
+      <div class="concept">
+        <span class="badge neutral">Variant C · Gift tin</span>
+        <p class="script">"A cranberry snack sold in a small tin, meant to be brought as a gift to someone's home or put out when you're hosting."</p>
+        <p class="tests">Tests: the "anti-Godiva" hostess-gift opening and whether gift demand holds outside the holidays (A2, A3).</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:14px">If you have product: run Q13–Q15 on the verbal concept first, then offer a tasting and record their reaction word for word before moving on to Q16. Tasting was the biggest thing missing from the synthetic run.</p>
+  </div>
+
+  <article class="card q" id="q13">
+    <div class="q-head"><span class="qnum">Q13</span><span class="badge rev">Revised</span><span class="badge neutral">A1</span><span class="badge neutral">A4</span></div>
+    <p class="q-text">What's your first reaction to that? What does it remind you of?</p>
+    <p class="why"><strong>Why revised:</strong> "What does it remind you of?" draws out the category frame they reach for on their own. Count it per variant. The interviewer must never say "Craisins."</p>
+    <p class="was">Was: <del>What's your first reaction to that? What thoughts come up?</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p><strong>10 of 10</strong> said "fancy Craisins" without prompting, and <strong>10 of 10</strong> raised Thanksgiving. White cranberry was the only element that sparked curiosity (9 of 10).</p>
+        <blockquote>Honestly my first thought is, is this just fancy Craisins?<cite>Chloe Laurent (synthetic)</cite></blockquote>
+        <blockquote>And I'd ask people like me whether cranberry can ever escape Thanksgiving, because I'm not sure it can.<cite>Lauren Mitchell (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>unprompted "Craisins" and "Thanksgiving" rate for each variant</strong>. Tally them on the debrief sheet.</li>
+          <li>Body language: leaning in, a pause, a laugh, or a flat "hm."</li>
+          <li>Questions they ask without being prompted, such as "Where can I get it?" or "What does it cost?"</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They ask where to buy it, or compare it to something they love that isn't Craisins.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "Craisins" comes up for all three variants, so the frame survives every positioning.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q14">
+    <div class="q-head"><span class="qnum">Q14</span><span class="badge rev">Revised</span><span class="badge neutral">A1</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Think back to the day you described at the start. Where, if anywhere, would something like this have fit? Walk me through that moment.</p>
+    <p class="why"><strong>Why revised:</strong> the open "when could you picture…" led 8 of 10 straight to a cheese board or party. Anchoring to their real day from Q1 and Q1b tests the everyday slot.</p>
+    <p class="was">Was: <del>When, if ever, can you picture yourself eating something like that? Walk me through the moment.</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>8 of 10 pictured a board or party first. 6 could picture a personal moment, and every one of them attached a condition.</p>
+        <blockquote>If it came in little portion packs, I could see it being in my drawer as a three o'clock thing, instead of the pastry.<cite>Hannah Kim (synthetic)</cite></blockquote>
+        <blockquote>The most realistic one is actually not me eating it, it's on a cheese board when I host, next to the Marconas and the Comté.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether the moment they name <strong>matches a real slot from Q1 or Q1b</strong>, and which named product it would replace.</li>
+          <li>The conditions they attach (sugar, format, tartness). Log each one word for word.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They put it in an existing weekday slot and name what it replaces.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> The only moment they name is hosting, a board or a holiday.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q15">
+    <div class="q-head"><span class="qnum">Q15</span><span class="badge neutral">A4</span></div>
+    <p class="q-text">Which parts of that description matter to you, and which don't matter at all?</p>
+    <p class="probe">If you have packaging mockups, show them only after this answer (for example cute pastel, an understated tin, clinical minimal) and ask, "Which of these would you pick up, and why?"</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Short ingredient list mattered to 8 of 10, as a gate. Packaging mattered to 9, but <strong>0 said it would drive a repeat purchase</strong>. 3 rejected "cute" outright, which is a direct challenge to the founder's "cute chic" brief.</p>
+        <blockquote>If it's elegant and giftable, like a tin, I'd consider it; if it's cute and pastel with a cartoon cranberry, it goes straight into the "trying too hard" category.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether "cute" <strong>helps or hurts</strong> with the real beachhead woman, and whether that differs between self-buying and gifting.</li>
+          <li>Which element they bring up first, and which one they mention again later without prompting.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They pick up a mockup, photograph it, or ask to keep it.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "Paid for the wrapper" language, or "cute" read as juvenile.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Section E ===== -->
+  <div class="section-head" id="sec-e">
+    <div class="eyebrow">Section E</div>
+    <h3>Closing: willingness to pay, trade-offs &amp; commitment</h3>
+    <p>About 10 minutes. End on a concrete ask, not a compliment.</p>
+  </div>
+
+  <article class="card q" id="q16">
+    <div class="q-head"><span class="qnum">Q16</span><span class="badge rev">Revised</span><span class="badge neutral">A2</span></div>
+    <p class="q-text">Picture a bag this size [show a 3 oz / 85 g mockup or hold up your hand]. Buying it for yourself, at what price would it feel so cheap you'd doubt the quality? At what price would it start to feel expensive but still worth considering? At what price would it be too expensive to consider? Now answer the same three for a gift.</p>
+    <p class="why"><strong>Why revised:</strong> without a stated size the answers had no anchor ("Depends on the ounces, I'd need to know." Daniel Chen, synthetic), and self and gift prices got mixed together. Pack size is now fixed, and self and gift are asked separately.</p>
+    <p class="was">Was: <del>At what price would a package of this feel so cheap… expensive but still worth considering… too expensive to consider?</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <ul>
+          <li>Too cheap: median <strong>$4</strong></li>
+          <li>Self expensive-but-considering: median <strong>$8</strong> (mean $8.50). Only <strong>4 of 10</strong> were at $9 or more.</li>
+          <li>Self too-expensive: median <strong>$12.50</strong>. <strong>8 of 10</strong> were at $16 or less.</li>
+          <li>Stated behavior: <strong>7 try once, 3 occasional gift</strong>, 0 recurring.</li>
+        </ul>
+        <blockquote>For myself, anything over eight or nine and I'd just buy almonds, I'm being honest.<cite>Priya Raman (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Compare the stated prices with their <strong>real maximum from Q9</strong>. A stated price above anything they have actually paid is a stated-versus-revealed gap.</li>
+          <li>Who they compare it to without prompting: Craisins, almonds, a Hu bar, Ladurée.</li>
+          <li>The difference between their self and gift prices.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A self expensive-but-considering price of $10 or more that matches a real purchase at that level.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Self too-expensive is at or below $9, or the stated price is well above their real behavior.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q17">
+    <div class="q-head"><span class="qnum">Q17</span><span class="badge neutral">A2</span><span class="badge neutral">A1</span></div>
+    <p class="q-text">If this were in front of you at checkout next to your current go-to treat, how would you decide between them? What would you give up to buy it?</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>They would choose the new product once for novelty, then return to chocolate.</p>
+        <blockquote>The first time, I'd probably pick the new one just because it's new, that's how I am. After that it goes back to whatever tastes better, and my money's on the chocolate.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>Whether it would <strong>replace a named item</strong> or be an add-on they buy once.</li>
+          <li>What they would give up: the latte, the chocolate, or nothing.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They name what it would replace, and it's something they buy weekly.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "I'd add it on once." That is trial-only demand.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q18">
+    <div class="q-head"><span class="qnum">Q18</span><span class="badge rev">Revised</span><span class="badge neutral">A2</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Think about the last gift you told me about. How would a single package compare with a set of three, for that occasion and for yourself? What would each need to look like?</p>
+    <p class="why"><strong>Why revised:</strong> no synthetic respondent would buy a trio for themselves. Anchoring to a real gift occasion and asking about format (tin or pouches, separable or not) tests where the $24+ price actually lives.</p>
+    <p class="was">Was: <del>How would you think about buying a single package versus a bundle of three? Who, if anyone, would you buy each one for?</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>3-pack median <strong>$25</strong>. All 5 respondents at $24 or more were buying as a gift. <strong>0 of 10</strong> would buy a trio for themselves before trying a single.</p>
+        <blockquote>If it's three plastic pouches rubber-banded together, it's not a gift, it's groceries.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The gift format that earns the premium: a separable tin, a ribbon, something the recipient keeps.</li>
+          <li>Whether any self-buyer would take a trio without a sample first.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A named upcoming occasion with a trio price of $24 or more.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> The trio is only ever seen as "teacher gifts in December."</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q19">
+    <div class="q-head"><span class="qnum">Q19</span><span class="badge rev">Revised</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">Tell me about the last snack that went from something you tried to something you buy every week. How did that happen, step by step?</p>
+    <p class="why"><strong>Why revised:</strong> the original hypothetical ("What would have to be true…") mostly produced "probably nothing." A real path to habit (how they found it, where they buy it, what it costs) predicts better than speculation.</p>
+    <p class="was">Was: <del>What would have to be true for this to show up in your kitchen every week?</del></p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>A3 was invalidated: <strong>0 of 10</strong> supported it and <strong>9 of 10</strong> contradicted it. Habits formed through cheap, reliable, weekly channels.</p>
+        <blockquote>I think people like me are good for your first month and then we're gone, so I wouldn't build a business on us.<cite>Zoe Martinez (synthetic)</cite></blockquote>
+        <blockquote>Cheap enough per unit, doesn't spoil, nobody objects.<cite>Daniel Chen, on how Kind bars made the list (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>The <strong>real path to habit</strong>: a sample, then a weekly store or subscription, then a price they don't think about.</li>
+          <li>Whether any habit they've formed recently started at a specialty grocer at $8 or more.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A premium weekly habit that began with a sample or a specialty-store find.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> Every habit formed at Costco or Subscribe &amp; Save at commodity prices.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q" id="q20">
+    <div class="q-head"><span class="qnum">Q20</span><span class="badge neutral">Catch-all</span></div>
+    <p class="q-text">What should I have asked you that I didn't?</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Respondents pointed to eating versus buying, the second bag, blood sugar and sampling.</p>
+        <blockquote>You should ask whether people like me actually eat what we buy.<cite>Chloe Laurent (synthetic)</cite></blockquote>
+        <blockquote>I'm not going to pay eight dollars on a gamble, but I'll eat a free one and then decide.<cite>Hannah Kim (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>What you must validate with real humans</h4>
+        <ul>
+          <li>New topics to add to the next version of the script.</li>
+          <li>Whether they bring up sampling, sugar or the household payer without being prompted.</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> They offer an intro or a use case you hadn't thought of.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "No, I think you covered it" after a flat interview. That signals low engagement.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="card q behav" id="commit">
+    <div class="q-head"><span class="qnum">C</span><span class="badge new">Behavioral test, not an interview question</span><span class="badge neutral">A2</span><span class="badge neutral">A3</span></div>
+    <p class="q-text">The commitment ask. Make one concrete ask per interview, after Q20, and record the answer and whether they follow through.</p>
+    <p class="why"><strong>Why added:</strong> the synthetic run ended with opinions only. A commitment of time, money or reputation is the only interview output that predicts buying.</p>
+    <div class="grid two">
+      <div class="col sim">
+        <h4>What the synthetic simulation suggested</h4>
+        <p>Every respondent described the first purchase as "once." 5 said a sample would change their decision, and 7 said they needed proof first (a sample, social proof or a trusted recommendation).</p>
+        <blockquote>I'd have to taste it.<cite>Sienna Alvarez (synthetic)</cite></blockquote>
+      </div>
+      <div class="col real">
+        <h4>Ask, in this order (stop at the first yes)</h4>
+        <ul>
+          <li><strong>Money:</strong> "Would you pre-order a bag at $[price for this interview]? Here's the link, and it's refundable." Rotate $7, $10 and $14, or $24 and $32 for gift trios.</li>
+          <li><strong>Time:</strong> "Can I send you a sample and follow up in 2 weeks to hear what happened to it?"</li>
+          <li><strong>Reputation:</strong> "Who else should I talk to, your partner or a friend who hosts? Would you introduce me?"</li>
+        </ul>
+        <p class="signal"><span class="badge good">Green light</span> A deposit paid, or a follow-up in two weeks where they report finishing the bag and asking where to buy more.</p>
+        <p class="signal"><span class="badge crit">Red flag</span> "Sure, send me the link" and then no click, no reply and no follow-through.</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= DEBRIEF ================= -->
+<section class="block" id="debrief" aria-labelledby="debrief-title">
+  <div class="eyebrow">After each interview</div>
+  <h2 id="debrief-title">Debrief scoring sheet</h2>
+  <p class="section-intro">Fill this in within 30 minutes of the interview, with the interviewer and note-taker together. Score only what you observed or heard word for word. Don't score what they said they would do.</p>
+  <div class="card">
+    <div class="score-meta">
+      <div>Participant ID:</div>
+      <div>Date / location:</div>
+      <div>Adoption segment:</div>
+      <div>Self-buyer / Gifter / Payer:</div>
+      <div>Concept variant (A / B / C):</div>
+      <div>Unprompted "Craisins" / "Thanksgiving":</div>
+    </div>
+    <div class="table-scroll">
+      <table class="score-table">
+        <thead><tr><th>Assumption</th><th>Evidence observed (verbatim or behavior)</th><th>Signal strength</th><th>Commitment obtained</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>A3 Habit</strong><br><span class="small">Q1, Q1b, Q4, Q5, Q12c, Q19</span></td>
+            <td class="fill"></td>
+            <td><span class="check"><span class="box"></span>Strong</span><span class="check"><span class="box"></span>Weak</span><span class="check"><span class="box"></span>None</span></td>
+            <td><span class="check"><span class="box"></span>Money</span><span class="check"><span class="box"></span>Time</span><span class="check"><span class="box"></span>Reputation</span><span class="check"><span class="box"></span>None</span></td>
+          </tr>
+          <tr>
+            <td><strong>A1 Craveability</strong><br><span class="small">Q3, Q6–Q8, Q13, Q14, Q17</span></td>
+            <td class="fill"></td>
+            <td><span class="check"><span class="box"></span>Strong</span><span class="check"><span class="box"></span>Weak</span><span class="check"><span class="box"></span>None</span></td>
+            <td><span class="check"><span class="box"></span>Money</span><span class="check"><span class="box"></span>Time</span><span class="check"><span class="box"></span>Reputation</span><span class="check"><span class="box"></span>None</span></td>
+          </tr>
+          <tr>
+            <td><strong>A2 Willingness to pay</strong><br><span class="small">Q9, Q10, Q12, Q16, Q18. Real max self $____ / gift $____</span></td>
+            <td class="fill"></td>
+            <td><span class="check"><span class="box"></span>Strong</span><span class="check"><span class="box"></span>Weak</span><span class="check"><span class="box"></span>None</span></td>
+            <td><span class="check"><span class="box"></span>Money</span><span class="check"><span class="box"></span>Time</span><span class="check"><span class="box"></span>Reputation</span><span class="check"><span class="box"></span>None</span></td>
+          </tr>
+          <tr>
+            <td><strong>A4 Positioning &amp; sourcing</strong><br><span class="small">Q10b, Q11, Q12b, Q15</span></td>
+            <td class="fill"></td>
+            <td><span class="check"><span class="box"></span>Strong</span><span class="check"><span class="box"></span>Weak</span><span class="check"><span class="box"></span>None</span></td>
+            <td><span class="check"><span class="box"></span>Money</span><span class="check"><span class="box"></span>Time</span><span class="check"><span class="box"></span>Reputation</span><span class="check"><span class="box"></span>None</span></td>
+          </tr>
+          <tr>
+            <td><strong>Household decision-making</strong><br><span class="small">Q12c: who pays, who cancels</span></td>
+            <td class="fill"></td>
+            <td><span class="check"><span class="box"></span>Strong</span><span class="check"><span class="box"></span>Weak</span><span class="check"><span class="box"></span>None</span></td>
+            <td><span class="check"><span class="box"></span>Partner intro</span><span class="check"><span class="box"></span>None</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:12px"><strong>Strong</strong> means specific past behavior with a brand, a price and a date, or a commitment. <strong>Weak</strong> means stated opinion or a conditional answer ("if it were low sugar…"). <strong>None</strong> means no evidence, or evidence against. Follow-through at 2 weeks: <span class="check"><span class="box"></span>Yes</span><span class="check"><span class="box"></span>No</span></p>
+  </div>
+</section>
+
+<!-- ================= BEHAVIORAL TESTS ================= -->
+<section class="block" id="tests" aria-labelledby="tests-title">
+  <div class="eyebrow">Run in parallel</div>
+  <h2 id="tests-title">Behavioral tests</h2>
+  <p class="section-intro">Interviews explain why. Sales tests show whether people buy. Run these alongside the interviews. <strong>Every threshold below is a proposal. The founder should set and write down the final pass/fail lines before any data comes in.</strong></p>
+  <div class="grid two">
+    <div class="card test-card">
+      <span class="badge neutral">A1</span> <span class="badge neutral">A2</span>
+      <h3 style="margin-top:10px">Sample-to-purchase at a Happier Grocery demo</h3>
+      <p>Sample at the store, and at a cheese counter as a comparison. Count samples given, same-visit purchases, and QR or email sign-ups.</p>
+      <p class="proposal">Proposal: pass at 15% or more same-visit purchase among people who sampled; fail under 5%.</p>
+    </div>
+    <div class="card test-card">
+      <span class="badge neutral">A2</span> <span class="badge neutral">A4</span>
+      <h3 style="margin-top:10px">Price-ladder landing page</h3>
+      <p>Paid social A/B test aimed at lookalikes of luxury-grocery shoppers. Singles at <strong>$7 / $10 / $14</strong> and a gift trio at <strong>$24 / $32</strong>. Measure click-through and add-to-cart, not likes.</p>
+      <p class="proposal">Proposal: pass if the $10 add-to-cart rate is at least 60% of the $7 rate, and the $32 trio is at least 60% of the $24 trio.</p>
+    </div>
+    <div class="card test-card">
+      <span class="badge neutral">A3</span>
+      <h3 style="margin-top:10px">60-day repeat tracking</h3>
+      <p>Track demo and pop-up buyers individually by QR or email, with reorder checks at 30, 60 and 90 days. Report results separately for November–December and February–August.</p>
+      <p class="proposal">Proposal: pass at 20–25% or more repeat at 60 days outside November–December; below 20% triggers a pivot to a gift-led brand.</p>
+    </div>
+    <div class="card test-card">
+      <span class="badge neutral">A2</span> <span class="badge neutral">A3</span>
+      <h3 style="margin-top:10px">Pre-order with deposit</h3>
+      <p>Offer a refundable deposit to the waitlist and to interviewees. Split results by gift and self, and track subscription opt-in.</p>
+      <p class="proposal">Proposal: pass if 10% or more of the waitlist places a deposit and at least a third of those are for themselves.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <p><strong>Source:</strong> synthetic primary research run of 2026-09-23, n=10 synthetic respondents (interview_script.md, dashboard_report.md, synthesis_data.json, transcripts 01–10). Every synthetic number and quote on this page is a hypothesis to test, not a finding.</p>
+  <p>CPG Cranberry · Customer Discovery · Real-user interview script, version 2.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.querySelector('.theme-toggle');
+  try{var saved=localStorage.getItem('cc-theme'); if(saved==='light'||saved==='dark'){root.dataset.theme=saved;}}catch(e){}
+  function current(){
+    if(root.dataset.theme) return root.dataset.theme;
+    return (window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  }
+  function label(){var d=current()==='dark'; btn.textContent=d?'Light mode':'Dark mode'; btn.setAttribute('aria-pressed',String(d));}
+  label();
+  btn.addEventListener('click',function(){
+    root.dataset.theme=current()==='dark'?'light':'dark';
+    try{localStorage.setItem('cc-theme',root.dataset.theme);}catch(e){}
+    label();
+  });
+})();
+</script>
+</body>
+</html>
