@@ -1,0 +1,1725 @@
+{
+  "meta": {
+    "study": "CPG Cranberry synthetic primary market research — synthesis",
+    "n": 10,
+    "mandate": "HUMAN VALIDATION MANDATE: All respondents are synthetic AI-generated personas. Findings are hypotheses only and must be validated with real human interviews, smoke tests, and sales tests before any business decision.",
+    "status_rules": "Validated >= 60% Supports; Invalidated <= 20% Supports AND majority (>50%) Contradicts; otherwise Partially Validated.",
+    "coding_rules": "Supports = expresses the assumed behavior/attitude without major conditions; Partial = conditional or context-limited (e.g., gift only, only if low sugar); Contradicts = explicitly rejects or cannot picture it."
+  },
+  "assumptions": [
+    {
+      "id": "A1",
+      "name": "Craveability (personal, non-holiday treat)",
+      "status": "Partially Validated (weak: 0 unconditional support)",
+      "evidence_by_respondent": [
+        {
+          "num": 1,
+          "name": "Sienna Alvarez",
+          "code": "Partial",
+          "evidence": "Could see the 3pm slot only 'if it was genuinely low-sugar and tart'; first pictures it on a board; 'I'd have to taste it.'"
+        },
+        {
+          "num": 2,
+          "name": "Chloe Laurent",
+          "code": "Partial",
+          "evidence": "Pictures buying at the Happier register and eating at her desk, but 'I don't think I'd eat cranberries every day, I'd eat chocolate every day.'"
+        },
+        {
+          "num": 3,
+          "name": "Maya Chen",
+          "code": "Partial",
+          "evidence": "'It's not something I'd ever crave'; maybe the 3pm slot 'if it was actually tart in a good way'; more 'something I put out for people.'"
+        },
+        {
+          "num": 4,
+          "name": "Priya Raman",
+          "code": "Partial",
+          "evidence": "'The most realistic one is actually not me eating it'; weak personal moment as hotel-room minibar replacement if tart, not sticky."
+        },
+        {
+          "num": 5,
+          "name": "Zoe Martinez",
+          "code": "Contradicts",
+          "evidence": "'Cranberry isn't a flavor I crave'; only moment is girls' night ranking; 3pm only if sour-coated."
+        },
+        {
+          "num": 6,
+          "name": "Olivia Brooks",
+          "code": "Partial",
+          "evidence": "Could replace afternoon yogurt if the label were clean, but 'It's not something I crave' and it must beat Chomps/Hu."
+        },
+        {
+          "num": 7,
+          "name": "Hannah Kim",
+          "code": "Partial",
+          "evidence": "Could be a 3pm drawer snack 'instead of the pastry' in portion packs; 'cranberry doesn't feel like dessert to me.'"
+        },
+        {
+          "num": 8,
+          "name": "Daniel Chen",
+          "code": "Contradicts",
+          "evidence": "'I'm not going to reach for a cranberry snack on my own after dinner, I'd take chocolate.'"
+        },
+        {
+          "num": 9,
+          "name": "Rachel Goldberg",
+          "code": "Contradicts",
+          "evidence": "'I can't picture wanting cranberries as my treat when my treat is chocolate.'"
+        },
+        {
+          "num": 10,
+          "name": "Lauren Mitchell",
+          "code": "Contradicts",
+          "evidence": "'As a snack I eat alone, every day? I really can't picture it.'"
+        }
+      ],
+      "supports": 0,
+      "partial": 6,
+      "contradicts": 4,
+      "pct_support": 0,
+      "pct_partial": 60,
+      "pct_contradict": 40,
+      "quotes": [
+        {
+          "respondent": "Zoe Martinez",
+          "quote": "Cranberry isn't a flavor I crave, like I've never once been like \"I need something cranberry.\""
+        },
+        {
+          "respondent": "Maya Chen",
+          "quote": "Cranberry to me is Thanksgiving sauce or the stuff in a salad, it's not something I'd ever crave."
+        },
+        {
+          "respondent": "Rachel Goldberg",
+          "quote": "But I can't picture wanting cranberries as my treat when my treat is chocolate."
+        },
+        {
+          "respondent": "Hannah Kim",
+          "quote": "If it came in little portion packs, I could see it being in my drawer as a three o'clock thing, instead of the pastry."
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Willingness-to-pay ($9–$16 single / $24 3-pack)",
+      "status": "Partially Validated (lower band, trial and gift contexts only)",
+      "evidence_by_respondent": [
+        {
+          "num": 1,
+          "name": "Sienna Alvarez",
+          "code": "Supports",
+          "evidence": "Self EC $11–12, too-expensive $18 (above band); 3-pack $28–30 but only as hosting gift after liking a single; 'tiny bag at twelve' annoys her."
+        },
+        {
+          "num": 2,
+          "name": "Chloe Laurent",
+          "code": "Supports",
+          "evidence": "Self EC $11–12, too-expensive $18; would 'consider it once'; 3-pack $30 gift only."
+        },
+        {
+          "num": 3,
+          "name": "Maya Chen",
+          "code": "Contradicts",
+          "evidence": "Self EC $8, too-expensive $13; 3-pack $20 gift only."
+        },
+        {
+          "num": 4,
+          "name": "Priya Raman",
+          "code": "Partial",
+          "evidence": "Self ceiling $8–9 ('I'd just buy almonds'); gift EC $18, too-expensive $28; 3-pack $40 as three separate gift tins."
+        },
+        {
+          "num": 5,
+          "name": "Zoe Martinez",
+          "code": "Contradicts",
+          "evidence": "EC $8, too-expensive $12; 3-pack $18–20 variety pack for girls' night."
+        },
+        {
+          "num": 6,
+          "name": "Olivia Brooks",
+          "code": "Partial",
+          "evidence": "EC $9–10 but too-expensive $15 and 'too expensive at any price' if sugar is high; 3-pack $25 gift only."
+        },
+        {
+          "num": 7,
+          "name": "Hannah Kim",
+          "code": "Contradicts",
+          "evidence": "EC $5, too-expensive $8 ('eight is silly'); 3-pack $12–13."
+        },
+        {
+          "num": 8,
+          "name": "Daniel Chen",
+          "code": "Partial",
+          "evidence": "Self EC $6 / too-expensive $9; gift EC $15 / too-expensive ~$20; 3-pack only as split teacher gifts under $30."
+        },
+        {
+          "num": 9,
+          "name": "Rachel Goldberg",
+          "code": "Contradicts",
+          "evidence": "EC ~$7, too-expensive above $10–11; 3-pack $18–20 teacher gifts only."
+        },
+        {
+          "num": 10,
+          "name": "Lauren Mitchell",
+          "code": "Partial",
+          "evidence": "EC $10 only 'if someone I trust told me it was worth it'; too-expensive $15; would not buy a 3-pack."
+        }
+      ],
+      "supports": 2,
+      "partial": 4,
+      "contradicts": 4,
+      "pct_support": 20,
+      "pct_partial": 40,
+      "pct_contradict": 40,
+      "quotes": [
+        {
+          "respondent": "Priya Raman",
+          "quote": "For myself, anything over eight or nine and I'd just buy almonds, I'm being honest."
+        },
+        {
+          "respondent": "Chloe Laurent",
+          "quote": "For dried fruit, even pretty dried fruit, I'm not paying macaron prices."
+        },
+        {
+          "respondent": "Lauren Mitchell",
+          "quote": "Because at $15 I can get something from La Maison du Chocolat that I already know I love. It's competing with that, not with Craisins."
+        },
+        {
+          "respondent": "Daniel Chen",
+          "quote": "Groceries I optimize. Gifts for her I don't really optimize, I just try not to get something she wouldn't pick herself."
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Habitual frequency (recurring everyday habit)",
+      "status": "Invalidated",
+      "evidence_by_respondent": [
+        {
+          "num": 1,
+          "name": "Sienna Alvarez",
+          "code": "Partial",
+          "evidence": "'Every week is a stretch'; 'More realistically it'd be a monthly thing or a hosting thing' — only if low sugar, tart, easy to get."
+        },
+        {
+          "num": 2,
+          "name": "Chloe Laurent",
+          "code": "Contradicts",
+          "evidence": "'Honestly, probably nothing'; best case gifting a few times a year plus new-flavor/collab buys."
+        },
+        {
+          "num": 3,
+          "name": "Maya Chen",
+          "code": "Contradicts",
+          "evidence": "'Every week is unlikely. I try things once, and maybe one in ten becomes a regular.'"
+        },
+        {
+          "num": 4,
+          "name": "Priya Raman",
+          "code": "Contradicts",
+          "evidence": "Would 'buy it a few times and drift away'; realistic version is holiday gifts a few times a year."
+        },
+        {
+          "num": 5,
+          "name": "Zoe Martinez",
+          "code": "Contradicts",
+          "evidence": "'Honestly? I don't think it would.' 'Good for your first month and then we're gone.'"
+        },
+        {
+          "num": 6,
+          "name": "Olivia Brooks",
+          "code": "Contradicts",
+          "evidence": "Needs <5 g sugar, no seed oils, creator proof, Whole Foods/Thrive — 'even then… weekly is a stretch.'"
+        },
+        {
+          "num": 7,
+          "name": "Hannah Kim",
+          "code": "Contradicts",
+          "evidence": "'Honestly, it probably wouldn't'; 'realistically it'd be a once-in-a-while thing.'"
+        },
+        {
+          "num": 8,
+          "name": "Daniel Chen",
+          "code": "Contradicts",
+          "evidence": "'Weekly, realistically, no. A couple of times a year as a gift, that I can believe.'"
+        },
+        {
+          "num": 9,
+          "name": "Rachel Goldberg",
+          "code": "Contradicts",
+          "evidence": "'So realistically I don't see it being weekly'; only if kids ask for it by name at Target price."
+        },
+        {
+          "num": 10,
+          "name": "Lauren Mitchell",
+          "code": "Contradicts",
+          "evidence": "'Honestly, I don't think it would'; weekly must be 'earned over years.'"
+        }
+      ],
+      "supports": 0,
+      "partial": 1,
+      "contradicts": 9,
+      "pct_support": 0,
+      "pct_partial": 10,
+      "pct_contradict": 90,
+      "quotes": [
+        {
+          "respondent": "Zoe Martinez",
+          "quote": "I think people like me are good for your first month and then we're gone, so I wouldn't build a business on us."
+        },
+        {
+          "respondent": "Daniel Chen",
+          "quote": "Weekly, realistically, no. A couple of times a year as a gift, that I can believe."
+        },
+        {
+          "respondent": "Maya Chen",
+          "quote": "I try things once, and maybe one in ten becomes a regular."
+        },
+        {
+          "respondent": "Sienna Alvarez",
+          "quote": "And I'd have to still like it after the Instagram moment wears off, which, going by my track record, is usually around week six."
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Positioning & sourcing (luxury branding, clean label, unique sourcing)",
+      "status": "Partially Validated (drives trial/gifting, not repeat or premium for self)",
+      "evidence_by_respondent": [
+        {
+          "num": 1,
+          "name": "Sienna Alvarez",
+          "code": "Partial",
+          "evidence": "Short list 'non-negotiable', white cranberry 'the hook'; packaging 'won't get me to buy it twice'; small batch 'doesn't really matter'; wants a named farm."
+        },
+        {
+          "num": 2,
+          "name": "Chloe Laurent",
+          "code": "Partial",
+          "evidence": "Packaging 'matters the most' and white cranberry 'is a story', but 'I'll pay for pretty once'; small batch 'doesn't matter to me at all'."
+        },
+        {
+          "num": 3,
+          "name": "Maya Chen",
+          "code": "Partial",
+          "evidence": "Short list and white cranberry matter; small batch 'I kind of tune that out'; pretty bags won't make her rebuy; resealable matters more than design."
+        },
+        {
+          "num": 4,
+          "name": "Priya Raman",
+          "code": "Partial",
+          "evidence": "Short list 'the minimum'; elegant tin matters 'but only for gifting'; cute pastel = 'trying too hard'; sweet white cranberry is the wrong direction."
+        },
+        {
+          "num": 5,
+          "name": "Zoe Martinez",
+          "code": "Partial",
+          "evidence": "Cute keepable tin 'huge'; white cranberry matters 'a little'; short list 'doesn't matter to me at all'; small batch 'sounds like something on a candle label'."
+        },
+        {
+          "num": 6,
+          "name": "Olivia Brooks",
+          "code": "Partial",
+          "evidence": "Short list 'matters the most'; wants minimal packaging with front sugar number; white cranberry 'only if that means less added sugar'."
+        },
+        {
+          "num": 7,
+          "name": "Hannah Kim",
+          "code": "Partial",
+          "evidence": "Short list 'the one thing that actually matters'; packaging gets a pick-up 'but it wouldn't make me buy it twice'; design/handmade read as 'expensive'."
+        },
+        {
+          "num": 8,
+          "name": "Daniel Chen",
+          "code": "Contradicts",
+          "evidence": "Positioning signals cost, not value: design + small batch 'means this is going to be expensive'; handmade 'makes me suspicious it'll be inconsistent'."
+        },
+        {
+          "num": 9,
+          "name": "Rachel Goldberg",
+          "code": "Partial",
+          "evidence": "Short list/no dyes 'a real plus'; packaging only for gifts; small batch 'mostly tells me it's going to be expensive'."
+        },
+        {
+          "num": 10,
+          "name": "Lauren Mitchell",
+          "code": "Contradicts",
+          "evidence": "'Design-forward packaging' makes her 'more wary'; short list 'doesn't move me'; values only verified heritage/provenance."
+        }
+      ],
+      "supports": 0,
+      "partial": 8,
+      "contradicts": 2,
+      "pct_support": 0,
+      "pct_partial": 80,
+      "pct_contradict": 20,
+      "quotes": [
+        {
+          "respondent": "Sienna Alvarez",
+          "quote": "Design-forward packaging matters to get me to pick it up, but I've been burned before, so it won't get me to buy it twice."
+        },
+        {
+          "respondent": "Rachel Goldberg",
+          "quote": "Small batch, hand-made, that doesn't really matter to me at all, it mostly tells me it's going to be expensive."
+        },
+        {
+          "respondent": "Olivia Brooks",
+          "quote": "Because paying extra for clean feels like an investment, paying extra for sugar feels like being played."
+        },
+        {
+          "respondent": "Priya Raman",
+          "quote": "The part that surprises me is \"sweet white cranberries,\" because the only interesting thing about cranberry is that it's tart, so taking that away sounds like making it more like every other dried fruit."
+        }
+      ]
+    }
+  ],
+  "respondents": [
+    {
+      "num": 1,
+      "name": "Sienna Alvarez",
+      "adoption": "Innovator",
+      "segment": "Innovators",
+      "too_cheap": 5,
+      "too_cheap_raw": "Under $5",
+      "expensive_considering": 11.5,
+      "expensive_considering_raw": "$11–$12",
+      "expensive_considering_context": "self (trial once)",
+      "expensive_considering_self": 11.5,
+      "expensive_considering_gift": null,
+      "too_expensive": 18,
+      "too_expensive_raw": "$18+",
+      "too_expensive_self": 18,
+      "too_expensive_gift": null,
+      "three_pack_max": 29,
+      "three_pack_raw": "$28–$30",
+      "three_pack_context": "Hosting/gift set (bring one, keep one, board) — only after liking a single",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": "Says 'more realistically it'd be a monthly thing or a hosting thing' — upside flag, but summary codes Try once.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Availability / channel",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste",
+        "Not tart enough (sweet is the wrong direction)",
+        "Functional: bloat / blood-sugar"
+      ],
+      "valued_attributes": [
+        "Short ingredient list",
+        "Low / transparent sugar",
+        "White cranberry novelty",
+        "Tart flavor profile",
+        "Design-forward packaging (trial only)",
+        "Specific founder / named-farm sourcing story"
+      ]
+    },
+    {
+      "num": 2,
+      "name": "Chloe Laurent",
+      "adoption": "Innovator",
+      "segment": "Innovators",
+      "too_cheap": 5,
+      "too_cheap_raw": "$5 (under $5)",
+      "expensive_considering": 11.5,
+      "expensive_considering_raw": "$11–$12",
+      "expensive_considering_context": "self (consider once if packaging cute)",
+      "expensive_considering_self": 11.5,
+      "expensive_considering_gift": null,
+      "too_expensive": 18,
+      "too_expensive_raw": "$18",
+      "too_expensive_self": 18,
+      "too_expensive_gift": null,
+      "three_pack_max": 30,
+      "three_pack_raw": "$30",
+      "three_pack_context": "Gift only (tin/box, coworker birthday, party); never for herself",
+      "stated_behavior": "Occasional gift",
+      "stated_behavior_note": "May self-buy when there is a new flavor or collab.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Price premium vs. perceived commodity",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste"
+      ],
+      "valued_attributes": [
+        "Design-forward / gift-worthy packaging (tin, ribbon)",
+        "White cranberry novelty (story)",
+        "Tart-sweet taste",
+        "Sugar not first ingredient",
+        "Limited drops / collabs / new flavors"
+      ]
+    },
+    {
+      "num": 3,
+      "name": "Maya Chen",
+      "adoption": "Early Adopter (Step 5 persona)",
+      "segment": "Early Adopters",
+      "too_cheap": 4,
+      "too_cheap_raw": "$4",
+      "expensive_considering": 8,
+      "expensive_considering_raw": "$8",
+      "expensive_considering_context": "self (consider once, curious)",
+      "expensive_considering_self": 8,
+      "expensive_considering_gift": null,
+      "too_expensive": 13,
+      "too_expensive_raw": "$13",
+      "too_expensive_self": 13,
+      "too_expensive_gift": null,
+      "three_pack_max": 20,
+      "three_pack_raw": "$20",
+      "three_pack_context": "Gifting only (holiday hostess gifts), only after trying a single",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": null,
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Price premium vs. perceived commodity",
+        "Availability / channel",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste",
+        "Not tart enough (sweet is the wrong direction)",
+        "Tartness / bitterness concern",
+        "Needs proof first (sample / social proof / trusted rec)"
+      ],
+      "valued_attributes": [
+        "Tart-sweet / salty-sour flavor (li hing mui style)",
+        "Short ingredient list with low sugar",
+        "White cranberry novelty",
+        "Resealable packaging",
+        "Availability at weekly stores (TJ's, Whole Foods)",
+        "Flavor pairing (dark chocolate or salty)"
+      ]
+    },
+    {
+      "num": 4,
+      "name": "Priya Raman",
+      "adoption": "Early Adopter",
+      "segment": "Early Adopters",
+      "too_cheap": 6,
+      "too_cheap_raw": "~$6",
+      "expensive_considering": 18,
+      "expensive_considering_raw": "~$18 as a gift; for self anything over $8–$9 she'd 'just buy almonds'",
+      "expensive_considering_context": "gift (self ceiling ~$8–$9)",
+      "expensive_considering_self": null,
+      "expensive_considering_gift": 18,
+      "too_expensive": 28,
+      "too_expensive_raw": "~$28 single package (gift); self ceiling ~$8–$9",
+      "too_expensive_self": 8.5,
+      "too_expensive_gift": 28,
+      "three_pack_max": 40,
+      "three_pack_raw": "~$40",
+      "three_pack_context": "Only as three separate giftable tins for her gift drawer; would not buy shrink-wrapped bundle",
+      "stated_behavior": "Occasional gift",
+      "stated_behavior_note": "Mostly around the holidays.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Price premium vs. perceived commodity",
+        "Availability / channel",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste",
+        "Not tart enough (sweet is the wrong direction)",
+        "Needs proof first (sample / social proof / trusted rec)"
+      ],
+      "valued_attributes": [
+        "Elegant gift-ready packaging (tin)",
+        "Short ingredient list",
+        "Novelty / a story to tell the host",
+        "Tart or chili-spiced flavor (not sweet)",
+        "Cheese-board fit"
+      ]
+    },
+    {
+      "num": 5,
+      "name": "Zoe Martinez",
+      "adoption": "Early Majority",
+      "segment": "Early Majority",
+      "too_cheap": 3,
+      "too_cheap_raw": "$3",
+      "expensive_considering": 8,
+      "expensive_considering_raw": "$8",
+      "expensive_considering_context": "self ('fine, I'll try it' range)",
+      "expensive_considering_self": 8,
+      "expensive_considering_gift": null,
+      "too_expensive": 12,
+      "too_expensive_raw": "$12 (unless heavily viral)",
+      "too_expensive_self": 12,
+      "too_expensive_gift": null,
+      "three_pack_max": 19,
+      "three_pack_raw": "$18–$20",
+      "three_pack_context": "3-flavor variety pack for girls' night ranking (social); not 3 of the same",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": null,
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Price premium vs. perceived commodity",
+        "Availability / channel",
+        "Won't buy multi-pack untried / pantry waste",
+        "Not tart enough (sweet is the wrong direction)",
+        "Needs proof first (sample / social proof / trusted rec)",
+        "Prefers sour candy as the treat"
+      ],
+      "valued_attributes": [
+        "Cute / collectible packaging (keepable tin)",
+        "White cranberry novelty",
+        "Virality / social proof",
+        "New flavor drops / variety",
+        "Sour flavor option",
+        "Mass-retail availability (H-E-B, Target)"
+      ]
+    },
+    {
+      "num": 6,
+      "name": "Olivia Brooks",
+      "adoption": "Early Majority (conditional)",
+      "segment": "Early Majority",
+      "too_cheap": 4,
+      "too_cheap_raw": "$4",
+      "expensive_considering": 9.5,
+      "expensive_considering_raw": "$9–$10",
+      "expensive_considering_context": "self (only if sugar is low)",
+      "expensive_considering_self": 9.5,
+      "expensive_considering_gift": null,
+      "too_expensive": 15,
+      "too_expensive_raw": "$15 (any price if added sugar is high)",
+      "too_expensive_self": 15,
+      "too_expensive_gift": null,
+      "three_pack_max": 25,
+      "three_pack_raw": "$25",
+      "three_pack_context": "Hostess gift only; for self only after repeat single purchases",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": null,
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Availability / channel",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste",
+        "Needs proof first (sample / social proof / trusted rec)",
+        "Functional: bloat / blood-sugar"
+      ],
+      "valued_attributes": [
+        "Low / no added sugar (<5g)",
+        "Short ingredient list",
+        "No seed oils",
+        "Minimal neutral packaging with front-of-pack sugar callout",
+        "Trusted (non-sponsored) creator endorsement",
+        "Availability at Whole Foods / Thrive",
+        "Evidence of no blood-sugar spike (CGM)"
+      ]
+    },
+    {
+      "num": 7,
+      "name": "Hannah Kim",
+      "adoption": "Early Majority",
+      "segment": "Early Majority",
+      "too_cheap": 2,
+      "too_cheap_raw": "$2 (under $2)",
+      "expensive_considering": 5,
+      "expensive_considering_raw": "$5",
+      "expensive_considering_context": "self (first try)",
+      "expensive_considering_self": 5,
+      "expensive_considering_gift": null,
+      "too_expensive": 8,
+      "too_expensive_raw": "$8",
+      "too_expensive_self": 8,
+      "too_expensive_gift": null,
+      "three_pack_max": 12.5,
+      "three_pack_raw": "$12–$13",
+      "three_pack_context": "Only after trying and liking a single (self / small add-on gift / clinic team)",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": "Explicitly sample-first.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Price premium vs. perceived commodity",
+        "Availability / channel",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste",
+        "Needs proof first (sample / social proof / trusted rec)"
+      ],
+      "valued_attributes": [
+        "Short ingredient list",
+        "Low / no added sugar",
+        "Natural tartness (white cranberry if less sugar needed)",
+        "Individual portion packs",
+        "Clean minimalist (K-beauty) packaging",
+        "Availability at Trader Joe's / Fairway",
+        "Free sampling"
+      ]
+    },
+    {
+      "num": 8,
+      "name": "Daniel Chen",
+      "adoption": "Early Majority (influencer / economic buyer, Step 5 persona)",
+      "segment": "Early Majority",
+      "too_cheap": 3,
+      "too_cheap_raw": "Under $3 (self/household, ~5–6 oz)",
+      "expensive_considering": 6,
+      "expensive_considering_raw": "~$6 self/household; ~$15 boxed gift for wife",
+      "expensive_considering_context": "self/household (gift: $15)",
+      "expensive_considering_self": 6,
+      "expensive_considering_gift": 15,
+      "too_expensive": 9,
+      "too_expensive_raw": "$9 self/household; >~$20 as gift",
+      "too_expensive_self": 9,
+      "too_expensive_gift": 20,
+      "three_pack_max": 30,
+      "three_pack_raw": "under $30 (split teacher gifts); would not buy for household",
+      "three_pack_context": "Split teacher gifts only (< a Starbucks card each); would not buy for household/self",
+      "stated_behavior": "Occasional gift",
+      "stated_behavior_note": "Buys only as a surprise for his wife if she has flagged it; approves/cancels any subscription.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Price premium vs. perceived commodity",
+        "Availability / channel",
+        "Won't buy multi-pack untried / pantry waste",
+        "Household co-approval / DMU gate"
+      ],
+      "valued_attributes": [
+        "Wife's approval / on her wish list",
+        "'Looks expensive' packaging for gifts",
+        "Resealable, low-waste packaging for home",
+        "Lower sugar / short ingredient list",
+        "Defensible price per ounce"
+      ]
+    },
+    {
+      "num": 9,
+      "name": "Rachel Goldberg",
+      "adoption": "Late Majority",
+      "segment": "Late Majority / Laggard",
+      "too_cheap": 3,
+      "too_cheap_raw": "Under $3",
+      "expensive_considering": 7,
+      "expensive_considering_raw": "~$7",
+      "expensive_considering_context": "self once, or small gift",
+      "expensive_considering_self": 7,
+      "expensive_considering_gift": null,
+      "too_expensive": 10.5,
+      "too_expensive_raw": "Above $10–$11",
+      "too_expensive_self": 10.5,
+      "too_expensive_gift": null,
+      "three_pack_max": 19,
+      "three_pack_raw": "$18–$20",
+      "three_pack_context": "Teacher/neighbor gifts (holiday season) only; never for household",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": "Plus possible occasional teacher/neighbor or Thanksgiving hostess gift.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Sugar / label concern",
+        "Price premium vs. perceived commodity",
+        "Availability / channel",
+        "Won't buy multi-pack untried / pantry waste",
+        "Tartness / bitterness concern",
+        "Needs proof first (sample / social proof / trusted rec)",
+        "Household co-approval / DMU gate",
+        "Kids won't eat it"
+      ],
+      "valued_attributes": [
+        "Short ingredient list / not loaded with sugar / no dyes",
+        "Sweet, not sour",
+        "Kid approval",
+        "Pretty packaging (gifting only)",
+        "Availability at Target / Park Slope Food Coop"
+      ]
+    },
+    {
+      "num": 10,
+      "name": "Lauren Mitchell",
+      "adoption": "Laggard / Skeptic",
+      "segment": "Late Majority / Laggard",
+      "too_cheap": 5,
+      "too_cheap_raw": "Under about $5",
+      "expensive_considering": 10,
+      "expensive_considering_raw": "$10",
+      "expensive_considering_context": "self (only if someone she trusts recommends it)",
+      "expensive_considering_self": 10,
+      "expensive_considering_gift": null,
+      "too_expensive": 15,
+      "too_expensive_raw": "$15",
+      "too_expensive_self": 15,
+      "too_expensive_gift": null,
+      "three_pack_max": null,
+      "three_pack_raw": "would not buy",
+      "three_pack_context": "Would not buy (not for self, would not gift; maybe plain elegant box on a holiday cheese board)",
+      "stated_behavior": "Try once",
+      "stated_behavior_note": "'A single, maybe, once' — closest to Would not buy.",
+      "objections": [
+        "Fancy Craisins / just dried fruit",
+        "Seasonal / Thanksgiving association",
+        "Novelty fatigue (try-once-then-drift)",
+        "Claim fatigue ('small batch' / 'everyday treat')",
+        "Prefers chocolate as the treat",
+        "Price premium vs. perceived commodity",
+        "Packaging skepticism ('paid for the wrapper' / too cute)",
+        "Won't buy multi-pack untried / pantry waste",
+        "Tartness / bitterness concern",
+        "Needs proof first (sample / social proof / trusted rec)"
+      ],
+      "valued_attributes": [
+        "Heritage / provenance with a real story",
+        "Genuine handcraft (if true)",
+        "Trusted recommendation (shopkeeper / friend)",
+        "Understated classic packaging",
+        "Not bitter (white cranberry only if actually less bitter)"
+      ]
+    }
+  ],
+  "wtp_stats": {
+    "coding_rules": "Ranges coded at midpoint ($11–12 = 11.5; $28–30 = 29; $18–20 = 19; $12–13 = 12.5; $9–10 = 9.5; above $10–11 = 10.5; $8–9 = 8.5). 'Under $X' coded as X. Daniel's 3-pack 'under $30' coded 30 (upper bound). 'Would not buy' excluded from 3-pack stats and reported separately.",
+    "self_purchase": {
+      "too_cheap": {
+        "n": 10,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 2,
+        "max": 6
+      },
+      "expensive_considering": {
+        "n": 9,
+        "mean": 8.5,
+        "median": 8,
+        "min": 5,
+        "max": 11.5
+      },
+      "too_expensive": {
+        "n": 10,
+        "mean": 12.7,
+        "median": 12.5,
+        "min": 8,
+        "max": 18
+      },
+      "note": "Self/household basis. Priya gave no self 'expensive-but-considering' price (only a self ceiling of ~$8–9, used as her self too-expensive), so EC n=9."
+    },
+    "any_context_highest": {
+      "expensive_considering": {
+        "n": 10,
+        "mean": 10.35,
+        "median": 9.75,
+        "min": 5,
+        "max": 18
+      },
+      "too_expensive": {
+        "n": 10,
+        "mean": 15.75,
+        "median": 15.0,
+        "min": 8,
+        "max": 28
+      },
+      "note": "Uses the gift figure where one was given (Priya EC $18 / TE $28; Daniel EC $15 / TE $20)."
+    },
+    "three_pack_max": {
+      "n": 9,
+      "mean": 24.94,
+      "median": 25,
+      "min": 12.5,
+      "max": 40,
+      "would_not_buy_count": 1
+    },
+    "a2_counts": {
+      "self_expensive_considering_ge_9": {
+        "count": 4,
+        "pct": 40,
+        "respondents": [
+          "Sienna Alvarez",
+          "Chloe Laurent",
+          "Olivia Brooks",
+          "Lauren Mitchell"
+        ]
+      },
+      "ge_9_only_for_gift": {
+        "count": 2,
+        "pct": 20,
+        "respondents": [
+          "Priya Raman",
+          "Daniel Chen"
+        ]
+      },
+      "too_expensive_le_16_self_basis": {
+        "count": 8,
+        "pct": 80,
+        "respondents": [
+          "Maya Chen",
+          "Priya Raman",
+          "Zoe Martinez",
+          "Olivia Brooks",
+          "Hannah Kim",
+          "Daniel Chen",
+          "Rachel Goldberg",
+          "Lauren Mitchell"
+        ]
+      },
+      "too_expensive_le_16_any_context": {
+        "count": 6,
+        "pct": 60,
+        "respondents": [
+          "Maya Chen",
+          "Zoe Martinez",
+          "Olivia Brooks",
+          "Hannah Kim",
+          "Rachel Goldberg",
+          "Lauren Mitchell"
+        ]
+      },
+      "three_pack_ge_24": {
+        "count": 5,
+        "pct": 50,
+        "respondents": [
+          "Sienna Alvarez",
+          "Chloe Laurent",
+          "Priya Raman",
+          "Olivia Brooks",
+          "Daniel Chen"
+        ],
+        "context": "All 5 are gift/hosting contexts; 0 of 10 would pay >= $24 for a 3-pack for their own consumption. Daniel's is an upper bound ('under $30')."
+      }
+    }
+  },
+  "wtp_bins": {
+    "self_purchase": [
+      {
+        "bin": "<$6",
+        "count": 1,
+        "pct": 10,
+        "respondents": [
+          "Hannah Kim"
+        ]
+      },
+      {
+        "bin": "$6–8.99",
+        "count": 4,
+        "pct": 40,
+        "respondents": [
+          "Maya Chen",
+          "Zoe Martinez",
+          "Daniel Chen",
+          "Rachel Goldberg"
+        ]
+      },
+      {
+        "bin": "$9–11.99",
+        "count": 4,
+        "pct": 40,
+        "respondents": [
+          "Sienna Alvarez",
+          "Chloe Laurent",
+          "Olivia Brooks",
+          "Lauren Mitchell"
+        ]
+      },
+      {
+        "bin": "$12–15.99",
+        "count": 0,
+        "pct": 0,
+        "respondents": []
+      },
+      {
+        "bin": "$16+",
+        "count": 0,
+        "pct": 0,
+        "respondents": []
+      },
+      {
+        "bin": "Not stated for self",
+        "count": 1,
+        "pct": 10,
+        "respondents": [
+          "Priya Raman"
+        ]
+      }
+    ],
+    "any_context_highest": [
+      {
+        "bin": "<$6",
+        "count": 1,
+        "pct": 10,
+        "respondents": [
+          "Hannah Kim"
+        ]
+      },
+      {
+        "bin": "$6–8.99",
+        "count": 3,
+        "pct": 30,
+        "respondents": [
+          "Maya Chen",
+          "Zoe Martinez",
+          "Rachel Goldberg"
+        ]
+      },
+      {
+        "bin": "$9–11.99",
+        "count": 4,
+        "pct": 40,
+        "respondents": [
+          "Sienna Alvarez",
+          "Chloe Laurent",
+          "Olivia Brooks",
+          "Lauren Mitchell"
+        ]
+      },
+      {
+        "bin": "$12–15.99",
+        "count": 1,
+        "pct": 10,
+        "respondents": [
+          "Daniel Chen"
+        ]
+      },
+      {
+        "bin": "$16+",
+        "count": 1,
+        "pct": 10,
+        "respondents": [
+          "Priya Raman"
+        ]
+      }
+    ]
+  },
+  "behavior_distribution": [
+    {
+      "category": "Would not buy",
+      "count": 0,
+      "pct": 0,
+      "respondents": []
+    },
+    {
+      "category": "Try once",
+      "count": 7,
+      "pct": 70,
+      "respondents": [
+        "Sienna Alvarez",
+        "Maya Chen",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ]
+    },
+    {
+      "category": "Occasional gift",
+      "count": 3,
+      "pct": 30,
+      "respondents": [
+        "Chloe Laurent",
+        "Priya Raman",
+        "Daniel Chen"
+      ]
+    },
+    {
+      "category": "Occasional self-treat",
+      "count": 0,
+      "pct": 0,
+      "respondents": []
+    },
+    {
+      "category": "Recurring monthly+",
+      "count": 0,
+      "pct": 0,
+      "respondents": []
+    },
+    {
+      "category": "Weekly",
+      "count": 0,
+      "pct": 0,
+      "respondents": []
+    }
+  ],
+  "objections": [
+    {
+      "tag": "Claim fatigue ('small batch' / 'everyday treat')",
+      "count": 10,
+      "pct": 100,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "All 10 discounted 'small batch' (Lauren: 'on its own doesn't mean much'); 8 also doubted the 'everyday treat' claim."
+    },
+    {
+      "tag": "Fancy Craisins / just dried fruit",
+      "count": 10,
+      "pct": 100,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "All 10 used the phrase 'fancy Craisins' at Q13 (unprompted)."
+    },
+    {
+      "tag": "Novelty fatigue (try-once-then-drift)",
+      "count": 10,
+      "pct": 100,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "All 10 described a try-then-drift pattern at Q5; 10/10 framed purchase of this concept as 'once'."
+    },
+    {
+      "tag": "Seasonal / Thanksgiving association",
+      "count": 10,
+      "pct": 100,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "All 10 said 'Thanksgiving' in the transcript."
+    },
+    {
+      "tag": "Won't buy multi-pack untried / pantry waste",
+      "count": 10,
+      "pct": 100,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "No respondent would buy a 3-pack for own consumption before trying a single."
+    },
+    {
+      "tag": "Prefers chocolate as the treat",
+      "count": 9,
+      "pct": 90,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "Zoe is the only exception (prefers sour candy)."
+    },
+    {
+      "tag": "Availability / channel",
+      "count": 8,
+      "pct": 80,
+      "respondents": [
+        "Sienna Alvarez",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "note": "Needs to be in a store shopped weekly or on subscription for any recurrence."
+    },
+    {
+      "tag": "Price premium vs. perceived commodity",
+      "count": 8,
+      "pct": 80,
+      "respondents": [
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "Sienna and Olivia set ceilings but frame price as conditional (bag size / sugar), so not counted."
+    },
+    {
+      "tag": "Sugar / label concern",
+      "count": 8,
+      "pct": 80,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "note": "Lauren mentions sugar only as a commodity descriptor ('a treat is a treat'), so not counted."
+    },
+    {
+      "tag": "Needs proof first (sample / social proof / trusted rec)",
+      "count": 7,
+      "pct": 70,
+      "respondents": [
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "Sample explicitly: Maya, Priya, Hannah, Rachel, Lauren; social proof: Zoe; trusted creator: Olivia."
+    },
+    {
+      "tag": "Packaging skepticism ('paid for the wrapper' / too cute)",
+      "count": 7,
+      "pct": 70,
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Lauren Mitchell"
+      ],
+      "note": "Includes 3 who reject 'cute' aesthetics outright (Priya, Olivia, Lauren) and 4 who say pretty packaging burned them / won't drive repeat."
+    },
+    {
+      "tag": "Not tart enough (sweet is the wrong direction)",
+      "count": 4,
+      "pct": 40,
+      "respondents": [
+        "Sienna Alvarez",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez"
+      ],
+      "note": "Want tart/sour/salty-tart, see 'sweet white cranberry' as solving the wrong problem."
+    },
+    {
+      "tag": "Tartness / bitterness concern",
+      "count": 3,
+      "pct": 30,
+      "respondents": [
+        "Maya Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "Worry it is too sour/bitter/astringent."
+    },
+    {
+      "tag": "Functional: bloat / blood-sugar",
+      "count": 2,
+      "pct": 20,
+      "respondents": [
+        "Sienna Alvarez",
+        "Olivia Brooks"
+      ],
+      "note": ""
+    },
+    {
+      "tag": "Household co-approval / DMU gate",
+      "count": 2,
+      "pct": 20,
+      "respondents": [
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "note": "Recurring purchases gated by spouse (Daniel) or kids (Rachel)."
+    },
+    {
+      "tag": "Kids won't eat it",
+      "count": 1,
+      "pct": 10,
+      "respondents": [
+        "Rachel Goldberg"
+      ],
+      "note": ""
+    },
+    {
+      "tag": "Prefers sour candy as the treat",
+      "count": 1,
+      "pct": 10,
+      "respondents": [
+        "Zoe Martinez"
+      ],
+      "note": ""
+    }
+  ],
+  "attributes": [
+    {
+      "name": "White cranberry / sweet variety",
+      "mattered_count": 5,
+      "conditional_count": 4,
+      "did_not_matter_count": 1,
+      "mattered": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Zoe Martinez",
+        "Rachel Goldberg"
+      ],
+      "conditional": [
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Lauren Mitchell",
+        "Daniel Chen"
+      ],
+      "did_not_matter": [
+        "Priya Raman"
+      ],
+      "note": "The only element that created unprompted curiosity (9/10 called it new/interesting/curious). Value is novelty/story; 4 make it conditional on it meaning less sugar or less bitterness; Priya sees 'sweet' as the wrong direction. Rachel values the 'sweet' part (doesn't want sour)."
+    },
+    {
+      "name": "Short ingredient list",
+      "mattered_count": 8,
+      "conditional_count": 0,
+      "did_not_matter_count": 2,
+      "mattered": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "did_not_matter": [
+        "Zoe Martinez",
+        "Lauren Mitchell"
+      ],
+      "note": "Most-cited 'matters' element, but framed as a minimum/gate ('non-negotiable', 'the minimum'), not as a reason to pay more. Several warn 'cranberries and sugar' is short but not good."
+    },
+    {
+      "name": "Small-batch / handmade",
+      "mattered_count": 0,
+      "conditional_count": 1,
+      "did_not_matter_count": 9,
+      "mattered": [],
+      "conditional": [
+        "Lauren Mitchell"
+      ],
+      "did_not_matter": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "note": "Rejected by 9/10; 3 (Hannah, Daniel, Rachel) read it as a signal of 'expensive'; Daniel reads it as 'inconsistent'. Lauren: only 'if it's true and there's a real person or place behind it'."
+    },
+    {
+      "name": "Design-forward packaging",
+      "mattered_count": 9,
+      "conditional_count": 7,
+      "did_not_matter_count": 1,
+      "mattered": [
+        "Chloe Laurent",
+        "Zoe Martinez"
+      ],
+      "conditional": [
+        "Sienna Alvarez (trial only)",
+        "Maya Chen (won't drive rebuy)",
+        "Hannah Kim (pick-up only)",
+        "Olivia Brooks (minimal, not cutesy)",
+        "Priya Raman (gifting only)",
+        "Daniel Chen (gifting only)",
+        "Rachel Goldberg (gifting only)"
+      ],
+      "did_not_matter": [
+        "Lauren Mitchell (makes her more wary)"
+      ],
+      "note": "mattered_count = any context (2 unconditional + 7 conditional). 0/10 said packaging would drive a repeat purchase; 4 said explicitly it would not (Sienna, Chloe, Maya, Hannah)."
+    },
+    {
+      "name": "Gift-ability / tin",
+      "mattered_count": 7,
+      "conditional_count": 0,
+      "did_not_matter_count": 1,
+      "mattered": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "did_not_matter": [
+        "Lauren Mitchell"
+      ],
+      "not_mentioned": [
+        "Maya Chen",
+        "Hannah Kim"
+      ],
+      "note": "All five 3-pack ceilings of $24 or more depend on a gift-grade set (tin, box, ribbon, separable units)."
+    },
+    {
+      "name": "Low sugar number (incl. front-of-pack callout)",
+      "mattered_count": 8,
+      "conditional_count": 0,
+      "did_not_matter_count": 2,
+      "mattered": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg"
+      ],
+      "did_not_matter": [
+        "Zoe Martinez",
+        "Lauren Mitchell"
+      ],
+      "note": "Only Olivia explicitly asked for a front-of-pack number (<5 g added sugar); the other 7 would flip the pack and check sugar first."
+    },
+    {
+      "name": "Flavor variety / drops / pairings",
+      "mattered_count": 4,
+      "conditional_count": 0,
+      "did_not_matter_count": 0,
+      "mattered": [
+        "Chloe Laurent",
+        "Zoe Martinez",
+        "Maya Chen",
+        "Priya Raman"
+      ],
+      "not_mentioned": [
+        "Sienna Alvarez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "note": "Chloe & Zoe: new drops/collabs bring them back; Maya: pair with dark chocolate or salty; Priya: chili/tart version."
+    },
+    {
+      "name": "Tart / sour flavor profile (unprompted, not in concept)",
+      "mattered_count": 7,
+      "conditional_count": 0,
+      "did_not_matter_count": 2,
+      "mattered": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim"
+      ],
+      "did_not_matter": [
+        "Rachel Goldberg (wants sweet)",
+        "Lauren Mitchell (tart reads astringent)"
+      ],
+      "note": "Daniel neutral. Not part of the concept statement but emerged as the strongest flavor signal."
+    },
+    {
+      "name": "Resealable / portion packs (unprompted)",
+      "mattered_count": 3,
+      "conditional_count": 0,
+      "did_not_matter_count": 0,
+      "mattered": [
+        "Maya Chen",
+        "Hannah Kim",
+        "Daniel Chen"
+      ],
+      "note": "Functional format needs for desk/drawer/household use."
+    }
+  ],
+  "language_patterns": [
+    {
+      "phrase": "\"fancy Craisins\"",
+      "count": 10,
+      "note": "Every respondent used it at Q13, before any price was discussed. Category-defining (and, in synthetic data, suspiciously uniform)."
+    },
+    {
+      "phrase": "Craisins as the price floor (\"Craisins in a nicer bag\" or equivalent)",
+      "count": 10,
+      "note": "Exact 'Craisins in a nicer bag': 7 (Sienna, Chloe, Maya, Priya, Zoe, Daniel, Rachel); equivalents: Olivia ('same sugary stuff in a nicer bag'), Hannah ('Craisins with a different label'), Lauren ('same as the supermarket stuff')."
+    },
+    {
+      "phrase": "\"Thanksgiving\"",
+      "count": 10,
+      "note": "All 10 said it; Rachel and Lauren 3+ times each (they host Thanksgiving)."
+    },
+    {
+      "phrase": "\"small batch\" = \"everyone says that\" / tuned out",
+      "count": 10,
+      "note": "Includes 'on literally everything', 'every brand says that now', 'candle label', 'marketing word'."
+    },
+    {
+      "phrase": "Purchase framed as \"once\" (try once / buy it once / curious like once)",
+      "count": 10,
+      "note": "10/10 framed first purchase as a single trial."
+    },
+    {
+      "phrase": "Chalk / sand / drywall disgust metaphors for 'virtuous' snacks (Q2)",
+      "count": 10,
+      "note": "sweet sand/chalk (Sienna, Chloe, Maya, Zoe, Hannah, Rachel), chalky keto cookie (Olivia, Q5), candle wax (Priya), pencil eraser (Daniel), sweetened drywall (Lauren). 8/10 disappointments were 'protein'/'healthy' snacks."
+    },
+    {
+      "phrase": "\"curious\" (re white cranberry)",
+      "count": 7,
+      "note": "Maya, Zoe, Olivia, Hannah, Daniel, Rachel, Lauren; Sienna & Chloe said 'interesting'/'oh'. Curiosity, not desire: 'curious, but I'm not excited' (Rachel); 'curious like once' (Daniel)."
+    },
+    {
+      "phrase": "Paid for the wrapper / box / bag",
+      "count": 6,
+      "note": "Sienna ('paid for the wrapper'), Chloe ('paid for the wrapper'), Maya ('paying for the bag'), Hannah ('paying for packaging and a story'), Lauren ('the money went into the box'), Priya ('packaging promising something the food doesn't deliver')."
+    },
+    {
+      "phrase": "Scammed / tricked / played / talked into",
+      "count": 5,
+      "note": "Sienna (tricked), Chloe (scammed), Zoe (feels like a scam), Olivia (scammed; being played), Hannah (talked into it). Emotional core of distrust in pretty premium snacks."
+    },
+    {
+      "phrase": "\"boring in the best way\" / boring on purpose (for staples)",
+      "count": 4,
+      "note": "Sienna ('boring in a good way'), Priya and Olivia ('boring in the best way'), Daniel ('boring on purpose'). Repeat purchase is earned by reliability, not excitement."
+    },
+    {
+      "phrase": "Silly / dumb / guilt(y) about snack spending or eating",
+      "count": 7,
+      "note": "silly: Priya, Hannah, Lauren; dumb: Chloe; guilt/guilty: Sienna, Chloe, Olivia, Rachel. 7 distinct respondents."
+    },
+    {
+      "phrase": "Chocolate as the benchmark / the safe choice",
+      "count": 9,
+      "note": "All but Zoe; e.g., 'chocolate wins', 'my money's on the chocolate', 'Chocolate is a safe gift'."
+    },
+    {
+      "phrase": "\"gamble\"",
+      "count": 3,
+      "note": "Chloe, Hannah, Rachel — cranberry is a risk vs. a known treat."
+    },
+    {
+      "phrase": "Board / party moment (Q14)",
+      "count": 8,
+      "note": "Cheese/brunch board or party is the first or easiest moment for Sienna, Maya, Priya, Zoe (girls' night), Olivia, Daniel, Rachel, Lauren."
+    }
+  ],
+  "emotional_descriptors": [
+    {
+      "descriptor": "Skeptical / suspicious / wary",
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "count": 7
+    },
+    {
+      "descriptor": "Curious but not excited",
+      "respondents": [
+        "Maya Chen",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Daniel Chen",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "count": 7
+    },
+    {
+      "descriptor": "Burned / scammed / tricked by pretty premium snacks",
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Maya Chen",
+        "Priya Raman",
+        "Zoe Martinez",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Lauren Mitchell"
+      ],
+      "count": 8
+    },
+    {
+      "descriptor": "Guilt / silliness about spending on self",
+      "respondents": [
+        "Sienna Alvarez",
+        "Chloe Laurent",
+        "Priya Raman",
+        "Olivia Brooks",
+        "Hannah Kim",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "count": 7
+    },
+    {
+      "descriptor": "Ritual comfort / 'the part of the day that's mine' (incumbent treat)",
+      "respondents": [
+        "Sienna Alvarez",
+        "Rachel Goldberg",
+        "Lauren Mitchell"
+      ],
+      "count": 3
+    }
+  ],
+  "biggest_unmet_need": {
+    "title": "A genuinely satisfying, low-sugar 'afternoon slump' treat that is actually indulgent — real-fruit tartness, no crash, portable",
+    "description": "The strongest, most widespread unmet need is not 'a luxury cranberry snack' but a treat for the weekday afternoon slot (and away-from-home moments) that feels indulgent yet does not deliver a sugar crash, bloat, or a 'chalk/sand' health-food disappointment. Every respondent recounted a recent disappointment with a snack that promised more (health, protein, 'gourmet', pretty) than it delivered, and most describe the afternoon as a defined, emotionally loaded moment currently served by chocolate, dates, mango, pastries or vending/minibar options they find 'meh' or 'depressing'. Cranberry can compete for this slot only if it is tart-forward, verifiably low in added sugar, and in a portable/resealable format — none of which the current 'sweet white cranberry, design-forward' concept yet proves. This is a hypothesis to test with real consumers, not a validated finding.",
+    "evidence": [
+      "10/10 Q2 disappointments were a snack that over-promised (8 'protein'/'healthy' snacks; Priya's 'gourmet' trail mix; Chloe's pretty pistachio bar), described as chalk/sand/drywall/eraser/candle wax.",
+      "8/10 describe a defined afternoon snack moment (Sienna, Maya, Priya, Zoe, Olivia, Hannah, Rachel, Lauren); Sienna: 'It's honestly the most important snack of my day.' Zoe and Hannah both call it 'the danger zone'.",
+      "Dissatisfaction with current away-from-home options: Maya's office snack wall ('meh'), Priya's hotel minibar ('just so depressing'), Hannah's break-room pastries, Olivia's sugar crash from a coffee-shop bar.",
+      "8/10 raise sugar/label concerns; Sienna: 'No sugar crash, no bloating, no guilt spiral… That's really the bar for anything that becomes a daily thing for me.'",
+      "7/10 like tart flavors unprompted (Q8) but reject 'sugar with acid' candy-sour; 6/10 could picture the concept in a personal afternoon/desk slot, all conditionally (Sienna, Chloe, Maya, Priya, Olivia, Hannah)."
+    ]
+  },
+  "runner_up_signals": [
+    {
+      "title": "Non-generic hostess / small-gift tin (the 'anti-Godiva')",
+      "evidence": [
+        "The only contexts where price clears $9 for Priya ($18 EC/$28 TE) and Daniel ($15/$20) are gifts.",
+        "All 5 respondents with a 3-pack ceiling >= $24 (Sienna, Chloe, Priya, Olivia, Daniel) are in gift/hosting contexts.",
+        "Priya: 'I refuse to show up with Godiva. It feels like you grabbed it at the airport.' Daniel: 'The worst outcome is spending $40 on something that looks like I grabbed it at a CVS.'",
+        "Caveat: Maya, Priya, Rachel, Lauren tie cranberry gifting to November–December — this signal pulls toward seasonality."
+      ]
+    },
+    {
+      "title": "Tart / sour / salty-spiced flavor profile (li hing mui, amla, chili, yuzu, sour-coated)",
+      "evidence": [
+        "Maya: 'If it tasted like a sour plum kind of thing, salty-tart, that would get my attention way more than \"white cranberries.\"'",
+        "Priya wants 'a tart version, maybe with chili or something, like an amla candy' and says 'sweet cranberry' is 'solving the wrong problem'.",
+        "Zoe: 3pm only 'Unless it was sour, like a sour-coated cranberry thing'; Sienna: 'If it's actually tart and they lean into that, I'm more into it.'",
+        "7/10 enjoy tart unprompted; 4 explicitly see 'sweet' as the wrong direction. Counter-signal: Rachel (kids) and Lauren want sweet/less bitter."
+      ]
+    },
+    {
+      "title": "Cheese-board / entertaining pairing",
+      "evidence": [
+        "8/10 first or most easily pictured a board/party moment at Q14.",
+        "Lauren: 'tart fruit makes sense next to something rich and salty'; Sienna: 'Cranberry and cheese already makes sense'.",
+        "Suggests cheesemonger-counter sampling (Lauren: Citarella cheesemonger next to a Stilton) and hosting use — but hosting is occasional, and Priya reports leftover dried fruit going to waste."
+      ]
+    },
+    {
+      "title": "Verified low-sugar / blood-sugar-friendly tart treat",
+      "evidence": [
+        "Olivia: 'If you could say \"doesn't spike you\" and prove it, that would honestly matter more to me than the packaging or the white cranberries.'",
+        "8/10 sugar concern; Olivia's threshold 'under five grams'."
+      ]
+    }
+  ],
+  "implications": [
+    {
+      "title": "Do not build the model on weekly habit; treat recurrence as unproven and lead with trial + gifting",
+      "evidence": "A3 Invalidated: 0/10 support, 9/10 contradict; stated behavior 7 Try once, 3 Occasional gift, 0 recurring. Zoe: 'good for your first month and then we're gone'.",
+      "validation_needed": "Real repeat-purchase data: sell at a Happier Grocery pop-up/shelf test for 8–12 weeks and track repeat rate by customer (loyalty/QR/email capture); DTC cohort with 30/60/90-day reorder tracking. Kill/pivot threshold set in advance (e.g., <20% 60-day repeat)."
+    },
+    {
+      "title": "Re-anchor self-purchase price below the $9–16 band; reserve $9+ and $24+ for gift formats",
+      "evidence": "Self EC median $8 (mean $8.50); self too-expensive median $12.50; 8/10 have a self too-expensive threshold <= $16; only 4/10 have self EC >= $9; 5/10 would pay >= $24 for a 3-pack, all gift-only.",
+      "validation_needed": "Van Westendorp + Gabor-Granger with n>=100 real target shoppers; price-ladder smoke test (landing page / paid social A/B at $7, $10, $14 single and $24/$32 gift trio); in-store price test at Happier with actual units sold."
+    },
+    {
+      "title": "Break the 'fancy Craisins' frame with product truth, not packaging: tart-forward, low added sugar, sugar grams on the front",
+      "evidence": "10/10 said 'fancy Craisins'; 8/10 sugar concern; Olivia: 'paying extra for sugar feels like being played'; 7/10 like tart; Priya/Sienna/Maya/Zoe see 'sweet' as the wrong direction.",
+      "validation_needed": "Blind sensory tests (real people, n>=30 per cell) of tart/salty-tart, chili-lime, sweet white cranberry vs. Craisins and a Hu square; measure liking and 'would buy again'; confirm achievable added-sugar level with a food scientist before making claims."
+    },
+    {
+      "title": "Keep the white cranberry as the hook, but prove what it does (less sugar needed? less bitter?)",
+      "evidence": "The only element that created curiosity (9/10); 4 make its value conditional on less sugar/bitterness; Lauren asks 'whether that's real or a gimmick'.",
+      "validation_needed": "Supply and sensory validation of white cranberries (availability, cost, Brix/acidity vs. red); claim test in real interviews: 'white cranberry' vs. 'white cranberry, naturally less tart, X g added sugar'."
+    },
+    {
+      "title": "Drop 'small batch / handmade' and 'everyday treat' claims; replace with specific provenance",
+      "evidence": "10/10 discounted 'small batch'; 3 read it as 'expensive', Daniel as 'inconsistent'; 8 doubted 'everyday treat'; Sienna and Lauren want a named farm / real person.",
+      "validation_needed": "Message A/B tests on paid social and in-store shelf talkers (named-farm story vs. small-batch vs. none), measuring click-through, add-to-cart and purchase, not stated preference."
+    },
+    {
+      "title": "Sampling-led go-to-market: every buyer is a 'once' buyer until they taste it",
+      "evidence": "10/10 framed purchase as 'once'; 5 explicitly said a sample would change their decision (Maya, Priya, Hannah, Rachel, Lauren); Hannah: 'I'll eat a free one and then decide'; Lauren trusts shopkeepers, not ads.",
+      "validation_needed": "In-store demos at Happier Grocery and cheese counters (Citarella/Eataly), office/clinic sample drops; measure sample-to-purchase conversion and 30-day repurchase versus non-sampled shoppers."
+    },
+    {
+      "title": "Design: elegant and understated beats 'cute'; packaging earns trial, not loyalty",
+      "evidence": "Packaging mattered in some context to 9/10, but 0/10 said it drives repeat and 4 said explicitly it won't; 3 reject 'cute/pastel' outright (Priya, Olivia, Lauren); 7 express 'paid for the wrapper' distrust.",
+      "validation_needed": "Shelf/visual preference test with real shoppers (cute pastel vs. understated tin vs. minimal clinical) measuring pick-up and purchase; separate gift-buyer and self-buyer cells."
+    },
+    {
+      "title": "Recurring requires weekly channels and passes the household economic buyer",
+      "evidence": "8/10 would need it in a store they shop weekly or on subscription (TJ's, Whole Foods, Target, H-E-B, Thrive, Costco); Happier is a weekend/monthly 'treat trip' for Maya, Hannah, Rachel; Daniel approves/cancels subscriptions on price per ounce; Rachel's kids gate the list.",
+      "validation_needed": "Subscription pre-order smoke test with deposit; dyad interviews with couples/households (discoverer + payer); retailer buyer conversations (Whole Foods/Erewhon) on velocity requirements."
+    }
+  ]
+}
