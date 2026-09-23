@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruby Reserve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  :root {
+    /* Ruby Reserve tokens — light (warm ivory editorial) */
+    --ground: #F6EFE4;
+    --paper: #EEE3D2;
+    --ink: #2B1116;
+    --muted: #6B5550;
+    --line: rgba(43, 17, 22, 0.14);
+    --ruby-fill: #7A1528;
+    --ruby-deep: #4A0C18;
+    --ruby-text: #7A1528;
+    --on-ruby: #F6EFE4;
+    --copper: #9C5A31;
+    --copper-soft: #D9A77C;
+    --pine: #2E4A3B;
+    --on-pine: #EFE7D8;
+    --focus: #9C5A31;
+
+    --serif: "Bodoni Moda", "Didot", "Bodoni 72", "Libre Bodoni", Georgia, serif;
+    --sans: "Source Sans 3", "Source Sans Pro", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+    --step--1: 0.875rem;
+    --step-0: 1.0625rem;   /* 17px body — never below 16px */
+    --step-1: 1.25rem;
+    --step-2: 1.625rem;
+    --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+    --step-4: clamp(2.6rem, 1.6rem + 4.2vw, 4.75rem);
+
+    --gutter: clamp(16px, 4vw, 48px);
+    --max: 1200px;
+    --tap: 48px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #170A0D;
+      --paper: #22110F;
+      --ink: #F2E7D8;
+      --muted: #BCA79D;
+      --line: rgba(242, 231, 216, 0.16);
+      --ruby-fill: #8E1B31;
+      --ruby-deep: #3A0912;
+      --ruby-text: #E58A97;
+      --on-ruby: #F6EFE4;
+      --copper: #D59A6A;
+      --copper-soft: #8A5A36;
+      --pine: #2A4536;
+      --on-pine: #EFE7D8;
+      --focus: #D59A6A;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #170A0D;
+    --paper: #22110F;
+    --ink: #F2E7D8;
+    --muted: #BCA79D;
+    --line: rgba(242, 231, 216, 0.16);
+    --ruby-fill: #8E1B31;
+    --ruby-deep: #3A0912;
+    --ruby-text: #E58A97;
+    --on-ruby: #F6EFE4;
+    --copper: #D59A6A;
+    --copper-soft: #8A5A36;
+    --pine: #2A4536;
+    --on-pine: #EFE7D8;
+    --focus: #D59A6A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+  .eyebrow {
+    font-size: var(--step--1); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper);
+  }
+  .lede { font-size: var(--step-1); line-height: 1.5; color: var(--muted); max-width: 34em; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+    min-height: var(--tap); padding: 0 1.4em; border-radius: 999px;
+    font: 600 var(--step-0)/1 var(--sans); letter-spacing: 0.01em; text-decoration: none;
+    border: 1px solid transparent; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s;
+  }
+  .btn-ruby { background: var(--ruby-fill); color: var(--on-ruby); }
+  .btn-ruby:hover { background: var(--ruby-deep); }
+  .btn-line { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-line:hover { border-color: var(--ink); }
+  .link-arrow { font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--copper); padding-bottom: 2px; min-height: var(--tap); display: inline-flex; align-items: center; }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: var(--ground); border-bottom: 1px solid var(--line);
+  }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+  .wordmark { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+  .wordmark b { font: italic 500 1.6rem/1 var(--serif); color: var(--ruby-text); letter-spacing: -0.01em; }
+  .wordmark small { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .nav { display: flex; gap: 4px; }
+  .nav a { text-decoration: none; padding: 0 14px; min-height: var(--tap); display: inline-flex; align-items: center; font-weight: 600; font-size: 0.98rem; }
+  .nav a:hover { color: var(--ruby-text); }
+  .box-btn { gap: 10px; }
+  .box-count {
+    min-width: 1.6em; height: 1.6em; border-radius: 999px; background: var(--ruby-fill); color: var(--on-ruby);
+    display: inline-grid; place-items: center; font-size: 0.8rem; font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 860px) { .nav { display: none; } }
+
+  /* Hero */
+  .hero { padding-block: clamp(32px, 6vw, 72px) clamp(48px, 7vw, 96px); }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .hero h1 { font-size: var(--step-4); font-weight: 400; margin-block: 18px 22px; }
+  .hero h1 em { color: var(--ruby-text); font-style: italic; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-top: 30px; }
+  .spec-row {
+    display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: var(--step--1); color: var(--muted);
+  }
+  .spec-row span strong { color: var(--ink); font-weight: 600; }
+
+  .stage {
+    position: relative; background: var(--ruby-fill); border-radius: 2px;
+    aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden;
+    display: grid; place-items: end center;
+  }
+  .stage::before { /* counter line */
+    content: ""; position: absolute; inset: auto 0 0 0; height: 22%; background: var(--ruby-deep);
+  }
+  .stage svg { position: relative; width: 88%; height: auto; margin-bottom: 9%; }
+  .stage figcaption {
+    position: absolute; left: 20px; top: 18px; right: 20px; color: var(--on-ruby); opacity: .82;
+    font-size: var(--step--1); letter-spacing: 0.04em;
+  }
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .stage { aspect-ratio: 1 / 1; }
+  }
+
+  /* Sections */
+  section { scroll-margin-top: 80px; }
+  .band { padding-block: clamp(56px, 8vw, 112px); }
+  .band-paper { background: var(--paper); }
+  .sec-head { display: grid; gap: 14px; margin-bottom: clamp(28px, 4vw, 48px); max-width: 44rem; }
+  .sec-head h2 { font-size: var(--step-3); }
+
+  /* Flavor profiles */
+  .flavor-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .chip {
+    min-height: var(--tap); padding: 0 20px; border-radius: 999px; border: 1px solid var(--line);
+    background: transparent; color: var(--ink); font: 600 1rem/1 var(--sans); cursor: pointer;
+  }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-selected="true"], .chip[aria-pressed="true"] { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+
+  .profile {
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px);
+    background: var(--ground); border: 1px solid var(--line); padding: clamp(22px, 4vw, 48px);
+  }
+  .band-paper .profile { background: var(--ground); }
+  .profile h3 { font-size: var(--step-3); font-style: italic; font-weight: 400; }
+  .profile .notes { margin-top: 14px; font-size: var(--step-1); line-height: 1.5; max-width: 30em; }
+  .profile .occasion { margin-top: 18px; color: var(--muted); }
+  .scales { display: grid; gap: 22px; align-content: start; }
+  .scale-label { display: flex; justify-content: space-between; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .scale-track { position: relative; height: 2px; background: var(--line); margin-top: 14px; }
+  .scale-dot {
+    position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%; background: var(--ruby-fill);
+    transform: translate(-50%, -50%); transition: left .5s cubic-bezier(.2,.7,.2,1); box-shadow: 0 0 0 4px var(--ground);
+  }
+  .scale-ticks { display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; margin: 0; padding-top: 22px; border-top: 1px solid var(--line); }
+  dl.facts dt { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+  dl.facts dd { margin: 0; }
+  @media (max-width: 760px) { .profile { grid-template-columns: 1fr; } dl.facts { grid-template-columns: 1fr; gap: 2px 0; } dl.facts dd { margin-bottom: 10px; } }
+
+  /* Shop */
+  .shop-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+  .product { display: flex; flex-direction: column; gap: 14px; }
+  .product .thumb { aspect-ratio: 1 / 1; max-width: 100%; display: grid; place-items: center; }
+  .product .thumb svg { width: 62%; height: auto; }
+  .thumb-ruby { background: var(--ruby-fill); }
+  .thumb-copper { background: var(--copper-soft); }
+  .thumb-pine { background: var(--pine); }
+  .product-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .product h3 { font-size: var(--step-2); }
+  .price { font-family: var(--serif); font-size: var(--step-2); font-variant-numeric: tabular-nums lining-nums; }
+  .product p { color: var(--muted); }
+  .product .btn { margin-top: auto; width: 100%; }
+  .product .size { font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--copper); }
+  .shop-flavor { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 28px; }
+  .shop-flavor > span { font-weight: 600; margin-right: 4px; }
+  @media (max-width: 860px) { .shop-grid { grid-template-columns: 1fr; max-width: 480px; } .product .thumb { aspect-ratio: 16 / 10; } .product .thumb svg { width: 34%; } }
+
+  /* Entertaining & gifting — vertical card rail */
+  .rail {
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(260px, 30%); gap: 18px;
+    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 18px; overscroll-behavior-x: contain;
+    scrollbar-color: var(--copper) transparent;
+  }
+  .scene {
+    scroll-snap-align: start; aspect-ratio: 4 / 5.4; max-width: 100%; padding: 26px; display: flex; flex-direction: column; justify-content: space-between;
+    color: var(--on-ruby);
+  }
+  .scene .when { font-size: var(--step--1); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; opacity: .85; }
+  .scene h3 { font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.5rem); font-weight: 400; font-style: italic; }
+  .scene ul { list-style: none; margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid currentColor; display: grid; gap: 4px; font-size: 1rem; }
+  .scene ul li::before { content: "— "; opacity: .6; }
+  .s-ruby { background: var(--ruby-fill); }
+  .s-deep { background: var(--ruby-deep); }
+  .s-pine { background: var(--pine); color: var(--on-pine); }
+  .s-copper { background: var(--copper-soft); color: #2B1116; }
+  .rail-hint { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; color: var(--muted); font-size: var(--step--1); }
+  .rail-nav { display: flex; gap: 8px; }
+  .rail-nav button { width: var(--tap); height: var(--tap); border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+  .rail-nav button:hover { border-color: var(--ink); }
+  @media (max-width: 640px) { .rail { grid-auto-columns: 82%; } }
+
+  /* Ritual timeline */
+  .ritual { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+  .ritual li { list-style: none; padding: 22px 24px 0 0; display: grid; gap: 8px; align-content: start; }
+  .ritual li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .ritual time { font-family: var(--serif); font-size: var(--step-3); font-variant-numeric: lining-nums; color: var(--ruby-text); }
+  .ritual h3 { font-family: var(--sans); font-size: var(--step-1); font-weight: 700; letter-spacing: 0; }
+  .ritual p { color: var(--muted); }
+  ol.ritual { margin: 0; padding: 0; }
+  @media (max-width: 760px) {
+    .ritual { grid-template-columns: 1fr; }
+    .ritual li, .ritual li + li { padding: 20px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  }
+
+  /* Sourcing — long-form editorial */
+  .source { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); }
+  .longform { max-width: 36rem; display: grid; gap: 1.1em; font-size: 1.125rem; line-height: 1.7; }
+  .longform p:first-of-type::first-letter {
+    font-family: var(--serif); float: left; font-size: 4.2em; line-height: .82; padding: 6px 10px 0 0; color: var(--ruby-text);
+  }
+  .spec-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  .spec-table caption { text-align: left; font-family: var(--serif); font-size: var(--step-2); padding-bottom: 12px; }
+  .spec-table th, .spec-table td { text-align: left; vertical-align: top; padding: 12px 0; border-top: 1px solid var(--line); }
+  .spec-table th { font-weight: 600; font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); width: 38%; padding-right: 16px; }
+  .leave-out { margin-top: 26px; padding: 20px 22px; background: var(--pine); color: var(--on-pine); }
+  .leave-out h3 { font-family: var(--sans); font-size: var(--step--1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
+  @media (max-width: 860px) { .source { grid-template-columns: 1fr; } }
+
+  /* Letters */
+  .letters { background: var(--ruby-deep); color: var(--on-ruby); }
+  .letters .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; }
+  .letters h2 { font-size: var(--step-3); font-style: italic; font-weight: 400; }
+  .letters p { opacity: .85; margin-top: 12px; max-width: 30em; }
+  .letters form { display: flex; flex-wrap: wrap; gap: 10px; }
+  .letters label { flex-basis: 100%; font-size: var(--step--1); letter-spacing: .1em; text-transform: uppercase; font-weight: 600; opacity: .85; }
+  .letters input {
+    flex: 1 1 220px; min-height: var(--tap); padding: 0 18px; border-radius: 999px; border: 1px solid rgba(246,239,228,.4);
+    background: transparent; color: var(--on-ruby); font: 400 var(--step-0) var(--sans);
+  }
+  .letters input::placeholder { color: rgba(246,239,228,.6); }
+  .letters .btn { background: var(--on-ruby); color: #4A0C18; }
+  .letters .btn:hover { background: #fff; }
+  .form-msg { flex-basis: 100%; min-height: 1.6em; font-size: 1rem; }
+  @media (max-width: 760px) { .letters .wrap { grid-template-columns: 1fr; } }
+
+  .site-foot { padding-block: 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--step--1); }
+  .site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+
+  /* Box drawer */
+  .scrim { position: fixed; inset: 0; background: rgba(23, 10, 13, .45); z-index: 40; }
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100%); z-index: 41;
+    background: var(--ground); border-left: 1px solid var(--line);
+    padding: calc(24px + env(safe-area-inset-top, 0px)) 24px calc(24px + env(safe-area-inset-bottom, 0px));
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .drawer-head { display: flex; justify-content: space-between; align-items: center; }
+  .drawer-head h2 { font-size: var(--step-2); font-style: italic; font-weight: 400; }
+  .icon-btn { width: var(--tap); height: var(--tap); border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 1.3rem; cursor: pointer; }
+  .box-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; overflow-y: auto; }
+  .box-list li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .box-list .meta { color: var(--muted); font-size: var(--step--1); }
+  .box-list .amt { font-variant-numeric: tabular-nums; }
+  .box-list button { grid-column: 1 / -1; justify-self: start; background: none; border: 0; padding: 0; min-height: 32px; color: var(--muted); text-decoration: underline; cursor: pointer; font: inherit; font-size: var(--step--1); }
+  .empty { display: grid; gap: 10px; padding: 28px 0; }
+  .empty h3 { font-size: var(--step-2); font-weight: 400; }
+  .empty p { color: var(--muted); }
+  .drawer-foot { margin-top: auto; display: grid; gap: 12px; padding-top: 16px; border-top: 1px solid var(--ink); }
+  .subtotal { display: flex; justify-content: space-between; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .drawer-foot small { color: var(--muted); }
+
+  .toast {
+    position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+    background: var(--ink); color: var(--ground); padding: 14px 22px; border-radius: 999px; z-index: 50;
+    font-weight: 600; max-width: calc(100% - 32px); text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Stand-up matte pouch -->
+    <symbol id="pouch" viewBox="0 0 200 280">
+      <path d="M22 18 Q22 10 30 10 H170 Q178 10 178 18 L184 250 Q184 268 166 270 Q100 278 34 270 Q16 268 16 250 Z" fill="#3E0A14"/>
+      <rect x="22" y="30" width="156" height="2" fill="#2A060D"/>
+      <rect x="44" y="84" width="112" height="132" fill="#F3EADC"/>
+      <rect x="50" y="90" width="100" height="120" fill="none" stroke="#9C5A31" stroke-width="0.8"/>
+      <text x="100" y="118" text-anchor="middle" font-family="Source Sans 3, Arial, sans-serif" font-size="7" letter-spacing="2.4" fill="#6B5550">ORGANIC · 4 OZ</text>
+      <text x="100" y="150" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-style="italic" font-size="24" fill="#7A1528">Ruby</text>
+      <text x="100" y="174" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-style="italic" font-size="24" fill="#7A1528">Reserve</text>
+      <text x="100" y="196" text-anchor="middle" font-family="Source Sans 3, Arial, sans-serif" font-size="6.4" letter-spacing="1.6" fill="#2B1116">SWEET-TART CRANBERRIES</text>
+      <circle cx="100" cy="56" r="6" fill="none" stroke="#9C5A31" stroke-width="1"/>
+    </symbol>
+    <!-- Counter tin -->
+    <symbol id="tin" viewBox="0 0 160 200">
+      <ellipse cx="80" cy="182" rx="66" ry="12" fill="#2A060D" opacity=".35"/>
+      <path d="M14 32 V176 Q14 188 80 188 Q146 188 146 176 V32 Z" fill="#F3EADC"/>
+      <rect x="14" y="72" width="132" height="62" fill="#7A1528"/>
+      <text x="80" y="102" text-anchor="middle" font-family="Bodoni Moda, Didot, Georgia, serif" font-style="italic" font-size="20" fill="#F3EADC">Ruby Reserve</text>
+      <text x="80" y="121" text-anchor="middle" font-family="Source Sans 3, Arial, sans-serif" font-size="6.5" letter-spacing="2" fill="#E3C3A2">THE COUNTER TIN · 8 OZ</text>
+      <path d="M10 22 Q10 12 80 12 Q150 12 150 22 V36 Q150 46 80 46 Q10 46 10 36 Z" fill="#B87A4B"/>
+      <ellipse cx="80" cy="22" rx="70" ry="10" fill="#CE9563"/>
+    </symbol>
+    <!-- Loose cranberries -->
+    <symbol id="berries" viewBox="0 0 120 40">
+      <ellipse cx="18" cy="28" rx="11" ry="9" fill="#5E0F1D"/><ellipse cx="15" cy="25" rx="3" ry="2" fill="#A8384B" opacity=".6"/>
+      <ellipse cx="42" cy="31" rx="10" ry="8" fill="#6C1222"/><ellipse cx="39" cy="28" rx="3" ry="2" fill="#B24457" opacity=".6"/>
+      <ellipse cx="66" cy="27" rx="12" ry="10" fill="#541019"/><ellipse cx="62" cy="23" rx="3" ry="2" fill="#A8384B" opacity=".6"/>
+      <ellipse cx="96" cy="31" rx="10" ry="8" fill="#6C1222"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Ruby Reserve home"><b>Ruby Reserve</b><small>by CPG Cranberry</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#flavors">Flavors</a>
+      <a href="#shop">Shop</a>
+      <a href="#pairings">Entertaining &amp; Gifting</a>
+      <a href="#sourcing">What's inside</a>
+    </nav>
+    <button class="btn btn-line box-btn" id="open-box" type="button" aria-haspopup="dialog">Your box <span class="box-count" id="box-count" aria-label="0 items">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Organic cranberries, gently dried</p>
+        <h1>The cranberry, <em>reserved</em> for ritual.</h1>
+        <p class="lede">A sweet-tart snack slow-dried from whole organic cranberries. Made for the 4 PM desk break, tonight's cheese board, and the host you'd like to thank properly.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-ruby" href="#shop">Reserve Your Box</a>
+          <a class="link-arrow" href="#pairings">Explore Pairings →</a>
+        </div>
+        <div class="spec-row">
+          <span><strong>3</strong> ingredients in The Original</span>
+          <span><strong>Resealable</strong> matte pouch</span>
+          <span>From <strong>$9</strong> · 4 oz</span>
+        </div>
+      </div>
+      <figure class="stage" style="margin:0">
+        <figcaption>Shown: The Original, 4 oz pouch &amp; 8 oz counter tin</figcaption>
+        <svg viewBox="0 0 400 320" role="img" aria-label="A matte ruby Ruby Reserve pouch standing beside a cream and copper counter tin, with loose cranberries in front">
+          <use href="#tin" x="200" y="88" width="170" height="212"/>
+          <use href="#pouch" x="40" y="10" width="200" height="290"/>
+          <use href="#berries" x="150" y="272" width="120" height="40"/>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band band-paper" id="flavors" aria-labelledby="flavors-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Flavor profiles</p>
+        <h2 id="flavors-h">Four ways to savor the sweet-tart.</h2>
+        <p class="lede">Every flavor starts with the same whole organic cranberry. Pick one to see its balance, texture and what it wants beside it.</p>
+      </div>
+      <div class="flavor-tabs" role="tablist" aria-label="Flavors" id="flavor-tabs"></div>
+      <article class="profile" id="profile" role="tabpanel" aria-live="polite">
+        <div>
+          <h3 id="p-name">The Original</h3>
+          <p class="notes" id="p-notes"></p>
+          <p class="occasion" id="p-occasion"></p>
+        </div>
+        <div class="scales">
+          <div>
+            <div class="scale-label"><span>Sweet</span><span>Tart</span></div>
+            <div class="scale-track"><span class="scale-dot" id="p-balance"></span></div>
+          </div>
+          <div>
+            <div class="scale-label"><span>Tender</span><span>Crisp</span></div>
+            <div class="scale-track"><span class="scale-dot" id="p-texture"></span></div>
+          </div>
+          <dl class="facts">
+            <dt>Notes</dt><dd id="p-tasting"></dd>
+            <dt>Pairs with</dt><dd id="p-pairs"></dd>
+            <dt>Ingredients</dt><dd id="p-ingredients"></dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="shop" aria-labelledby="shop-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Reserve your box</p>
+        <h2 id="shop-h">Choose a flavor, then a format.</h2>
+      </div>
+      <div class="shop-flavor" role="group" aria-label="Flavor for your box" id="shop-flavor"><span>Flavor</span></div>
+      <div class="shop-grid">
+        <article class="product">
+          <div class="thumb thumb-ruby"><svg viewBox="0 0 200 280" aria-hidden="true"><use href="#pouch"/></svg></div>
+          <p class="size">4 oz · resealable</p>
+          <div class="product-top"><h3>The Pouch</h3><span class="price" data-price="pouch">$9</span></div>
+          <p>Matte, zip-close, desk-drawer sized. About eight 4 PM breaks.</p>
+          <button class="btn btn-ruby" type="button" data-add="pouch">Add pouch to box</button>
+        </article>
+        <article class="product">
+          <div class="thumb thumb-copper"><svg viewBox="0 0 160 200" aria-hidden="true"><use href="#tin"/></svg></div>
+          <p class="size">8 oz · refillable steel</p>
+          <div class="product-top"><h3>The Counter Tin</h3><span class="price" data-price="tin">$16</span></div>
+          <p>Made to live on the kitchen counter. Refill it with any pouch.</p>
+          <button class="btn btn-ruby" type="button" data-add="tin">Add tin to box</button>
+        </article>
+        <article class="product">
+          <div class="thumb thumb-pine"><svg viewBox="0 0 200 280" aria-hidden="true"><use href="#pouch"/></svg></div>
+          <p class="size">3 × 4 oz · gift-wrapped</p>
+          <div class="product-top"><h3>The Hostess Trio</h3><span class="price" data-price="trio">$30</span></div>
+          <p>Original, Dark Chocolate and Blood Orange, tied in cotton ribbon with a handwritten card.</p>
+          <button class="btn btn-ruby" type="button" data-add="trio">Add trio to box</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-paper" id="pairings" aria-labelledby="pairings-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Entertaining &amp; gifting</p>
+        <h2 id="pairings-h">Set out a bowl. Bring a tin.</h2>
+        <p class="lede">Chef-tested pairings for boards, dessert courses and the hostess gift that actually gets opened.</p>
+      </div>
+      <div class="rail" id="rail" tabindex="0" aria-label="Pairing cards, scroll sideways">
+        <article class="scene s-ruby">
+          <p class="when">The 6 PM board</p>
+          <div><h3>Original, aged Gouda &amp; sparkling rosé</h3>
+            <ul><li>Two-year Gouda, shaved</li><li>Marcona almonds</li><li>A small bowl of The Original</li></ul></div>
+        </article>
+        <article class="scene s-pine">
+          <p class="when">After dinner</p>
+          <div><h3>Dark Chocolate &amp; a short espresso</h3>
+            <ul><li>70% cacao shell</li><li>Pinot noir if the night's not over</li></ul></div>
+        </article>
+        <article class="scene s-copper">
+          <p class="when">The hostess gift</p>
+          <div><h3>A Counter Tin, ribboned</h3>
+            <ul><li>Handwritten card included</li><li>Stays on her counter long after</li></ul></div>
+        </article>
+        <article class="scene s-deep">
+          <p class="when">Aperitivo hour</p>
+          <div><h3>Blood Orange &amp; a gin and tonic</h3>
+            <ul><li>Fresh goat cheese</li><li>Castelvetrano olives</li></ul></div>
+        </article>
+        <article class="scene s-ruby">
+          <p class="when">Brunch table</p>
+          <div><h3>Pistachio over burrata</h3>
+            <ul><li>Scatter a handful, torn basil</li><li>Prosecco, well chilled</li></ul></div>
+        </article>
+      </div>
+      <div class="rail-hint">
+        <span>Swipe or use the arrows to browse pairings.</span>
+        <div class="rail-nav">
+          <button type="button" id="rail-prev" aria-label="Previous pairings">←</button>
+          <button type="button" id="rail-next" aria-label="Next pairings">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="ritual-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">A day with Ruby Reserve</p>
+        <h2 id="ritual-h">Small moments, planned for.</h2>
+      </div>
+      <ol class="ritual">
+        <li><time>3:30 PM</time><h3>Between meetings</h3><p>A handful from the desk-drawer pouch instead of another sad granola bar. Zip it shut, back to the deck.</p></li>
+        <li><time>6:45 PM</time><h3>Friends arrive</h3><p>Pour The Original into a small bowl beside the Gouda. It's the thing people ask about.</p></li>
+        <li><time>9:15 PM</time><h3>After dinner</h3><p>Two or three Dark Chocolate cranberries, in place of a whole bar.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band-paper" id="sourcing" aria-labelledby="sourcing-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What's inside</p>
+        <h2 id="sourcing-h">Three ingredients, and where they come from.</h2>
+      </div>
+      <div class="source">
+        <div class="longform">
+          <p>Most dried cranberries are sliced, soaked in syrup and dried fast. Ours arrive whole from organic family bogs, are lightly infused with organic cane sugar, and dry slowly at low temperature, so the fruit keeps its shape, its chew and most of its tartness.</p>
+          <p>We add a touch of sunflower oil so the berries don't clump in the pouch. That's the full list for The Original. The other flavors add one thing each: dark chocolate, blood orange peel, or Sicilian pistachio.</p>
+          <p>We don't make health claims. It's a snack you eat on purpose, and we'd like you to know exactly what's in it.</p>
+        </div>
+        <div>
+          <table class="spec-table">
+            <caption>The Original, at a glance</caption>
+            <tbody>
+              <tr><th scope="row">Fruit</th><td>Whole organic cranberries</td></tr>
+              <tr><th scope="row">Grown</th><td>Family bogs, Central Wisconsin</td></tr>
+              <tr><th scope="row">Sweetened with</th><td>Organic cane sugar</td></tr>
+              <tr><th scope="row">Also contains</th><td>Organic sunflower oil</td></tr>
+              <tr><th scope="row">Dried</th><td>Low-temperature, whole berry</td></tr>
+              <tr><th scope="row">Packaging</th><td>Resealable matte pouch or refillable steel tin</td></tr>
+            </tbody>
+          </table>
+          <div class="leave-out">
+            <h3>What we leave out</h3>
+            <p>Artificial colors, artificial flavors, glycerin and preservatives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band letters" aria-labelledby="letters-h">
+    <div class="wrap">
+      <div>
+        <h2 id="letters-h">Letters from the Bog</h2>
+        <p>One short note a month: a new pairing, a board worth copying, and first access to seasonal flavors. Nothing more.</p>
+      </div>
+      <form id="letters-form" novalidate>
+        <label for="letters-email">Email address</label>
+        <input id="letters-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <button class="btn" type="submit">Join the list</button>
+        <p class="form-msg" id="letters-msg" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>Ruby Reserve by CPG Cranberry · Design prototype</span>
+    <span>Pricing and product details are illustrative.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-h" hidden>
+  <div class="drawer-head">
+    <h2 id="drawer-h">Your box</h2>
+    <button class="icon-btn" type="button" id="close-box" aria-label="Close your box">×</button>
+  </div>
+  <div class="empty" id="box-empty">
+    <h3>Nothing reserved yet.</h3>
+    <p>Let's get your pantry stocked. A single pouch is a good place to start.</p>
+    <a class="link-arrow" href="#shop" id="empty-shop">Browse the shop →</a>
+  </div>
+  <ul class="box-list" id="box-list"></ul>
+  <div class="drawer-foot" id="box-foot" hidden>
+    <div class="subtotal"><span>Subtotal</span><span id="box-subtotal">$0</span></div>
+    <button class="btn btn-ruby" type="button" id="checkout">Continue to checkout</button>
+    <small id="checkout-note">Ships in 2–3 days in recyclable packaging.</small>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  var FLAVORS = [
+    { id: "original", name: "The Original", sweet: 58, crisp: 22,
+      notes: "Bright and jammy, with the clean snap of fresh cranberry and a soft, lingering sweetness.",
+      occasion: "Perfect for 4 PM desk breaks or tonight's cheese board.",
+      tasting: "Red currant, orange blossom, a little bramble",
+      pairs: "Aged Gouda, Manchego, sparkling rosé",
+      ingredients: "Organic cranberries, organic cane sugar, organic sunflower oil",
+      prices: { pouch: 9, tin: 16 } },
+    { id: "chocolate", name: "Dark Chocolate", sweet: 40, crisp: 55,
+      notes: "Each berry in a thin 70% cacao shell. The tartness cuts the bitterness; the chocolate rounds the tart.",
+      occasion: "The after-dinner square, reimagined.",
+      tasting: "Cocoa, black cherry, a hint of espresso",
+      pairs: "Espresso, pinot noir, triple-crème brie",
+      ingredients: "Organic cranberries, organic dark chocolate (cacao, cane sugar, cocoa butter), organic cane sugar, organic sunflower oil",
+      prices: { pouch: 12, tin: 16 } },
+    { id: "orange", name: "Blood Orange", sweet: 68, crisp: 18,
+      notes: "Candied blood orange peel lifts the fruit into something brighter and a little floral.",
+      occasion: "For aperitivo hour, or a sunny afternoon at your desk.",
+      tasting: "Citrus zest, pink grapefruit, honeyed finish",
+      pairs: "Fresh goat cheese, gin and tonic, Campari spritz",
+      ingredients: "Organic cranberries, organic cane sugar, organic blood orange peel, organic sunflower oil",
+      prices: { pouch: 10, tin: 16 } },
+    { id: "pistachio", name: "Pistachio", sweet: 50, crisp: 78,
+      notes: "Rolled in finely crushed Sicilian pistachio for a savory, buttery crunch around a tender berry.",
+      occasion: "Scatter over burrata at brunch, or eat straight from the pouch.",
+      tasting: "Toasted nut, green olive oil, tart cherry",
+      pairs: "Burrata, prosecco, Parmigiano-Reggiano",
+      ingredients: "Organic cranberries, organic cane sugar, Sicilian pistachios, organic sunflower oil",
+      prices: { pouch: 12, tin: 16 } }
+  ];
+  var FORMATS = { pouch: "The Pouch · 4 oz", tin: "The Counter Tin · 8 oz", trio: "The Hostess Trio · 3 × 4 oz" };
+  var current = FLAVORS[0];
+  var box = [];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var money = function (n) { return "$" + n.toFixed(0); };
+
+  // Flavor tabs (profile) and shop chips share one selection
+  var tabs = $("flavor-tabs"), shopChips = $("shop-flavor");
+  FLAVORS.forEach(function (f, i) {
+    var t = document.createElement("button");
+    t.type = "button"; t.className = "chip"; t.id = "tab-" + f.id; t.textContent = f.name;
+    t.setAttribute("role", "tab"); t.setAttribute("aria-controls", "profile");
+    t.addEventListener("click", function () { select(f); });
+    t.addEventListener("keydown", function (e) {
+      var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var next = FLAVORS[(i + d + FLAVORS.length) % FLAVORS.length];
+      select(next); $("tab-" + next.id).focus();
+    });
+    tabs.appendChild(t);
+
+    var c = document.createElement("button");
+    c.type = "button"; c.className = "chip"; c.id = "shop-" + f.id; c.textContent = f.name;
+    c.addEventListener("click", function () { select(f); });
+    shopChips.appendChild(c);
+  });
+
+  function select(f) {
+    current = f;
+    FLAVORS.forEach(function (g) {
+      var on = g === f;
+      var t = $("tab-" + g.id);
+      t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+      $("shop-" + g.id).setAttribute("aria-pressed", on);
+    });
+    $("profile").setAttribute("aria-labelledby", "tab-" + f.id);
+    $("p-name").textContent = f.name;
+    $("p-notes").textContent = f.notes;
+    $("p-occasion").textContent = f.occasion;
+    $("p-tasting").textContent = f.tasting;
+    $("p-pairs").textContent = f.pairs;
+    $("p-ingredients").textContent = f.ingredients;
+    $("p-balance").style.left = (100 - f.sweet) + "%";
+    $("p-texture").style.left = f.crisp + "%";
+    document.querySelector('[data-price="pouch"]').textContent = money(f.prices.pouch);
+    document.querySelector('[data-price="tin"]').textContent = money(f.prices.tin);
+    document.querySelector('[data-add="pouch"]').textContent = "Add " + f.name + " pouch";
+    document.querySelector('[data-add="tin"]').textContent = "Add " + f.name + " tin";
+  }
+  select(current);
+
+  // Box
+  function priceFor(fmt, f) { return fmt === "trio" ? 30 : f.prices[fmt]; }
+  document.querySelectorAll("[data-add]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var fmt = b.getAttribute("data-add");
+      var label = fmt === "trio" ? "Original, Dark Chocolate, Blood Orange" : current.name;
+      var key = fmt + ":" + (fmt === "trio" ? "trio" : current.id);
+      var hit = box.filter(function (x) { return x.key === key; })[0];
+      if (hit) hit.qty++; else box.push({ key: key, fmt: fmt, label: label, price: priceFor(fmt, current), qty: 1 });
+      render();
+      toast((fmt === "trio" ? "The Hostess Trio" : current.name + " " + (fmt === "tin" ? "tin" : "pouch")) + " added to your box");
+    });
+  });
+
+  function render() {
+    var count = box.reduce(function (s, x) { return s + x.qty; }, 0);
+    var total = box.reduce(function (s, x) { return s + x.qty * x.price; }, 0);
+    $("box-count").textContent = count;
+    $("box-count").setAttribute("aria-label", count + (count === 1 ? " item" : " items"));
+    $("box-empty").hidden = count > 0;
+    $("box-foot").hidden = count === 0;
+    $("box-subtotal").textContent = money(total);
+    var list = $("box-list"); list.innerHTML = "";
+    box.forEach(function (x, i) {
+      var li = document.createElement("li");
+      li.innerHTML = '<div><div></div><div class="meta"></div></div><span class="amt"></span><button type="button">Remove</button>';
+      li.children[0].children[0].textContent = FORMATS[x.fmt];
+      li.children[0].children[1].textContent = x.label + (x.qty > 1 ? " · Qty " + x.qty : "");
+      li.children[1].textContent = money(x.qty * x.price);
+      li.children[2].setAttribute("aria-label", "Remove " + FORMATS[x.fmt] + ", " + x.label);
+      li.children[2].addEventListener("click", function () { box.splice(i, 1); render(); $("close-box").focus(); });
+      list.appendChild(li);
+    });
+  }
+
+  var lastFocus = null;
+  function openBox() { lastFocus = document.activeElement; $("scrim").hidden = false; $("drawer").hidden = false; $("close-box").focus(); }
+  function closeBox() { $("scrim").hidden = true; $("drawer").hidden = true; if (lastFocus) lastFocus.focus(); }
+  $("open-box").addEventListener("click", openBox);
+  $("close-box").addEventListener("click", closeBox);
+  $("scrim").addEventListener("click", closeBox);
+  $("empty-shop").addEventListener("click", closeBox);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("drawer").hidden) closeBox(); });
+  $("checkout").addEventListener("click", function () {
+    $("checkout-note").textContent = "Checkout isn't connected in this prototype — your selections stay here until you leave the page.";
+  });
+
+  var tTimer;
+  function toast(msg) {
+    var t = $("toast"); t.textContent = msg; t.hidden = false;
+    clearTimeout(tTimer); tTimer = setTimeout(function () { t.hidden = true; }, 2600);
+  }
+
+  // Pairing rail arrows
+  function step(dir) {
+    var rail = $("rail"), card = rail.querySelector(".scene");
+    rail.scrollBy({ left: dir * (card.getBoundingClientRect().width + 18), behavior: "smooth" });
+  }
+  $("rail-prev").addEventListener("click", function () { step(-1); });
+  $("rail-next").addEventListener("click", function () { step(1); });
+
+  // Newsletter
+  $("letters-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = $("letters-email").value.trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    $("letters-msg").textContent = ok
+      ? "You're on the list. The first letter arrives with the next harvest."
+      : "That email looks incomplete. Check for an @ and a domain, like name@example.com.";
+    if (ok) $("letters-email").value = "";
+  });
+})();
+</script>
+</body>
+</html>
